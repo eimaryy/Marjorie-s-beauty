@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    overflow-x: hidden;
+}
+
+:root{
+    font: {
+        size: 62.5%;
+    }
+}
+
+body{
+    width: 100vw;
+}
+
+a{
+    text-decoration: none;
+}
+
+@mixin centralizar($direction, $alinhamento){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $alinhamento;
+    align-items: center;
+
+}
+
+@mixin modalMenu($width, $height){
+    position: absolute;
+    top: 0;
+   left: 0;
+    width: $width;
+    height: $height;
+}
+
+@mixin ajusteImg($width, $height){
+    width: $width;
+    height: $height;
+    object-fit: fill;
+}
+
+@mixin fonte($size){
+    font: {
+        size: $size; 
+        family: $fonte__padrao;
+    }
+}
