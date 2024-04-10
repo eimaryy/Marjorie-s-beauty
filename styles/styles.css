@@ -59,7 +59,7 @@ header #container_header #header_menu-aberto {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   flex-direction: column;
 }
 header #container_header .header_menu-cabecalho {
@@ -127,15 +127,28 @@ header .pesquisa {
   padding: 1.5rem;
   background-color: #ebecee;
 }
-header .pesquisa input {
-  width: 70%;
-  height: 3rem;
-  padding: 1rem;
-  background-color: white;
-  border: 2px solid #E1F0DA;
+header .pesquisa form {
+  display: flex;
+  flex-direction: row;
+  justify-content: none;
+  align-items: center;
+  width: 80%;
+  border: 2px solid #B0C5A4;
   border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+}
+header .pesquisa form #header_pesquisa-caixa {
+  width: 80%;
+  border: none;
+  padding: 5px;
   font-size: 1.5rem;
   font-family: "Roboto", serif;
+}
+header .pesquisa form .header__pesquisa-btn {
+  width: 20%;
+  padding: 5px;
+  background-color: #B0C5A4;
+  border: none;
 }
 
 .banner {
