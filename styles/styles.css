@@ -69,6 +69,7 @@ header #container_header .header_menu-cabecalho {
   align-items: center;
   width: 100%;
   padding: 2rem 0 2.5rem 0;
+  overflow-y: hidden;
 }
 header #container_header .header_menu-cabecalho .header_menu-cabecalho-logo {
   width: 14rem;
@@ -81,9 +82,9 @@ header #container_header .header_menu-cabecalho img {
   object-fit: fill;
   margin: 0 1.5rem;
 }
-header #container_header #header_list-menu #header_list-item {
+header #container_header #header_list-menu .header_list-item {
   width: 100vw;
-  padding: 1.2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -91,7 +92,7 @@ header #container_header #header_list-menu #header_list-item {
   font-size: 1.6rem;
   font-family: "Roboto", serif;
 }
-header #container_header #header_list-menu #header_list-item img {
+header #container_header #header_list-menu .header_list-item img {
   width: 1.5rem;
   height: 1.5rem;
   object-fit: fill;
@@ -100,19 +101,19 @@ header #container_header #header_list-menu #header_list-item img {
 header #container_header .header_menu-footer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 5rem;
+  padding: 4rem 0;
 }
 header #container_header .header_menu-footer a {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-size: 1.5rem;
   font-family: "Roboto", serif;
-  color: rgb(92, 92, 92);
-  gap: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
 }
 header #container_header .header_menu-footer a img {
   width: 5rem;
@@ -125,7 +126,7 @@ header .pesquisa {
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
-  background-color: #ebecee;
+  background-color: rgb(255, 255, 255);
 }
 header .pesquisa form {
   display: flex;
@@ -150,10 +151,22 @@ header .pesquisa form .header__pesquisa-btn {
   background-color: #B0C5A4;
   border: none;
 }
+header .pesquisa form .header__pesquisa-btn img {
+  width: 2rem;
+  height: auto;
+  object-fit: fill;
+}
 
 .banner {
   height: 20rem;
   background-color: rgb(0, 0, 0);
+}
+
+#produtosEdestaque #produtosEdestaque_produtos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

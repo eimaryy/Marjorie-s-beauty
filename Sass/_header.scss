@@ -36,6 +36,7 @@ header{
           @include centralizar(row, space-between);
           width: 100%;
           padding: 2rem 0 2.5rem 0;
+          overflow-y: hidden;
 
           .header_menu-cabecalho-logo{
             @include ajusteImg(14rem, 2.5rem);
@@ -49,9 +50,9 @@ header{
 
       #header_list-menu{
 
-        #header_list-item{
+        .header_list-item{
           width: 100vw;
-          padding: 1.2rem;
+          padding: 1.5rem;
           @include centralizar (row, space-between);
           @include fonte (1.6rem);
 
@@ -62,14 +63,14 @@ header{
         }
       }
     .header_menu-footer{
-      @include centralizar(row, center);
-      padding: 5rem;
-
+      @include centralizar(row, flex-start);
+      padding: 4rem 0;
+      
       a{
-        @include centralizar(row, center);
+        @include centralizar(row, flex-start);
         @include fonte(1.5rem);   
-        color: $cor__cinza;     
-        gap: 5px;
+        color: $cor__preto;     
+        font-weight: bolder;
 
         img{
           @include ajusteImg(5rem, auto);
@@ -80,7 +81,7 @@ header{
   .pesquisa{
     @include centralizar (row, center);
     padding: 1.5rem;
-    background-color: #ebecee; //#B4B4B8;
+    background-color: $cor__branco;
 
     form{
       @include centralizar (row, none);
@@ -104,6 +105,10 @@ header{
         padding: 5px;
         background-color: #B0C5A4;
         border: none;
+
+        img{
+          @include ajusteImg(2rem, auto);
+        }
       }
 
     }
