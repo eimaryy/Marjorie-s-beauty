@@ -2,6 +2,17 @@
 
     #produtosEdestaque_produtos{
         @include centralizar (column, center);
+
+        .produtos_titulo{
+            @include centralizar(row, center);
+            padding: 2rem;
+
+            h2{
+                font-family: "Montserrat", sans-serif;
+                font-size: 2.5rem;
+                font-weight: 500;
+            }
+        }
     }
 
 }

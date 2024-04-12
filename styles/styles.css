@@ -23,7 +23,7 @@ header #container_header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem;
+  margin: 0.8rem 0.5rem 0.3rem 0.5rem;
 }
 header #container_header #header_logo {
   display: flex;
@@ -84,7 +84,7 @@ header #container_header .header_menu-cabecalho img {
 }
 header #container_header #header_list-menu .header_list-item {
   width: 100vw;
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -96,7 +96,7 @@ header #container_header #header_list-menu .header_list-item img {
   width: 1.5rem;
   height: 1.5rem;
   object-fit: fill;
-  margin: 0 1.5rem;
+  margin: 0 2rem;
 }
 header #container_header .header_menu-footer {
   display: flex;
@@ -125,7 +125,7 @@ header .pesquisa {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem;
   background-color: rgb(255, 255, 255);
 }
 header .pesquisa form {
@@ -133,7 +133,7 @@ header .pesquisa form {
   flex-direction: row;
   justify-content: none;
   align-items: center;
-  width: 80%;
+  width: 75%;
   border: 2px solid #B0C5A4;
   border-radius: 8px;
   background-color: rgb(255, 255, 255);
@@ -141,13 +141,13 @@ header .pesquisa form {
 header .pesquisa form #header_pesquisa-caixa {
   width: 80%;
   border: none;
-  padding: 5px;
+  padding: 3px;
   font-size: 1.5rem;
   font-family: "Roboto", serif;
 }
 header .pesquisa form .header__pesquisa-btn {
   width: 20%;
-  padding: 5px;
+  padding: 3px;
   background-color: #B0C5A4;
   border: none;
 }
@@ -167,6 +167,18 @@ header .pesquisa form .header__pesquisa-btn img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#produtosEdestaque #produtosEdestaque_produtos .produtos_titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+#produtosEdestaque #produtosEdestaque_produtos .produtos_titulo h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -2,7 +2,7 @@ header{
 
   #container_header{
       @include centralizar(row, space-between);
-      margin: 0.5rem;
+      margin: 0.8rem 0.5rem 0.3rem 0.5rem;
 
       #header_logo{
         @include centralizar(row, center);
@@ -52,13 +52,13 @@ header{
 
         .header_list-item{
           width: 100vw;
-          padding: 1.5rem;
+          padding: 1.5rem 2rem;
           @include centralizar (row, space-between);
           @include fonte (1.6rem);
 
           img{
             @include ajusteImg(1.5rem, 1.5rem);
-            margin: 0 1.5rem;
+            margin: 0 2rem;
           }
         }
       }
@@ -80,12 +80,12 @@ header{
   }
   .pesquisa{
     @include centralizar (row, center);
-    padding: 1.5rem;
+    padding: 1rem;
     background-color: $cor__branco;
 
     form{
       @include centralizar (row, none);
-      width: 80%;
+      width: 75%;
       border: 2px solid #B0C5A4;
       border-radius: 8px;
       background-color: $cor__branco;
@@ -93,7 +93,7 @@ header{
       #header_pesquisa-caixa{
         width: 80%;
         border: none;
-        padding: 5px;
+        padding: 3px;
         font: {
           size: 1.5rem;
           family: $fonte__padrao;
@@ -102,7 +102,7 @@ header{
       
       .header__pesquisa-btn{
         width: 20%;
-        padding: 5px;
+        padding: 3px;
         background-color: #B0C5A4;
         border: none;
 
