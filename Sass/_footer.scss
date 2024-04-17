@@ -1,0 +1,25 @@
+footer{
+    @include centralizar (column, center);
+    background-color: $cor__cinzaClaro;
+    padding: 2rem;
+
+    #footer__origem{
+
+        .footer__origem-container{
+            @include centralizar (row, center);
+
+            figure{
+                padding: 1rem;
+                @include centralizar (column, center);
+
+                img{
+                    @include ajusteImg (5rem, 5rem);
+                }
+                p{
+                    @include fonte(1rem, 400);
+                }
+            }
+        }
+    }
+
+}

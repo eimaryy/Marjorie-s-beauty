@@ -35,7 +35,7 @@ header{
           .header_menu-cabecalho{
           @include centralizar(row, space-between);
           width: 100%;
-          padding: 2rem 0 2.5rem 0;
+          padding: 2rem 0 3rem 0;
           overflow-y: hidden;
 
           .header_menu-cabecalho-logo{
@@ -52,9 +52,9 @@ header{
 
         .header_list-item{
           width: 100vw;
-          padding: 1.5rem 2rem;
+          padding: 1.2rem 2rem;
           @include centralizar (row, space-between);
-          @include fonte (1.6rem);
+          @include fonte (1.6rem, 400);
 
           img{
             @include ajusteImg(1.5rem, 1.5rem);
@@ -68,9 +68,8 @@ header{
       
       a{
         @include centralizar(row, flex-start);
-        @include fonte(1.5rem);   
+        @include fonte(1.5rem, bolder);   
         color: $cor__preto;     
-        font-weight: bolder;
 
         img{
           @include ajusteImg(5rem, auto);
@@ -85,7 +84,7 @@ header{
 
     form{
       @include centralizar (row, none);
-      width: 75%;
+      width: 90%;
       border: 2px solid #B0C5A4;
       border-radius: 8px;
       background-color: $cor__branco;
@@ -93,11 +92,8 @@ header{
       #header_pesquisa-caixa{
         width: 80%;
         border: none;
-        padding: 3px;
-        font: {
-          size: 1.5rem;
-          family: $fonte__padrao;
-        }
+        padding: 4px;
+        @include fonte (1.5rem, 400);
       }
       
       .header__pesquisa-btn{

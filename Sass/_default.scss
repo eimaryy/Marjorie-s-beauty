@@ -42,9 +42,11 @@ a{
     object-fit: fill;
 }
 
-@mixin fonte($size){
+@mixin fonte($size,$weight){
     font: {
         size: $size; 
         family: $fonte__padrao;
+        weight: $weight;
     }
+    font-style: normal;
 }

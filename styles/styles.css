@@ -68,7 +68,7 @@ header #container_header .header_menu-cabecalho {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 2rem 0 2.5rem 0;
+  padding: 2rem 0 3rem 0;
   overflow-y: hidden;
 }
 header #container_header .header_menu-cabecalho .header_menu-cabecalho-logo {
@@ -84,13 +84,15 @@ header #container_header .header_menu-cabecalho img {
 }
 header #container_header #header_list-menu .header_list-item {
   width: 100vw;
-  padding: 1.5rem 2rem;
+  padding: 1.2rem 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: 1.6rem;
-  font-family: "Roboto", serif;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 header #container_header #header_list-menu .header_list-item img {
   width: 1.5rem;
@@ -111,9 +113,10 @@ header #container_header .header_menu-footer a {
   justify-content: flex-start;
   align-items: center;
   font-size: 1.5rem;
-  font-family: "Roboto", serif;
-  color: rgb(0, 0, 0);
+  font-family: "Platypi", serif;
   font-weight: bolder;
+  font-style: normal;
+  color: rgb(0, 0, 0);
 }
 header #container_header .header_menu-footer a img {
   width: 5rem;
@@ -133,7 +136,7 @@ header .pesquisa form {
   flex-direction: row;
   justify-content: none;
   align-items: center;
-  width: 75%;
+  width: 90%;
   border: 2px solid #B0C5A4;
   border-radius: 8px;
   background-color: rgb(255, 255, 255);
@@ -141,9 +144,11 @@ header .pesquisa form {
 header .pesquisa form #header_pesquisa-caixa {
   width: 80%;
   border: none;
-  padding: 3px;
+  padding: 4px;
   font-size: 1.5rem;
-  font-family: "Roboto", serif;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 header .pesquisa form .header__pesquisa-btn {
   width: 20%;
@@ -176,9 +181,43 @@ header .pesquisa form .header__pesquisa-btn img {
   padding: 2rem;
 }
 #produtosEdestaque #produtosEdestaque_produtos .produtos_titulo h2 {
-  font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
-  font-weight: 500;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebecee;
+  padding: 2rem;
+}
+footer #footer__origem .footer__origem-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer #footer__origem .footer__origem-container figure {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer #footer__origem .footer__origem-container figure img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: fill;
+}
+footer #footer__origem .footer__origem-container figure p {
+  font-size: 1rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /*# sourceMappingURL=styles.css.map */
