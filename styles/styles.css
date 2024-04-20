@@ -11,7 +11,7 @@
 }
 
 body {
-  width: 100vw;
+  min-width: 100%;
 }
 
 a {
@@ -92,7 +92,6 @@ header #container_header #header_list-menu .header_list-item {
   font-size: 1.6rem;
   font-family: "Platypi", serif;
   font-weight: 400;
-  font-style: normal;
 }
 header #container_header #header_list-menu .header_list-item img {
   width: 1.5rem;
@@ -100,14 +99,14 @@ header #container_header #header_list-menu .header_list-item img {
   object-fit: fill;
   margin: 0 2rem;
 }
-header #container_header .header_menu-footer {
+header #container_header #header_menu-footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding: 4rem 0;
 }
-header #container_header .header_menu-footer a {
+header #container_header #header_menu-footer a {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -115,10 +114,9 @@ header #container_header .header_menu-footer a {
   font-size: 1.5rem;
   font-family: "Platypi", serif;
   font-weight: bolder;
-  font-style: normal;
   color: rgb(0, 0, 0);
 }
-header #container_header .header_menu-footer a img {
+header #container_header #header_menu-footer a img {
   width: 5rem;
   height: auto;
   object-fit: fill;
@@ -137,21 +135,23 @@ header .pesquisa form {
   justify-content: none;
   align-items: center;
   width: 90%;
+  height: 3.5rem;
   border: 2px solid #B0C5A4;
   border-radius: 8px;
   background-color: rgb(255, 255, 255);
 }
 header .pesquisa form #header_pesquisa-caixa {
   width: 80%;
+  height: 100%;
   border: none;
   padding: 4px;
   font-size: 1.5rem;
   font-family: "Platypi", serif;
   font-weight: 400;
-  font-style: normal;
 }
 header .pesquisa form .header__pesquisa-btn {
   width: 20%;
+  height: 100%;
   padding: 3px;
   background-color: #B0C5A4;
   border: none;
@@ -184,7 +184,6 @@ header .pesquisa form .header__pesquisa-btn img {
   font-size: 2.5rem;
   font-family: "Platypi", serif;
   font-weight: 400;
-  font-style: normal;
 }
 
 footer {
@@ -195,11 +194,19 @@ footer {
   background-color: #ebecee;
   padding: 2rem;
 }
+footer #footer__origem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 footer #footer__origem .footer__origem-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
 }
 footer #footer__origem .footer__origem-container figure {
   padding: 1rem;
@@ -217,7 +224,125 @@ footer #footer__origem .footer__origem-container figure p {
   font-size: 1rem;
   font-family: "Platypi", serif;
   font-weight: 400;
-  font-style: normal;
+}
+footer #footer__newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+footer #footer__newsletter .footer__newsletter-descricao {
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  padding: 0.5rem 0 1.5rem 0;
+  margin: 0.5rem 0;
+  text-align: justify;
+}
+footer #footer__newsletter form {
+  display: flex;
+  flex-direction: row;
+  justify-content: none;
+  align-items: center;
+  width: 99%;
+  height: 4.5rem;
+  border: 1px solid rgb(92, 92, 92);
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+}
+footer #footer__newsletter form .footer_email-caixa {
+  width: 65%;
+  height: 100%;
+  border: none;
+  padding: 4px;
+  font-size: 1.3rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+}
+footer #footer__newsletter form .footer__inscrever-btn {
+  width: 35%;
+  height: 100%;
+  padding: 4px;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  font-size: 1.1rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+footer #footer__newsletter .footer__newsletter-termos {
+  font-size: 1.2rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  padding: 0.5rem 0 1rem 0;
+  text-align: justify;
+}
+footer #footer__nav {
+  width: 100%;
+  padding: 2rem 0;
+}
+footer #footer__nav .footer__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer #footer__nav .footer__list .footer__item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+footer #footer__nav .footer__list .footer__item-container .footer__list-item {
+  font-size: 1.7rem;
+  font-family: "Platypi", serif;
+  font-weight: bolder;
+  margin: 0.5rem 0;
+}
+footer #footer__nav .footer__list .footer__item-container .footer__item {
+  display: none;
+}
+footer #footer__nav .footer__list .footer__item-container .footer__item {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+}
+footer #footer__nav .footer__list .footer__item-container .footer__item a {
+  color: rgb(92, 92, 92);
+}
+footer #footer__copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer #footer__copyright h2 {
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 600;
+}
+footer #footer__copyright .footer__copyright-text {
+  font-size: 1.2rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  padding: 1rem;
+  margin: 0 0 2rem 0;
+  text-align: justify;
+}
+footer #footer__copyright .footer__copyright-simbolo {
+  margin: 3rem 0 0 0;
+  font-size: 1rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+}
+footer hr {
+  width: 90%;
 }
 
 /*# sourceMappingURL=styles.css.map */

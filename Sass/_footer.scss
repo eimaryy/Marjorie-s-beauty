@@ -4,9 +4,12 @@ footer{
     padding: 2rem;
 
     #footer__origem{
+        @include centralizar (column, center);
+        width: 100%;
 
         .footer__origem-container{
             @include centralizar (row, center);
+            padding: 2rem 0;
 
             figure{
                 padding: 1rem;
@@ -20,6 +23,99 @@ footer{
                 }
             }
         }
+    }
+
+    #footer__newsletter{
+        @include centralizar (column, center);
+        padding: 2rem;
+        
+        .footer__newsletter-descricao{
+            @include fonte(1.4rem, 400);
+            padding: 0.5rem 0 1.5rem 0;
+            margin: 0.5rem 0;
+            text-align: justify;
+        }
+
+        form{
+            @include form(99%, 4.5rem, 1px, $cor__cinza);
+          
+            .footer_email-caixa{
+                @include formTextCaixa(65%);
+                @include fonte (1.3rem, 400);
+            }
+
+            .footer__inscrever-btn{
+                @include formBtn(35%, 4px, $cor__preto);
+                @include fonte (1.1rem, 500);
+                color: $cor__branco;
+              
+            }   
+        }
+
+        .footer__newsletter-termos{
+            @include fonte(1.2rem, 400);
+            padding: 0.5rem 0 1rem 0;
+            text-align: justify;
+        }
+    }
+
+    #footer__nav{
+        width: 100%;
+        padding: 2rem 0;
+        
+        .footer__list{
+            @include centralizar (column, center);
+
+            .footer__item-container{
+                @include centralizar (column, center);
+                margin: 1rem 0;
+
+                .footer__list-item{
+                    @include fonte(1.7rem, bolder);
+                    margin: 0.5rem 0;  
+                }
+
+                .footer__item{
+                    display: none;
+                }
+
+                .footer__item{
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    @include fonte(1.5rem, 400);
+                   
+                    a{ 
+                        color: $cor__cinza;
+                   }
+                }
+            }
+        }
+    }
+
+    #footer__copyright{
+        @include centralizar(column, center);
+
+        h2{
+            @include fonte(1.5rem, 600);
+        }
+        .footer__copyright-text{
+            @include fonte(1.2rem, 400);
+            padding:1rem;
+            margin: 0 0 2rem 0;
+            text-align: justify;
+            
+        }
+        .footer__copyright-simbolo{
+            margin: 3rem 0 0 0;
+            @include fonte(1rem, 400);
+        }
+    
+    }
+
+    hr{
+        width: 90%;
     }
 
 }

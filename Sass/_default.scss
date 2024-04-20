@@ -13,7 +13,7 @@
 }
 
 body{
-    width: 100vw;
+    min-width: 100%;
 }
 
 a{
@@ -48,5 +48,28 @@ a{
         family: $fonte__padrao;
         weight: $weight;
     }
-    font-style: normal;
+}
+
+@mixin formTextCaixa($width){
+    width: $width;
+    height: 100%;
+    border: none;
+    padding: 4px;
+}
+
+@mixin formBtn($width, $pad, $cor){
+    width: $width;
+    height: 100%;
+    padding: $pad;
+    background-color: $cor;
+    border: none;
+}
+
+@mixin form($width, $height, $px, $cor){
+    @include centralizar (row, none);
+    width: $width;
+    height: $height;
+    border: $px solid $cor;
+    border-radius: 8px;
+    background-color: $cor__branco;
 }

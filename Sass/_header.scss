@@ -62,7 +62,7 @@ header{
           }
         }
       }
-    .header_menu-footer{
+    #header_menu-footer{
       @include centralizar(row, flex-start);
       padding: 4rem 0;
       
@@ -83,24 +83,15 @@ header{
     background-color: $cor__branco;
 
     form{
-      @include centralizar (row, none);
-      width: 90%;
-      border: 2px solid #B0C5A4;
-      border-radius: 8px;
-      background-color: $cor__branco;
+      @include form(90%, 3.5rem, 2px, #B0C5A4);
     
       #header_pesquisa-caixa{
-        width: 80%;
-        border: none;
-        padding: 4px;
+       @include formTextCaixa(80%);
         @include fonte (1.5rem, 400);
       }
       
       .header__pesquisa-btn{
-        width: 20%;
-        padding: 3px;
-        background-color: #B0C5A4;
-        border: none;
+        @include formBtn(20%,3px,#B0C5A4);
 
         img{
           @include ajusteImg(2rem, auto);

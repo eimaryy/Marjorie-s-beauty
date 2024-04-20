@@ -14,23 +14,23 @@
 <body>
     <header>
         <div id="container_header">
-            <section id="header_logo">
-                <img class="header_logo-img" src="./assets/logo.png" alt="Logo marca Marjorie´s">
-            </section>
-            <section id="header_botoes">    
+            <div id="header_logo">
+                <a href="#"><img class="header_logo-img" src="./assets/logo.png" alt="Logo marca Marjorie´s"></a>
+            </div>
+            <div id="header_botoes">    
                 <ul class="header_botoes-list">
                     <li class="header_list-icon heart"><img src="./assets/bag.png" alt="icone de Sacola"></li>
                     <li class="header_list-icon heart"><img src="./assets/big-heart.png" alt="icone de Favoritos"></li>
                     <li class="header_list-icon user"><img src="./assets/user-icon.png" alt="icone de usuario"></li>
                     <li class="header_list-icon menu"><img src="./assets/menu.png" alt="icone de menu"></li>
                 </ul>
-            </section>
-            <section id="header_menu-aberto">
+            </div>
+        <div id="header_menu-aberto">
                 <div class="header_menu-cabecalho">
-                    <img class="header_menu-cabecalho-logo" src="./assets/logo.png" alt="Logo marca Marjorie´s">
+                    <a href="./index.html"><img class="header_menu-cabecalho-logo" src="./assets/logo.png" alt="Logo marca Marjorie´s"></a>
                     <img class="header_menu-sair" src="./assets/close.png" alt="botão de sair">
                 </div>
-            <div id="header_list-menu">
+            <nav id="header_list-menu">
                     <ul class="header_list-itens">
                         <li class="header_list-item"><p>LANÇAMENTOS</p><img class="header_list-itens icon-seta" src="./assets/seta.png" alt="seta"></li>
                         <li class="header_list-item"><p>PROMOÇÕES</p><img class="header_list-itens icon-seta" src="./assets/seta.png" alt="seta"></li>
@@ -42,23 +42,23 @@
                         <li class="header_list-item"><p>INFANTIL</p><img class="header_list-itens icon-seta" src="./assets/seta.png" alt="seta"></li>
                         <li class="header_list-item"><p>MARCAS</p><img class="header_list-itens icon-seta" src="./assets/seta.png" alt="seta"></li>
                     </ul>
-                    <div class="header_menu-footer">
+                    <nav id="header_menu-footer">
                        <ul class="header_list-footer-ancoras">
-                        <li class="header_list-item"><a href="#"><img src="./assets/bag.png" alt="icone de sacola">Sacola</a></li>
-                        <li class="header_list-item"><a href="#"><img src="./assets/love.png" alt="icone de favoritos">Favoritos</a></li>
-                        <li class="header_list-item"><a href="#"><img src="./assets/user-icon.png" alt="icone de usuario">Entrar</a></li>
-                        <li class="header_list-item"><a href="#"><img src="./assets/telefone.png" alt="icone de ajuda">Ajuda</a></li>
+                            <li class="header_list-item"><a href="#"><img src="./assets/bag.png" alt="icone de sacola">Sacola</a></li>
+                            <li class="header_list-item"><a href="#"><img src="./assets/love.png" alt="icone de favoritos">Favoritos</a></li>
+                            <li class="header_list-item"><a href="#"><img src="./assets/user-icon.png" alt="icone de usuario">Entrar</a></li>
+                            <li class="header_list-item"><a href="#"><img src="./assets/telefone.png" alt="icone de ajuda">Ajuda</a></li>
                        </ul>
-                    </div>
-            </div>
-            </section>
+                    </nav>
+            </nav>
         </div>
-        <section class="pesquisa">
+        </div>
+        <div class="pesquisa">
             <form action="" method="">
                 <input type="text" id="header_pesquisa-caixa" name="pesquisa" placeholder="Procurando por algo?">
                 <button type="submit" class="header__pesquisa-btn"><img src="./assets/busca.png" alt="Icone de busca"></button>
             </form>
-        </section>
+        </div>
             
     </header>
     <section class="banner">
@@ -68,16 +68,16 @@
         
     </section>
     <section id="produtosEdestaque">
-        <section id="produtosEdestaque_produtos">
+        <div id="produtosEdestaque_produtos">
             <div class="produtos_titulo">
                 <h2 class="titulo">Conheça nossa sessão de outono!</h2>
 
             </div>
-        </section>
+        </div>
 
     </section>
     <footer>
-        <section id="footer__origem">
+        <div id="footer__origem">
            <div class="footer__origem-container">
                 <figure class="footer__img crueldade">
                     <img src="./assets/crueldade0.svg" alt="Icone simbolizando crueldade 0">
@@ -96,11 +96,58 @@
                     <p>Sem Parabenos</p>
                 </figure>
             </div>
+        </div>
+        <hr />
+        <div id="footer__newsletter">
+            <!-- <h2>Seja nosso cliente premium!<br> </h2> -->
+            <p class="footer__newsletter-descricao">Assine nossa Newsletter para Obtenha atualizações, promoções exclusivas e muito mais - diretamente no seu e-mail.</p>
+            <form action="" method="">
+                <input type="text" class="footer_email-caixa" name="email" placeholder="Digite seu email aqui:">
+                <button type="submit" class="footer__inscrever-btn">SE INSCREVER</button>
+            </form>
+            <p class="footer__newsletter-termos">Li e concordo com os <a href="#">Termos de Serviço</a> e a <a href="#">Política de Privacidade</a> de Marjorie´s</p>
+        </div>
+        <hr />
+        <nav id="footer__nav">
+            <ul class="footer__list">
+                <div class="footer__item-container">
+                    <li class="footer__list-item com">Comprar +</li>
+                        <ul class="footer__item comprar" style="display: none;">
+                            <li><a href="#">Todos</a></li>
+                            <li><a href="#">Olhos</a></li>
+                            <li><a href="#">Rosto</a></li>
+                            <li><a href="#">Boca</a></li>
+                            <li><a href="#">Conjuntos</a></li>
+                        </ul>
+                </div>
+                <div class="footer__item-container">
+                    <li class="footer__list-item at">Atendimento ao Cliente +</li>
+                    <ul class="footer__item atendimento" style="display: none;">
+                        <li><a href="#">Ajuda e perguntas frequentes</a></li>
+                        <li><a href="#">Política de reembolso</a></li>
+                        <li><a href="#">Minha conta</a></li>
+                        <li><a href="#">Formas de pagamento</a></li>
+                        <li><a href="#">Fretes e entrega</a></li>
+                        <li><a href="#">Contatos</a></li>
+                    </ul>
+                </div>
+                <div class="footer__item-container">
+                    <li class="footer__list-item sob">Sobre +</li>
+                    <ul class="footer__item sobre" style="display: none;">
+                        <li><a href="#">A visão de Marjorie</a></li>
+                        <li><a href="#">Feito conscientemente</a></li>
+                        <li><a href="#">Termos de uso e privacidade</a></li>
+                        <li><a href="#">Trabalhe conosco</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </nav>
+        <div id="footer__copyright">
+            <h2>Feito com o amor</h2>
+            <p class="footer__copyright-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, amet perferendis, doloremque laudantium voluptatem vero delectus voluptatibus voluptates, ex reprehenderit corporis. Error eligendi maxime maiores ipsum odio debitis impedit distinctio.</p>
             <hr />
-        </section>
-        <section class="footer__">
-
-        </section>
+            <p class="footer__copyright-simbolo">© Maria Eduarda Nery, 2024</p>
+        </div>
 
     </footer>
 
