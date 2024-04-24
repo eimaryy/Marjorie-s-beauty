@@ -59,7 +59,7 @@ header{
       }
 
       #header_menu-aberto{
-        @include modalMenu(100%, 120%);
+        @include modalMenu(100vw, 100vh);
         display: block;
         background-color: $cor__branco;
         z-index: 2;

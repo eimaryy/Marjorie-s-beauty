@@ -111,8 +111,8 @@ header #container_header #header_menu-aberto {
   position: fixed;
   left: 0;
   top: 100%;
-  width: 100%;
-  height: 120%;
+  width: 100vw;
+  height: 100vh;
   display: block;
   background-color: rgb(255, 255, 255);
   z-index: 2;
