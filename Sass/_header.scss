@@ -2,40 +2,65 @@ header{
 
   #container_header{
       @include centralizar(row, space-between);
-      margin: 0.8rem 0.5rem 0.3rem 0.5rem;
+      padding: 2rem 0.8rem 1rem 0.8rem;
+      position: fixed;
+      width: 100%;
+    z-index: 2;
+    background-color: $cor__branco;
+
+      #contato{
+        display: none;
+        width: 35%;
+        padding: 0 3rem;
+        @include fonte(1.2rem, bolder);
+
+        a{
+          color: $cor__preto;
+        }
+      }
 
       #header_logo{
-        @include centralizar(row, center);
+        width: 50%;
+        @include centralizar(row, start);
         .header_logo-img{
           @include ajusteImg(14rem, 2.5rem);
         }
       }
 
       #header_botoes{
-        @include centralizar(row, center);
+        @include centralizar(row, end);
+        width: 50%;
       }
 
       .header_botoes-list{
         display: flex;
         
         img{
-          @include ajusteImg(2.5rem, 2.5rem);
+          @include ajusteImg(2.3rem, 2.3rem);
             margin: 0 0.5rem;
             cursor: pointer;
+        }
+
+        span{
+          display: none; 
         }
       }
 
       #header_menu-aberto{
-        display: none;
         @include modalMenu(100%, 100%);
+        display: block;
         background-color: $cor__branco;
-        flex-direction: column;
-        
-      }  
+        z-index: 2;
+        transition: all 1s;
+
+
+      } 
+
+      
           .header_menu-cabecalho{
           @include centralizar(row, space-between);
           width: 100%;
-          padding: 2rem 0 3rem 0;
+          padding: 2rem 1.5rem 3rem 1.5rem;
           overflow-y: hidden;
 
           .header_menu-cabecalho-logo{
@@ -78,12 +103,13 @@ header{
     }
   }
   .pesquisa{
+    margin: 6rem 0 0 0;
     @include centralizar (row, center);
     padding: 1rem;
     background-color: $cor__branco;
 
     form{
-      @include form(90%, 3.5rem, 2px, #B0C5A4);
+      @include form(85%, 3.5rem, 1px, $cor__verdeClaro);
     
       #header_pesquisa-caixa{
        @include formTextCaixa(80%);
@@ -91,7 +117,8 @@ header{
       }
       
       .header__pesquisa-btn{
-        @include formBtn(20%,3px,#B0C5A4);
+        @include formBtn(20%,3px, $cor__verdeClaro);
+        cursor: pointer;
 
         img{
           @include ajusteImg(2rem, auto);
@@ -99,5 +126,59 @@ header{
       }
 
     }
+  }
+}
+
+@media screen and (min-width:500px) {
+  header{
+    #container_header{
+      #contato{
+        display: block;
+      }
+      #header_logo{
+        width: 30%;
+        justify-content: center;
+      }
+      #header_botoes{
+        width: 35%;
+      }
+    }
+    .pesquisa{
+      form{
+        width: 70%;
+        height: 4rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1000px) {
+
+  header{
+    #container_header{
+        .header_botoes-list{
+          .menu{
+            display: none;
+          }        
+
+          li{
+            @include centralizar(row, center); 
+            padding: 0.5rem;
+            span{
+              display: inline-block;
+              @include fonte(1.2rem, bolder);
+            }
+            .menu{
+              display: none;
+            }
+          }
+        }
+      }
+      .pesquisa{
+        form{
+          width: 50%;
+          height: 5rem;
+        }
+      }
   }
 }

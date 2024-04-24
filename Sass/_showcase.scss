@@ -1,0 +1,115 @@
+#showcase{
+    @include centralizar (column, center);
+
+    #showcase__produtos{
+        @include centralizar (column, center);
+
+        .titulo{
+            @include fonte (2.5rem, 400);
+            padding: 1rem;
+        }
+        
+        .showcase__container{
+            padding: 0 2rem 2rem 2rem;
+            @include centralizar (column, center);
+            width: 100vw;
+            
+            .swiper{
+                width: 100%;
+
+                .swiper-wrapper{
+                    width: 300px;
+                    height: 30%;
+                }
+                    
+                    .swiper-slide{
+                        @include centralizar(column, start);
+                        border-radius: 2%;
+                        border: 1px solid $cor__cinzaClaro;
+                        // padding: 1rem;
+
+                      
+                        .slide__infoStatus{
+                            position: absolute;
+                            @include fonte(1.1rem, 500); 
+                            width: auto;
+                            padding: 0.5rem;
+                            background-color: $cor__branco;
+                            border-radius: 5px;
+                            color: $cor__preto;
+                            left: 5px;
+                            top: 6px;
+                        }
+                        .slide__btn-fav{
+                            position: absolute;
+                            width: auto;
+                            padding: 0.5rem;
+                            background-color: $cor__branco;
+                            border-radius: 5px;
+                            right: 5px;
+                            top: 6px;
+
+                            img{
+                                @include ajusteImg(1.8rem, 1.8rem);                                
+                              }
+                        }
+                        .slide__informacoes-Container{
+                            @include centralizar(column, center);
+                            padding: 1rem;
+
+                            .slide__infoNome{
+                                @include fonte(1.5rem, bolder);
+                                margin: 0.5rem;
+                            }
+                            .slide__infoProduto{
+                                @include fonte(1.1rem, 400); 
+                                text-align: justify;
+                                padding: 0.5rem;
+                                span{
+                                    color:$cor__cinza;
+                                }
+                            }
+                            .slide__infoPreco{
+                                @include fonte(1.4rem, bolder);
+                                padding: 0.5rem;
+                            }
+                            .slide__btn-sacola{
+                                @include centralizar(row, center);
+                                @include fonte(1.4rem, 500); 
+                                text-align: justify; 
+                               width: 100%;
+                               padding: 1rem;
+                                border: solid 1px $cor__verdeEscuro;  
+                                border-radius: 5px;
+                                background-color: $cor__branco;
+                                transition: 0.3s all;
+                                color: $cor__verdeEscuro;
+          
+                                &:hover{
+                                color:$cor__branco;
+                                background-color: $cor__verdeEscuro;
+                            }
+                            }
+                        }
+
+                    }
+
+                    .swiper-slide img{
+                        display: block;
+                        @include ajusteImg(300px, 200px);
+                        border-radius: 2% 2% 0 0;
+                        object-fit: cover;
+                        }
+
+                
+                    .swiper-pagination{
+                        position: initial;
+                        margin: 1rem 0;
+                    }
+                }
+
+
+        }
+    
+    }
+}

@@ -35,33 +35,37 @@ footer{
             margin: 0.5rem 0;
             text-align: justify;
         }
+        .footer__form-container{
+            @include centralizar(column, center);
+            form{
+                @include form(99%, 4.5rem, 1px, $cor__cinzaClaro);
+            
+                .footer_email-caixa{
+                    @include formTextCaixa(65%);
+                    @include fonte (1.3rem, 400);
+                }
 
-        form{
-            @include form(99%, 4.5rem, 1px, $cor__cinza);
-          
-            .footer_email-caixa{
-                @include formTextCaixa(65%);
-                @include fonte (1.3rem, 400);
+                .footer__inscrever-btn{
+                    @include formBtn(35%, 4px, $cor__preto);
+                    @include fonte (1.1rem, 500);
+                    color: $cor__branco;
+                    cursor: pointer;
+                
+                }   
             }
 
-            .footer__inscrever-btn{
-                @include formBtn(35%, 4px, $cor__preto);
-                @include fonte (1.1rem, 500);
-                color: $cor__branco;
-              
-            }   
-        }
-
-        .footer__newsletter-termos{
-            @include fonte(1.2rem, 400);
-            padding: 0.5rem 0 1rem 0;
-            text-align: justify;
+            .footer__newsletter-termos{
+                @include fonte(1.2rem, 400);
+                padding: 0.5rem 0 1rem 0;
+                text-align: justify;
+            }
         }
     }
 
     #footer__nav{
         width: 100%;
         padding: 2rem 0;
+        @include centralizar(column,center);
         
         .footer__list{
             @include centralizar (column, center);
@@ -73,17 +77,14 @@ footer{
                 .footer__list-item{
                     @include fonte(1.7rem, bolder);
                     margin: 0.5rem 0;  
-                }
-
-                .footer__item{
-                    display: none;
+                    cursor: pointer;
                 }
 
                 .footer__item{
                     display: none;
                     flex-direction: column;
                     justify-content: center;
-                    align-items: center;
+                    align-items: start;
                     @include fonte(1.5rem, 400);
                    
                     a{ 
@@ -117,5 +118,62 @@ footer{
     hr{
         width: 90%;
     }
+
+}
+
+@media screen and (min-width:500px) {
+   footer{
+        #footer__origem{
+            .footer__origem-container{
+                figure{
+                    img{
+                        @include ajusteImg (5.5rem, 5.5rem);
+                    }
+                    p{
+                        @include fonte(1.5rem, 400);
+                    }
+                }
+            }
+        }
+    }
+    #footer__newsletter{
+        .footer__form-container{
+            width: 70%;
+         
+        }
+    }
+
+    #footer__nav{
+
+        .footer__list{
+            flex-direction: row !important;
+            align-items: start !important;
+            justify-content:center !important;
+            gap: 1rem;
+            width: 100%;
+            .footer__item-container{
+                width: 33%;
+                
+                span{
+                    display: none;
+                }
+                .footer__item{
+                    padding: 1rem 0 ;
+                    display: block !important;
+
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width:1000px) {
+    // footer{
+    //     #footer__newsletter{
+    //         flex-direction: row !important;
+           
+    //     }
+    // }
 
 }

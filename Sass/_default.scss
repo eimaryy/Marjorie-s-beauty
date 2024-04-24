@@ -16,6 +16,7 @@ body{
     min-width: 100%;
 }
 
+
 a{
     text-decoration: none;
 }
@@ -29,9 +30,9 @@ a{
 }
 
 @mixin modalMenu($width, $height){
-    position: absolute;
-    top: 0;
+    position: fixed;
    left: 0;
+   top: 100%;
     width: $width;
     height: $height;
 }
@@ -54,7 +55,7 @@ a{
     width: $width;
     height: 100%;
     border: none;
-    padding: 4px;
+    padding: 4px 2rem;
 }
 
 @mixin formBtn($width, $pad, $cor){
@@ -70,6 +71,32 @@ a{
     width: $width;
     height: $height;
     border: $px solid $cor;
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: $cor__branco;
 }
+
+.swiper-pagination-clickable .swiper-pagination-bullet{
+    width: 2rem;
+    height: 5px;
+}
+
+.swiper-pagination-bullet{
+    border-radius: 5px;
+}
+
+.swiper-pagination-bullet-active{
+    background:#327463;
+ }
+
+ .swiper-button-next, .swiper-button-prev{
+    color:#327463; 
+    border-radius: 100%;
+    background-color: #ebecee;
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+ }
+
+ .swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 3rem;
+ }

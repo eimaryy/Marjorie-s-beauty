@@ -1,12 +1,76 @@
+let swiper = new Swiper('.container-swiper-1', {
+    spaceBetween: 15,
+    slidesPerView: 1.2,
+    setWrapperSize:true,
+
+    pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+ },
+ navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+ breakpoints: {
+    430: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    600: {
+      slidesPerView: 3,
+    },
+    900: {
+        slidesPerView: 4,
+        
+      },
+    1024: {
+      slidesPerView: 5.2,
+    },
+    1500: {
+        slidesPerView: 7.2,
+      },
+  },
+});  
+
+swiper = new Swiper('.container-swiper-0', {
+    spaceBetween: 15,
+    slidesPerView: 1,
+    setWrapperSize:true,
+    effect: 'coverflow',
+  coverflowEffect: {
+    rotate: 30,
+    slideShadows: false,
+  },
+
+    autoplay: {
+        delay: 5000,
+      },
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+     },
+     navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+}); 
+
+
 const menuBt = document.querySelector('.menu');
 const menuAberto = document.querySelector('#header_menu-aberto');
 const menuSair = document.querySelector('.header_menu-sair');
 
 menuBt.addEventListener('click', () => {
-    menuAberto.style.display = 'flex'
+    menuAberto.style.top = '0%'
+    // menuAberto.style.display = 'block'
+
 });
 menuSair.addEventListener('click', () => {
-    menuAberto.style.display = 'none'
+    menuAberto.style.top = '100%'
+    // menuAberto.style.display = 'none'
+
+   
 });
 
 const btnCompra = document.querySelector('.com');
@@ -15,28 +79,28 @@ const btnSobre = document.querySelector('.sob');
 const ulCompra = document.querySelector('.comprar');
 const ulAtendimento = document.querySelector('.atendimento');
 const ulSobre = document.querySelector('.sobre');
+const span = document.querySelectorAll('.footer_item-span');
+let textBtn = ['+', '-']
 
 btnCompra.addEventListener('click', () =>{
-    let textBtn = ['Comprar +', 'Comprar -']
-    eventoClicker(ulCompra, btnCompra, textBtn);
+    eventoClicker(ulCompra, btnCompra, textBtn, span[0]);
 });
 
 btnAtendimento.addEventListener('click', () =>{
-    let textBtn = ['Atendimento ao Cliente +', 'Atendimento ao Cliente -']
-    eventoClicker(ulAtendimento, btnAtendimento, textBtn);
+    eventoClicker(ulAtendimento, btnAtendimento, textBtn, span[1]);
 });
 
 btnSobre.addEventListener('click', () =>{
-    let textBtn = ['Sobre +', 'Sobre -']
-    eventoClicker(ulSobre, btnSobre, textBtn);
+    eventoClicker(ulSobre, btnSobre, textBtn, span[2]);
 });
 
-function eventoClicker(ul, btn, textBtn){
+function eventoClicker(ul, btn, textBtn, span){
 if (ul.style.display == 'none'){
     ul.style.display = 'flex'
-    btn.innerHTML = textBtn[1]
+    span.innerHTML = textBtn[1]
 } else{
     ul.style.display = 'none'
-    btn.innerHTML = textBtn[0]
+    span.innerHTML = textBtn[0]
 }
 }
+

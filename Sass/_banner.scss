@@ -1,5 +1,131 @@
-.banner{
-    height: 20rem;
-    background-color: $cor__preto;
+#banner{
+    height: auto;
+    width: 100%;
+    // background-color: $cor__preto;
+    .swiper{
+       padding: 0 2rem 1.5rem 2rem;
+        
+        .swiper-slide{
+            @include centralizar(column, start);
+            border: solid 1px $cor__branco;
+           
+            color: $cor__branco;
+        }
 
+        .swiper-slide img{
+            display: block;
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            }
+    }
+    #banner__infos{
+        width: 100%;   
+        height: auto;
+        display: block;
+        
+        .banner__infos-list{    
+            display: none;
+            .info_list-item{
+                @include centralizar(column, center);
+                padding: 0 1rem;
+                width: 25%;
+                @include fonte(1.1rem, 400);
+                color: $cor__verdeEscuro;
+
+                img{
+                    margin: 1rem;
+                }
+                span{
+                    font-weight: bolder;
+                    padding: 0.5rem;
+                }
+
+                
+            }
+        }
+
+        .banner__infos-swiper{
+            .swiper{
+                width: 90%;
+                .swiper-button-next:after, .swiper-button-prev:after{
+                    font-size: 2rem;
+                 }
+                 .swiper-button-next, .swiper-button-prev{
+                    background-color: rgb(255, 255, 255);
+                    padding: 1rem;
+                    width: 3rem;
+                    height: 4rem;
+                 }
+                .swiper-slide{
+                    padding: 2rem;
+                    color: $cor__verdeEscuro;
+                    @include fonte(1rem, 400);
+                    text-align: center;
+                    span{
+                        font-weight: bolder;
+                    }
+                    img{
+                        @include ajusteImg(2rem, auto);
+                        margin: 0 0 0.5rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #banner__menu{
+        display: none;
+        margin: 1rem 0;
+        background-color: $cor__verdeEscuro;
+        .banner__menu-list{
+            @include centralizar(row, center);
+            gap: 1rem;
+            padding: 0 3rem;
+
+            .menu_list-item{
+                @include fonte(1.5rem, bolder);
+                padding: 1rem 0 ;
+                a{
+                    color: $cor__branco;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }      
+            }
+        }
+    }
+}
+
+@media screen and (min-width:500px) {
+    #banner{
+        #banner__infos{
+            @include centralizar(column, center);
+            .banner__infos-list{
+                @include centralizar(row, center);
+                width: 100%;
+                align-items: start;
+            }
+        }
+        .banner__infos-swiper{
+            display: none;
+        }
+    }
+    
+}
+
+@media screen and (min-width:1000px) {
+    #banner{
+        #banner__menu{
+            display: block;
+        }
+    }
+    #banner__infos{
+        .banner__infos-list{
+            width: 80% !important;
+
+        }
+    }
+    
 }
