@@ -93,10 +93,25 @@ a{
     border-radius: 100%;
     background-color: #ebecee;
     padding: 1rem;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
  }
 
  .swiper-button-next:after, .swiper-button-prev:after{
-    font-size: 3rem;
+    font-size: 1.5rem;
+ }
+
+ @media screen and (min-width:500px) {
+    .swiper-button-next, .swiper-button-prev{
+        color:#327463; 
+        border-radius: 100%;
+        background-color: #ebecee;
+        padding: 1rem;
+        width: 5rem;
+        height: 5rem;
+     }
+     .swiper-button-next:after, .swiper-button-prev:after{
+        font-size: 3rem;
+     }
+
  }

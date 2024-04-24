@@ -97,13 +97,18 @@ footer{
 
     #footer__copyright{
         @include centralizar(column, center);
+        width: 100%;
+
+        #footer__logo{
+            margin: 3rem 0 2rem 0;
+        }
 
         h2{
             @include fonte(1.5rem, 600);
         }
         .footer__copyright-text{
-            @include fonte(1.2rem, 400);
-            padding:1rem;
+            @include fonte(1.3rem, 400);
+            padding:1.5rem;
             margin: 0 0 2rem 0;
             text-align: justify;
             

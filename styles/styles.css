@@ -36,14 +36,27 @@ a {
   border-radius: 100%;
   background-color: #ebecee;
   padding: 1rem;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .swiper-button-next:after, .swiper-button-prev:after {
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
+@media screen and (min-width: 500px) {
+  .swiper-button-next, .swiper-button-prev {
+    color: #327463;
+    border-radius: 100%;
+    background-color: #ebecee;
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 3rem;
+  }
+}
 header #container_header {
   display: flex;
   flex-direction: row;
@@ -666,6 +679,10 @@ footer #footer__copyright {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+footer #footer__copyright #footer__logo {
+  margin: 3rem 0 2rem 0;
 }
 footer #footer__copyright h2 {
   font-size: 1.5rem;
@@ -673,10 +690,10 @@ footer #footer__copyright h2 {
   font-weight: 600;
 }
 footer #footer__copyright .footer__copyright-text {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: "Platypi", serif;
   font-weight: 400;
-  padding: 1rem;
+  padding: 1.5rem;
   margin: 0 0 2rem 0;
   text-align: justify;
 }
