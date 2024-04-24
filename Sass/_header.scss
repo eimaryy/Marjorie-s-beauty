@@ -14,8 +14,12 @@ header{
         padding: 0 3rem;
         @include fonte(1.2rem, bolder);
 
+        
         a{
           color: $cor__preto;
+          &:hover{
+            text-decoration: underline;
+          }
         }
       }
 
@@ -34,20 +38,28 @@ header{
 
       .header_botoes-list{
         display: flex;
-        
-        img{
-          @include ajusteImg(2.3rem, 2.3rem);
-            margin: 0 0.5rem;
-            cursor: pointer;
-        }
 
-        span{
-          display: none; 
-        }
+          .header_list-icon{
+            cursor: pointer;
+
+            &:hover{
+              background-color: $cor__cinzaClaro;
+            }
+
+            img{
+              @include ajusteImg(2.3rem, 2.3rem);
+                margin: 0 0.5rem;
+                cursor: pointer;
+            }
+
+            span{
+              display: none; 
+            }
+          }
       }
 
       #header_menu-aberto{
-        @include modalMenu(100%, 100%);
+        @include modalMenu(100%, 120%);
         display: block;
         background-color: $cor__branco;
         z-index: 2;
@@ -161,9 +173,10 @@ header{
             display: none;
           }        
 
-          li{
+          .header_list-icon{
             @include centralizar(row, center); 
             padding: 0.5rem;
+           
             span{
               display: inline-block;
               @include fonte(1.2rem, bolder);

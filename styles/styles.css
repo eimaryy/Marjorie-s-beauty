@@ -66,6 +66,9 @@ header #container_header #contato {
 header #container_header #contato a {
   color: rgb(0, 0, 0);
 }
+header #container_header #contato a:hover {
+  text-decoration: underline;
+}
 header #container_header #header_logo {
   width: 50%;
   display: flex;
@@ -88,14 +91,20 @@ header #container_header #header_botoes {
 header #container_header .header_botoes-list {
   display: flex;
 }
-header #container_header .header_botoes-list img {
+header #container_header .header_botoes-list .header_list-icon {
+  cursor: pointer;
+}
+header #container_header .header_botoes-list .header_list-icon:hover {
+  background-color: #ebecee;
+}
+header #container_header .header_botoes-list .header_list-icon img {
   width: 2.3rem;
   height: 2.3rem;
   object-fit: fill;
   margin: 0 0.5rem;
   cursor: pointer;
 }
-header #container_header .header_botoes-list span {
+header #container_header .header_botoes-list .header_list-icon span {
   display: none;
 }
 header #container_header #header_menu-aberto {
@@ -103,7 +112,7 @@ header #container_header #header_menu-aberto {
   left: 0;
   top: 100%;
   width: 100%;
-  height: 100%;
+  height: 120%;
   display: block;
   background-color: rgb(255, 255, 255);
   z-index: 2;
@@ -231,20 +240,20 @@ header .pesquisa form .header__pesquisa-btn img {
   header #container_header .header_botoes-list .menu {
     display: none;
   }
-  header #container_header .header_botoes-list li {
+  header #container_header .header_botoes-list .header_list-icon {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
   }
-  header #container_header .header_botoes-list li span {
+  header #container_header .header_botoes-list .header_list-icon span {
     display: inline-block;
     font-size: 1.2rem;
     font-family: "Platypi", serif;
     font-weight: bolder;
   }
-  header #container_header .header_botoes-list li .menu {
+  header #container_header .header_botoes-list .header_list-icon .menu {
     display: none;
   }
   header .pesquisa form {
