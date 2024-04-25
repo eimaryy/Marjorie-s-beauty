@@ -32,7 +32,7 @@ a{
 @mixin modalMenu($width, $height){
     position: fixed;
    left: 0;
-   top: 100%;
+   top: 100vh;
     width: $width;
     height: $height;
 }

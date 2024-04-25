@@ -1,61 +1,34 @@
 const swiperContainer1 = document.querySelector('.s1');
 const swiperContainer2 = document.querySelector('.s2');
-const swiperContainer3 = document.querySelector('.s3');
 
 
-function acenderSlider(Produtos){
-Produtos.forEach((produto, index) => {
-    if(index <= 9){
-    swiperContainer1.innerHTML += `
-        <div class="swiper-slide">
-        <img src="${produto.url}" alt="${produto.alt}">
-        <h3 class="slide__infoStatus">${produto.info}</h3>
-        <a href="#" class="slide__btn-fav"><img src="./assets/big-heart.png" alt="Icone de coração"></a>
-        <div class="slide__informacoes-Container">
-            <h2 class="slide__infoNome">${produto.titulo}</h2>
-            <a href="#" class="slide__infoProduto"><span>${produto.descricao}</span></a>
-            <h2 class="slide__infoPreco">${produto.preco}</h2>
-            <a href="#" class="slide__btn-sacola"><span>Adicionar a sacola</span></a>
-            
-        </div>
-        
-    </div>
-    `} 
-    else if( index > 9 && index <= 18){
-        swiperContainer2.innerHTML += `
-        <div class="swiper-slide">
-        <img src="${produto.url}" alt="${produto.alt}">
-        <h3 class="slide__infoStatus">${produto.info}</h3>
-        <a href="#" class="slide__btn-fav"><img src="./assets/big-heart.png" alt="Icone de coração"></a>
-        <div class="slide__informacoes-Container">
-            <h2 class="slide__infoNome">${produto.titulo}</h2>
-            <a href="#" class="slide__infoProduto"><span>${produto.descricao}</span></a>
-            <h2 class="slide__infoPreco">${produto.preco}</h2>
-            <a href="#" class="slide__btn-sacola"><span>Adicionar a sacola</span></a>
-            
-        </div>
-        
-    </div>
-    `
-    } else{
-        swiperContainer3.innerHTML += `
-        <div class="swiper-slide">
-        <img src="${produto.url}" alt="${produto.alt}">
-        <h3 class="slide__infoStatus">${produto.info}</h3>
-        <a href="#" class="slide__btn-fav"><img src="./assets/big-heart.png" alt="Icone de coração"></a>
-        <div class="slide__informacoes-Container">
-            <h2 class="slide__infoNome">${produto.titulo}</h2>
-            <a href="#" class="slide__infoProduto"><span>${produto.descricao}</span></a>
-            <h2 class="slide__infoPreco">${produto.preco}</h2>
-            <a href="#" class="slide__btn-sacola"><span>Adicionar a sacola</span></a>
-            
-        </div>
-        
-    </div>
-    `
-    }
-    
-});
+async function acenderSlider(Produtos) {
+    const sliderPromises = Produtos.map((produto, index) => {
+        const container = 
+            index <= 12 ? swiperContainer1 : 
+            swiperContainer2;
+
+        return new Promise((resolve) => {
+            container.innerHTML += `
+                <div class="swiper-slide">
+                    <img src="${produto.url}" alt="${produto.alt}">
+                    <h3 class="slide__infoStatus">${produto.info}</h3>
+                    <a href="#" class="slide__btn-fav">
+                        <img src="./assets/big-heart.png" alt="Icone de coração">
+                    </a>
+                    <div class="slide__informacoes-Container">
+                        <h2 class="slide__infoNome">${produto.titulo}</h2>
+                        <a href="#" class="slide__infoProduto"><span>${produto.descricao}</span></a>
+                        <h2 class="slide__infoPreco">${produto.preco}</h2>
+                        <a href="#" class="slide__btn-sacola"><span>Adicionar a sacola</span></a>
+                    </div>
+                </div>
+            `;
+            resolve(); // resolve a promessa
+        });
+    });
+
+    await Promise.all(sliderPromises);
 }
 
 const Produtos = [{
@@ -159,17 +132,6 @@ const Produtos = [{
 {
     id: '10',
     categoria: 'rosto',
-    info: '2% desconto',
-    titulo: 'Kit Prudent',
-    url: './assets/products/kitmask+oil.jpg',
-    alt: 'imagem produtos Prudent',
-    descricao: 'Mascara facial + oleo de argan Prudent', 
-    preco: 'R$ '+62.00,
-
-},
-{
-    id: '11',
-    categoria: 'rosto',
     info: 'Lançamento',
     titulo: 'Pour la peau',
     url: './assets/products/serum2.jpg',
@@ -179,7 +141,7 @@ const Produtos = [{
 
 },
 {
-    id: '12',
+    id: '11',
     categoria: 'pele',
     info: '5% desconto',
     titulo: 'Pour la peau',
@@ -190,7 +152,7 @@ const Produtos = [{
 
 },
 {
-    id: '13',
+    id: '12',
     categoria: 'rosto',
     info: '+30% Fidelidade',
     titulo: 'Lighten++',
@@ -201,7 +163,7 @@ const Produtos = [{
 
 },
 {
-    id: '14',
+    id: '13',
     categoria: 'maquiagem',
     info: '+3% Fidelidade',
     titulo: '+magnifique',
@@ -212,62 +174,7 @@ const Produtos = [{
 
 },
 {
-    id: '15',
-    categoria: 'pele',
-    info: 'Compre 3 pague 2',
-    titulo: '+magnifique',
-    url: './assets/products/kitAcido+gelHidra+cremecorp.png',
-    alt: 'imagem kit produtos',
-    descricao: 'Vitamina C + gel facial + creme corpo Doux', 
-    preco: 'R$ '+119.99,
-
-},
-{
-    id: '16',
-    categoria: 'pele',
-    info: '+5% Fidelidade',
-    titulo: 'Fiery',
-    url: './assets/products/bodySplash.jpg',
-    alt: 'imagem Body Splash',
-    descricao: 'Body Splash Fiery 250ml', 
-    preco: 'R$ '+55.00,
-
-},
-{
-    id: '17',
-    categoria: 'pele',
-    info: '+2% Fidelidade',
-    titulo: 'Doux',
-    url: './assets/products/cremecorp.jpg',
-    alt: 'imagem creme corporal Doux',
-    descricao: 'Creme Hidratante Corpo Doux 250ml', 
-    preco: 'R$ '+55.00,
-
-},
-{
-    id: '18',
-    categoria: 'cabelo',
-    info: 'Lançamento',
-    titulo: 'Argent',
-    url: './assets/products/maskCap.jpg',
-    alt: 'imagem mascara capilar Argent',
-    descricao: 'Mascara capilar Argent 250ml', 
-    preco: 'R$ '+69.99,
-
-},
-{
-    id: '19',
-    categoria: 'pele',
-    info: 'Lançamento',
-    titulo: 'Fiery',
-    url: './assets/products/desodorantePe.jpg',
-    alt: 'imagem desodorante pé',
-    descricao: 'Desodorante para Pé 140ml', 
-    preco: 'R$ '+55.00,
-
-},
-{
-    id: '20',
+    id: '14',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -278,7 +185,7 @@ const Produtos = [{
 
 },
 {
-    id: '21',
+    id: '15',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -289,7 +196,7 @@ const Produtos = [{
 
 },
 {
-    id: '22',
+    id: '16',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -300,7 +207,7 @@ const Produtos = [{
 
 },
 {
-    id: '23',
+    id: '17',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -311,7 +218,7 @@ const Produtos = [{
 
 },
 {
-    id: '24',
+    id: '18',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -322,7 +229,7 @@ const Produtos = [{
 
 },
 {
-    id: '25',
+    id: '19',
     categoria: 'Artesanal',
     info: 'Compre 2 pague 1',
     titulo: 'Marjorie`s',
@@ -333,7 +240,7 @@ const Produtos = [{
 
 },
 {
-    id: '26',
+    id: '20',
     categoria: 'Artesanal',
     info: 'Compre 2 pague 1',
     titulo: 'Marjorie`s',
@@ -347,3 +254,4 @@ const Produtos = [{
 ];
 
 acenderSlider(Produtos);
+    
