@@ -11,6 +11,9 @@ let swiper = new Swiper('.container-swiper-1', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  keyboard: {
+    enabled: true,
+  },
  breakpoints: {
     430: {
       slidesPerView: 2,
