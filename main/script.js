@@ -65,12 +65,12 @@ const menuAberto = document.querySelector('#header_menu-aberto');
 const menuSair = document.querySelector('.header_menu-sair');
 
 menuBt.addEventListener('click', () => {
-    menuAberto.style.top = '0%'
+    menuAberto.style.top = '0'
     // menuAberto.style.display = 'block'
 
 });
 menuSair.addEventListener('click', () => {
-    menuAberto.style.top = '100%'
+    menuAberto.style.top = '100vh'
     // menuAberto.style.display = 'none'
 
    

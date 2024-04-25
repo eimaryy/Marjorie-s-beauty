@@ -5,7 +5,7 @@ const swiperContainer2 = document.querySelector('.s2');
 async function acenderSlider(Produtos) {
     const sliderPromises = Produtos.map((produto, index) => {
         const container = 
-            index <= 12 ? swiperContainer1 : 
+            index <= 11 ? swiperContainer1 : 
             swiperContainer2;
 
         return new Promise((resolve) => {
@@ -14,7 +14,7 @@ async function acenderSlider(Produtos) {
                     <img src="${produto.url}" alt="${produto.alt}">
                     <h3 class="slide__infoStatus">${produto.info}</h3>
                     <a href="#" class="slide__btn-fav">
-                        <img src="./assets/big-heart.png" alt="Icone de coração">
+                        <img class="img-fav" src="./assets/big-heart.png" alt="Icone de coração">
                     </a>
                     <div class="slide__informacoes-Container">
                         <h2 class="slide__infoNome">${produto.titulo}</h2>
@@ -24,7 +24,7 @@ async function acenderSlider(Produtos) {
                     </div>
                 </div>
             `;
-            resolve(); // resolve a promessa
+            resolve();
         });
     });
 
@@ -164,17 +164,6 @@ const Produtos = [{
 },
 {
     id: '13',
-    categoria: 'maquiagem',
-    info: '+3% Fidelidade',
-    titulo: '+magnifique',
-    url: './assets/products/kitMake.jpg',
-    alt: 'imagem kit produtos +magnifique',
-    descricao: 'Kit make +magnifique', 
-    preco: 'R$ '+99.99,
-
-},
-{
-    id: '14',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -185,7 +174,7 @@ const Produtos = [{
 
 },
 {
-    id: '15',
+    id: '14',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -196,7 +185,7 @@ const Produtos = [{
 
 },
 {
-    id: '16',
+    id: '15',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -207,7 +196,7 @@ const Produtos = [{
 
 },
 {
-    id: '17',
+    id: '16',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -218,7 +207,7 @@ const Produtos = [{
 
 },
 {
-    id: '18',
+    id: '17',
     categoria: 'Artesanal',
     info: 'Lançamento',
     titulo: 'Marjorie`s',
@@ -229,7 +218,7 @@ const Produtos = [{
 
 },
 {
-    id: '19',
+    id: '18',
     categoria: 'Artesanal',
     info: 'Compre 2 pague 1',
     titulo: 'Marjorie`s',
@@ -240,7 +229,7 @@ const Produtos = [{
 
 },
 {
-    id: '20',
+    id: '19',
     categoria: 'Artesanal',
     info: 'Compre 2 pague 1',
     titulo: 'Marjorie`s',
