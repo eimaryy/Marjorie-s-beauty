@@ -287,6 +287,7 @@ header .pesquisa form .header__pesquisa-btn img {
   justify-content: start;
   align-items: center;
   border: solid 1px rgb(255, 255, 255);
+  padding: 1rem;
   color: rgb(255, 255, 255);
 }
 #banner .swiper .swiper-slide img {

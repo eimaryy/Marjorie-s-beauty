@@ -8,7 +8,7 @@
         .swiper-slide{
             @include centralizar(column, start);
             border: solid 1px $cor__branco;
-           
+           padding: 1rem;
             color: $cor__branco;
         }
 

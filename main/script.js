@@ -63,9 +63,12 @@ swiper = new Swiper('.container-swiper-0', {
 const menuBt = document.querySelector('.menu');
 const menuAberto = document.querySelector('#header_menu-aberto');
 const menuSair = document.querySelector('.header_menu-sair');
+const corpo = document.body;
 
 menuBt.addEventListener('click', () => {
     menuAberto.style.top = '0'
+    corpo.style.overflowY = 'Hidden'
+    
     // menuAberto.style.display = 'block'
 
 });
