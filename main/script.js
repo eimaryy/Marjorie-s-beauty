@@ -74,6 +74,7 @@ menuBt.addEventListener('click', () => {
 });
 menuSair.addEventListener('click', () => {
     menuAberto.style.top = '100vh'
+    corpo.style.overflowY = 'scroll'
     // menuAberto.style.display = 'none'
 
    

@@ -582,6 +582,13 @@ footer #footer__newsletter {
   align-items: center;
   padding: 2rem;
 }
+footer #footer__newsletter .footer__termos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
 footer #footer__newsletter .footer__newsletter-descricao {
   font-size: 1.4rem;
   font-family: "Platypi", serif;
@@ -674,6 +681,9 @@ footer #footer__nav .footer__list .footer__item-container .footer__item {
 }
 footer #footer__nav .footer__list .footer__item-container .footer__item a {
   color: rgb(92, 92, 92);
+}
+footer #footer__nav .footer__list .footer__item-container .footer__item a:hover {
+  color: rgb(0, 0, 0);
 }
 footer #footer__copyright {
   display: flex;
