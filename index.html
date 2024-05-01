@@ -7,37 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Sedan:ital@0;1&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./styles/styles.css">
-    <script src="./main/script.js" defer></script>
-    <script src="./main/mock.js" defer></script>
+    <script src="./js/mock.js" defer></script>
+    <script src="./js/script.js" defer></script>
     <title>Marjorie`s beauty</title>
 </head>
 
 <body>
     <header>
-        <div id="container_header">
-            <div id="contato">
+        <main id="container_header">
+            <section id="contato">
                 <a href="#">Entre em contato conosco</a>
-            </div>
-            <div id="header_logo">
-                <a href="./index.html"><img class="header_logo-img" src="./assets/logo.png" alt="Logo marca Marjorie´s"></a>
-            </div>
-            <div id="header_botoes">
+            </section>
+            <section id="header_logo">
+                <a href="./index.html"><img class="header_logo-img" src="./assets/logo.png"
+                        alt="Logo marca Marjorie´s"></a>
+            </section>
+            <nav id="header_botoes">
                 <ul class="header_botoes-list">
-                    <li class="header_list-icon"><img class="bag" src="./assets/bag.png" alt="icone de Sacola"><span>Sacola</span></li>
-                    <li class="header_list-icon"><img class="heart" src="./assets/big-heart.png" alt="icone de Favoritos"><span>Favoritos</span></li>
-                    <li class="header_list-icon"><img class="user" src="./assets/user-icon.png" alt="icone de usuario"><span>Minha Conta</span></li>
+                    <li class="header_list-icon"><img class="bag" src="./assets/bag.png"
+                            alt="icone de Sacola"><span>Sacola</span></li>
+                    <li class="header_list-icon"><img class="heart" src="./assets/big-heart.png"
+                            alt="icone de Favoritos"><span>Favoritos</span></li>
+                    <li class="header_list-icon"><img class="user" src="./assets/user-icon.png"
+                            alt="icone de usuario"><span>Minha Conta</span></li>
                     <li class="header_list-icon"><img class="menu" src="./assets/menu.png" alt="icone de menu"></li>
                 </ul>
-            </div>
-            <div id="header_menu-aberto">
-                <div class="header_menu-cabecalho">
+            </nav>
+            <section id="header_menu-aberto">
+                <section class="header_menu-cabecalho">
                     <a href="./index.html"><img class="header_menu-cabecalho-logo" src="./assets/logo.png"
                             alt="Logo marca Marjorie´s"></a>
                     <img class="header_menu-sair" src="./assets/close.png" alt="botão de sair">
-                </div>
+                </section>
                 <nav id="header_list-menu">
                     <ul class="header_list-itens">
                         <li class="header_list-item">
@@ -84,116 +90,124 @@
                         </ul>
                     </nav>
                 </nav>
-            </div>
-        </div>
-        <div class="pesquisa">
+            </section>
+        </main>
+        <main class="pesquisa">
             <form action="" method="">
                 <input type="text" id="header_pesquisa-caixa" name="pesquisa" placeholder="Procurando por algo?">
                 <button type="submit" class="header__pesquisa-btn"><img src="./assets/busca.png"
                         alt="Icone de busca"></button>
             </form>
-        </div>
+        </main>
 
     </header>
-    <section id="banner">
+    <main id="banner">
         <div class="container-swiper-0 swiper">
             <div class="swiper-pagination"></div>
             <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="./assets/banner1.png" alt=""></div>
-              <div class="swiper-slide"><img src="./assets/banner2.png" alt=""></div>
-              <div class="swiper-slide"><img src="./assets/banner3.png" alt=""></div>
+                <div class="swiper-slide"><img src="./assets/banner1.png" alt=""></div>
+                <div class="swiper-slide"><img src="./assets/banner2.png" alt=""></div>
+                <div class="swiper-slide"><img src="./assets/banner3.png" alt=""></div>
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-          </div>            
-        
-    </div>
-    <div id="banner__infos">
-        <ul class="banner__infos-list">
-            <li class="info_list-item"><img src="./assets/card.webp" alt="imagem de cartão"><span>PARCELAMENTO EM ATÉ 12X</span>COM MÍNIMO DE R$100</li>
-            <li class="info_list-item"><img src="./assets/desconto.webp" alt="imagem de desconto"><span>FRETE GRÁTIS</span>NAS COMPRAS ACIMA DE R$200</li>
-            <li class="info_list-item"><img src="./assets/frete.webp" alt="imagem de caminhão"><span>20% DE DESCONTO</span>EM SUA PRIMEIRA COMPRA NO SITE, CUPOM: BEMVINDO20</li>
-            <li class="info_list-item"><img src="./assets/entrega.webp" alt="imagem de moto"><span>ENTREGA EXPRESSA</span>RECEBA SEU PEDIDO EM ATÉ 3 DIAS ÚTEIS</li>
-
-        </ul>
-        <div class="banner__infos-swiper">
-            <div class="container-swiper-0 swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="./assets/card.webp" alt="imagem de cartão"><span>PARCELAMENTO EM ATÉ 12X</span>COM MÍNIMO DE R$100</div>
-                  <div class="swiper-slide"><img src="./assets/desconto.webp" alt="imagem de desconto"><span>FRETE GRÁTIS</span>NAS COMPRAS ACIMA DE R$200</div>
-                  <div class="swiper-slide"><img src="./assets/frete.webp" alt="imagem de caminhão"><span>20% DE DESCONTO</span>EM SUA PRIMEIRA COMPRA NO SITE, CUPOM: BEMVINDO20</div>
-                  <div class="swiper-slide"><img src="./assets/entrega.webp" alt="imagem de moto"><span>ENTREGA EXPRESSA</span>RECEBA SEU PEDIDO EM ATÉ 3 DIAS ÚTEIS</div>
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>            
+        </div>
 
         </div>
-    </div>
-    <div id="banner__menu">
-          <ul class="banner__menu-list">
-              <li class="menu_list-item">
-                  <a href="#">LANÇAMENTOS</a>
-              </li>
-              <li class="menu_list-item">
-                  <a href="#">PROMOÇÕES</a>
-              </li>
-              <li class="menu_list-item">
-                  <a href="#">SKINCARE</a>
-              </li>
-              <li class="menu_list-item">
-                  <a href="#">PERFUMARIA</a>
-              </li>
-              <li class="menu_list-item">
-                  <a href="#">MAQUIAGEM</a>
-              </li>
-              <li class="menu_list-item">
-                  <a href="#">CORPO E BANHO</a>
-              </li>
-              <li class="menu_list-item">
-                  <a href="#">CABELOS</a>
-              </li>
-              <li class="menu_list-item">
-                  <a href="#">INFANTIL</a>
-              </li>
-              <li class="menu_list-item">
-                 <a href="#">MARCAS</a>
-              </li>
-          </ul>
+        <main id="banner__infos">
+            <ul class="banner__infos-list">
+                <li class="info_list-item"><img src="./assets/card.webp" alt="imagem de cartão"><span>PARCELAMENTO EM
+                        ATÉ 12X</span>COM MÍNIMO DE R$100</li>
+                <li class="info_list-item"><img src="./assets/desconto.webp" alt="imagem de desconto"><span>FRETE
+                        GRÁTIS</span>NAS COMPRAS ACIMA DE R$200</li>
+                <li class="info_list-item"><img src="./assets/frete.webp" alt="imagem de caminhão"><span>20% DE
+                        DESCONTO</span>EM SUA PRIMEIRA COMPRA NO SITE, CUPOM: BEMVINDO20</li>
+                <li class="info_list-item"><img src="./assets/entrega.webp" alt="imagem de moto"><span>ENTREGA
+                        EXPRESSA</span>RECEBA SEU PEDIDO EM ATÉ 3 DIAS ÚTEIS</li>
 
-    </section>
-    <section id="showcase">
-        <div id="showcase__produtos">
+            </ul>
+            <section class="banner__infos-swiper">
+                <div class="container-swiper-0 swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./assets/card.webp"
+                                alt="imagem de cartão"><span>PARCELAMENTO EM ATÉ 12X</span>COM MÍNIMO DE R$100</div>
+                        <div class="swiper-slide"><img src="./assets/desconto.webp" alt="imagem de desconto"><span>FRETE
+                                GRÁTIS</span>NAS COMPRAS ACIMA DE R$200</div>
+                        <div class="swiper-slide"><img src="./assets/frete.webp" alt="imagem de caminhão"><span>20% DE
+                                DESCONTO</span>EM SUA PRIMEIRA COMPRA NO SITE, CUPOM: BEMVINDO20</div>
+                        <div class="swiper-slide"><img src="./assets/entrega.webp" alt="imagem de moto"><span>ENTREGA
+                                EXPRESSA</span>RECEBA SEU PEDIDO EM ATÉ 3 DIAS ÚTEIS</div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+
+            </section>
+        </main>
+        <nav id="banner__menu">
+            <ul class="banner__menu-list">
+                <li class="menu_list-item">
+                    <a href="#">LANÇAMENTOS</a>
+                </li>
+                <li class="menu_list-item">
+                    <a href="#">PROMOÇÕES</a>
+                </li>
+                <li class="menu_list-item">
+                    <a href="#">SKINCARE</a>
+                </li>
+                <li class="menu_list-item">
+                    <a href="#">PERFUMARIA</a>
+                </li>
+                <li class="menu_list-item">
+                    <a href="#">MAQUIAGEM</a>
+                </li>
+                <li class="menu_list-item">
+                    <a href="#">CORPO E BANHO</a>
+                </li>
+                <li class="menu_list-item">
+                    <a href="#">CABELOS</a>
+                </li>
+                <li class="menu_list-item">
+                    <a href="#">INFANTIL</a>
+                </li>
+                <li class="menu_list-item">
+                    <a href="#">MARCAS</a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+    <main id="showcase">
+        <section id="showcase__produtos">
             <h2 class="titulo">Rotina completa de cuidado</h2>
             <div class="showcase__container">
 
                 <div class="container-swiper-1 swiper">
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper s1">
-                </div>
-                    
+                    </div>
+
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
-                
+
                 </div>
             </div>
-                <h2 class="titulo">Feito a mão de Marjorie</h2>
-                <div class="showcase__container">
+            <h2 class="titulo">Feito a mão de Marjorie</h2>
+            <div class="showcase__container">
 
-                    <div class="container-swiper-1 swiper">
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-wrapper s2">
+                <div class="container-swiper-1 swiper">
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-wrapper s2">
                     </div>
-                        
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    
-                    </div>
-        </div>
-    </section>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                </div>
+        </section>
+    </main>
     <footer>
-        <div id="footer__origem">
-            <div class="footer__origem-container">
+        <main id="footer__origem">
+            <section class="footer__origem-container">
                 <figure class="footer__img crueldade">
                     <img src="./assets/crueldade0.svg" alt="Icone simbolizando crueldade 0">
                     <p>Crueldade 0</p>
@@ -210,28 +224,28 @@
                     <img src="./assets/quimica.svg" alt="Icone simbolizando sem parabenos">
                     <p>Sem Parabenos</p>
                 </figure>
-            </div>
-        </div>
+            </section>
+        </main>
         <hr />
-        <div id="footer__newsletter">
-            <!-- <h2>Seja nosso cliente premium!<br> </h2> -->
+        <main id="footer__newsletter">
             <p class="footer__newsletter-descricao">Assine nossa Newsletter para Obtenha atualizações, promoções
                 exclusivas e muito mais - diretamente no seu e-mail.</p>
             <div class="footer__form-container">
-            <form action="" method="">
-                <input type="text" class="footer_email-caixa" name="email" placeholder="Digite seu email:">
-                <button type="submit" class="footer__inscrever-btn">SE INSCREVER</button>
-            </form>
-            <div class="footer__termos">
-            <input type="checkbox">
-                <p class="footer__newsletter-termos">Li e concordo com os <a href="#">Termos de Serviço</a> e a <a href="#">Política de Privacidade</a> de Marjorie´s</p>
-            </div>  
-        </div>
-        </div>
+                <form action="" method="">
+                    <input type="text" class="footer_email-caixa" name="email" placeholder="Digite seu email:">
+                    <button type="submit" class="footer__inscrever-btn">SE INSCREVER</button>
+                </form>
+                <div class="footer__termos">
+                    <input type="checkbox">
+                    <p class="footer__newsletter-termos">Li e concordo com os <a href="#">Termos de Serviço</a> e a <a
+                            href="#">Política de Privacidade</a> de Marjorie´s</p>
+                </div>
+            </div>
+        </main>
         <hr />
         <nav id="footer__nav">
             <ul class="footer__list">
-                <div class="footer__item-container">
+                <nav class="footer__item-container">
                     <li class="footer__list-item com">Comprar <span class=" footer_item-span span-com">+</span></li>
                     <ul class="footer__item comprar" style="display: none;">
                         <li><a href="#">Todos</a></li>
@@ -240,9 +254,10 @@
                         <li><a href="#">Boca</a></li>
                         <li><a href="#">Conjuntos</a></li>
                     </ul>
-                </div>
-                <div class="footer__item-container">
-                    <li class="footer__list-item at">Atendimento ao Cliente <span class="footer_item-span span-at">+</span></li>
+                </nav>
+                <nav class="footer__item-container">
+                    <li class="footer__list-item at">Atendimento ao Cliente <span
+                            class="footer_item-span span-at">+</span></li>
                     <ul class="footer__item atendimento" style="display: none;">
                         <li><a href="#">Ajuda e perguntas frequentes</a></li>
                         <li><a href="#">Política de reembolso</a></li>
@@ -251,8 +266,8 @@
                         <li><a href="#">Fretes e entrega</a></li>
                         <li><a href="#">Contatos</a></li>
                     </ul>
-                </div>
-                <div class="footer__item-container">
+                </nav>
+                <nav class="footer__item-container">
                     <li class="footer__list-item sob">Sobre <span class="footer_item-span span-sob">+</span></li>
                     <ul class="footer__item sobre" style="display: none;">
                         <li><a href="#">A visão de Marjorie</a></li>
@@ -261,23 +276,25 @@
                         <li><a href="#">Código de Ética</a></li>
                         <li><a href="#">Trabalhe conosco</a></li>
                     </ul>
-                </div>
+                </nav>
             </ul>
         </nav>
-        <div id="footer__copyright">
+        <main id="footer__copyright">
             <div id="footer__logo">
-                <a href="./index.html"><img class="header_logo-img" src="./assets/logo.png" alt="Logo marca Marjorie´s"></a>
+                <a href="./index.html"><img class="header_logo-img" src="./assets/logo.png"
+                        alt="Logo marca Marjorie´s"></a>
             </div>
             <h2>BELEZA REFINADA, SEM EXCESSOS</h2>
-            <p class="footer__copyright-text">Beleza autêntica, sofisticação inigualável. Desperte sua verdadeira essência.</p>
+            <p class="footer__copyright-text">Beleza autêntica, sofisticação inigualável. Desperte sua verdadeira
+                essência.</p>
             <hr />
             <p class="footer__copyright-simbolo">© Maria Eduarda Nery, 2024</p>
-        </div>
+        </main>
 
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+
 
 </body>
 
