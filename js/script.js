@@ -67,14 +67,12 @@ const corpo = document.body;
 
 menuBt.addEventListener('click', () => {
     menuAberto.style.top = '0'
-    corpo.style.overflowY = 'Hidden'
     
     // menuAberto.style.display = 'block'
 
 });
 menuSair.addEventListener('click', () => {
     menuAberto.style.top = '100vh'
-    corpo.style.overflowY = 'scroll'
     // menuAberto.style.display = 'none'
 
    
