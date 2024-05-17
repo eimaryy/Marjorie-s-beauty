@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,22 +6,22 @@
     overflow-x: hidden;
 }
 
-:root{
+:root {
     font: {
         size: 62.5%;
     }
 }
 
-body{
+body {
     min-width: 100%;
 }
 
 
-a{
+a {
     text-decoration: none;
 }
 
-@mixin centralizar($direction, $alinhamento){
+@mixin centralizar($direction, $alinhamento) {
     display: flex;
     flex-direction: $direction;
     justify-content: $alinhamento;
@@ -29,36 +29,36 @@ a{
 
 }
 
-@mixin modalMenu($width, $height){
+@mixin modalMenu($width, $height) {
     position: fixed;
-   left: 0;
-   top: 100vh;
+    left: 0;
+    top: 100vh;
     width: $width;
     height: $height;
 }
 
-@mixin ajusteImg($width, $height){
+@mixin ajusteImg($width, $height) {
     width: $width;
     height: $height;
     object-fit: fill;
 }
 
-@mixin fonte($size,$weight){
+@mixin fonte($size, $weight) {
     font: {
-        size: $size; 
+        size: $size;
         family: $fonte__padrao;
         weight: $weight;
     }
 }
 
-@mixin formTextCaixa($width){
+@mixin formTextCaixa($width) {
     width: $width;
     height: 100%;
     border: none;
     padding: 4px 2rem;
 }
 
-@mixin formBtn($width, $pad, $cor){
+@mixin formBtn($width, $pad, $cor) {
     width: $width;
     height: 100%;
     padding: $pad;
@@ -66,7 +66,7 @@ a{
     border: none;
 }
 
-@mixin form($width, $height, $px, $cor){
+@mixin form($width, $height, $px, $cor) {
     @include centralizar (row, none);
     width: $width;
     height: $height;
@@ -75,43 +75,76 @@ a{
     background-color: $cor__branco;
 }
 
-.swiper-pagination-clickable .swiper-pagination-bullet{
+@mixin btnFlutuanteSlide() {
+    position: absolute;
+    width: auto;
+    padding: 0.5rem;
+    background-color: $cor__branco;
+    border-radius: 5px;
+}
+
+@mixin botaoCompra() {
+    @include centralizar(row, center);
+    @include fonte(1.4rem, 500);
+    width: 100%;
+    padding: 1rem;
+    border: solid 1px $cor__verdeEscuro;
+    border-radius: 5px;
+    background-color: $cor__branco;
+    transition: 0.3s all;
+    color: $cor__verdeEscuro;
+}
+
+@mixin btnCompraHover() {
+    &:hover {
+        color: $cor__branco;
+        background-color: $cor__verdeEscuro;
+    }
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
     width: 2rem;
     height: 5px;
 }
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
     border-radius: 5px;
 }
 
-.swiper-pagination-bullet-active{
-    background:#327463;
- }
+.swiper-pagination-bullet-active {
+    background: #327463;
+}
 
- .swiper-button-next, .swiper-button-prev{
-    color:#327463; 
+.swiper-button-next,
+.swiper-button-prev {
+    color: #327463;
     border-radius: 100%;
     background-color: #ebecee;
     padding: 1rem;
     width: 4rem;
     height: 4rem;
- }
+}
 
- .swiper-button-next:after, .swiper-button-prev:after{
+.swiper-button-next:after,
+.swiper-button-prev:after {
     font-size: 1.5rem;
- }
+}
 
- @media screen and (min-width:500px) {
-    .swiper-button-next, .swiper-button-prev{
-        color:#327463; 
+@media screen and (min-width:500px) {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #327463;
         border-radius: 100%;
         background-color: #ebecee;
         padding: 1rem;
         width: 5rem;
         height: 5rem;
-     }
-     .swiper-button-next:after, .swiper-button-prev:after{
-        font-size: 3rem;
-     }
+    }
 
- }
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 3rem;
+    }
+
+}

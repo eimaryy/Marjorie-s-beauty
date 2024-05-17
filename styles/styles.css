@@ -31,7 +31,8 @@ a {
   background: #327463;
 }
 
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   color: #327463;
   border-radius: 100%;
   background-color: #ebecee;
@@ -40,12 +41,14 @@ a {
   height: 4rem;
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
+.swiper-button-next:after,
+.swiper-button-prev:after {
   font-size: 1.5rem;
 }
 
 @media screen and (min-width: 500px) {
-  .swiper-button-next, .swiper-button-prev {
+  .swiper-button-next,
+  .swiper-button-prev {
     color: #327463;
     border-radius: 100%;
     background-color: #ebecee;
@@ -53,7 +56,8 @@ a {
     width: 5rem;
     height: 5rem;
   }
-  .swiper-button-next:after, .swiper-button-prev:after {
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
     font-size: 3rem;
   }
 }
@@ -226,6 +230,10 @@ header .pesquisa form .header__pesquisa-btn {
   background-color: #B0C5A4;
   border: none;
   cursor: pointer;
+  transition: 1s background-color;
+}
+header .pesquisa form .header__pesquisa-btn:hover {
+  background-color: #7FB57D;
 }
 header .pesquisa form .header__pesquisa-btn img {
   width: 2rem;
@@ -287,7 +295,7 @@ header .pesquisa form .header__pesquisa-btn img {
   justify-content: start;
   align-items: center;
   border: solid 1px rgb(255, 255, 255);
-  padding: 1rem;
+  padding: 1.5rem;
   color: rgb(255, 255, 255);
 }
 #banner .swiper .swiper-slide img {
@@ -300,6 +308,7 @@ header .pesquisa form .header__pesquisa-btn img {
   width: 100%;
   height: auto;
   display: block;
+  padding: 1rem 0;
 }
 #banner #banner__infos .banner__infos-list {
   display: none;
@@ -326,14 +335,16 @@ header .pesquisa form .header__pesquisa-btn img {
 #banner #banner__infos .banner__infos-swiper .swiper {
   width: 90%;
 }
-#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-next:after, #banner #banner__infos .banner__infos-swiper .swiper .swiper-button-prev:after {
+#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-next:after,
+#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-prev:after {
   font-size: 2rem;
 }
-#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-next, #banner #banner__infos .banner__infos-swiper .swiper .swiper-button-prev {
+#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-next,
+#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-prev {
   background-color: rgb(255, 255, 255);
-  padding: 1rem;
-  width: 3rem;
-  height: 4rem;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 3rem;
 }
 #banner #banner__infos .banner__infos-swiper .swiper .swiper-slide {
   padding: 2rem;
@@ -438,6 +449,7 @@ header .pesquisa form .header__pesquisa-btn img {
   width: 300px;
   height: 30%;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide {
   display: flex;
@@ -450,13 +462,13 @@ header .pesquisa form .header__pesquisa-btn img {
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__infoStatus {
   position: absolute;
-  font-size: 1.1rem;
-  font-family: "Platypi", serif;
-  font-weight: 500;
   width: auto;
   padding: 0.5rem;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
   color: rgb(0, 0, 0);
   left: 5px;
   top: 6px;
@@ -492,11 +504,15 @@ header .pesquisa form .header__pesquisa-btn img {
   font-size: 1.1rem;
   font-family: "Platypi", serif;
   font-weight: 400;
-  text-align: justify;
+  text-overflow: ellipsis;
+  text-align: center;
+  overflow: hidden;
+  width: 200px;
+  white-space: nowrap;
   padding: 0.5rem;
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__infoProduto span {
-  color: rgb(92, 92, 92);
+  color: rgb(75, 75, 75);
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__infoPreco {
   font-size: 1.4rem;
@@ -512,7 +528,6 @@ header .pesquisa form .header__pesquisa-btn img {
   font-size: 1.4rem;
   font-family: "Platypi", serif;
   font-weight: 500;
-  text-align: justify;
   width: 100%;
   padding: 1rem;
   border: solid 1px #327463;
@@ -636,6 +651,10 @@ footer #footer__newsletter .footer__form-container form .footer__inscrever-btn {
   font-weight: 500;
   color: rgb(255, 255, 255);
   cursor: pointer;
+  transition: 1s background-color;
+}
+footer #footer__newsletter .footer__form-container form .footer__inscrever-btn:hover {
+  background-color: #2A363B;
 }
 footer #footer__newsletter .footer__form-container .footer__newsletter-termos {
   font-size: 1.2rem;
@@ -682,7 +701,7 @@ footer #footer__nav .footer__list .footer__item-container .footer__item {
   font-weight: 400;
 }
 footer #footer__nav .footer__list .footer__item-container .footer__item a {
-  color: rgb(92, 92, 92);
+  color: rgb(75, 75, 75);
 }
 footer #footer__nav .footer__list .footer__item-container .footer__item a:hover {
   color: rgb(0, 0, 0);

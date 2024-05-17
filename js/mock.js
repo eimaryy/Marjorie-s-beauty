@@ -9,6 +9,7 @@ async function acenderSlider(Produtos) {
             swiperContainer2;
 
         return new Promise((resolve) => {
+
             container.innerHTML += `
                 <div class="swiper-slide">
                     <img src="${produto.url}" alt="${produto.alt}">
@@ -243,4 +244,4 @@ const Produtos = [{
 ];
 
 acenderSlider(Produtos);
-    
+

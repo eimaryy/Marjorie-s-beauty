@@ -1,64 +1,72 @@
-footer{
+footer {
     @include centralizar (column, center);
     background-color: $cor__cinzaClaro;
     padding: 2rem;
 
-    #footer__origem{
+    #footer__origem {
         @include centralizar (column, center);
         width: 100%;
 
-        .footer__origem-container{
+        .footer__origem-container {
             @include centralizar (row, center);
             padding: 2rem 0;
 
-            figure{
+            figure {
                 padding: 1rem;
                 @include centralizar (column, center);
 
-                img{
+                img {
                     @include ajusteImg (5rem, 5rem);
                 }
-                p{
+
+                p {
                     @include fonte(1rem, 400);
                 }
             }
         }
     }
 
-    #footer__newsletter{
+    #footer__newsletter {
         @include centralizar (column, center);
         padding: 2rem;
-        
-        .footer__termos{
+
+        .footer__termos {
             @include centralizar(row, center);
             gap: 0.5rem;
         }
-        .footer__newsletter-descricao{
+
+        .footer__newsletter-descricao {
             @include fonte(1.4rem, 400);
             padding: 0.5rem 0 1.5rem 0;
             margin: 0.5rem 0;
             text-align: justify;
         }
-        .footer__form-container{
+
+        .footer__form-container {
             @include centralizar(column, center);
-            form{
+
+            form {
                 @include form(99%, 4.5rem, 1px, $cor__cinzaClaro);
-            
-                .footer_email-caixa{
+
+                .footer_email-caixa {
                     @include formTextCaixa(65%);
                     @include fonte (1.3rem, 400);
                 }
 
-                .footer__inscrever-btn{
+                .footer__inscrever-btn {
                     @include formBtn(35%, 4px, $cor__preto);
                     @include fonte (1.1rem, 500);
                     color: $cor__branco;
                     cursor: pointer;
-                
-                }   
+                    transition: 1s background-color;
+                    &:hover{
+                        background-color: $cor__pretoDesbotado;
+                    }
+
+                }
             }
 
-            .footer__newsletter-termos{
+            .footer__newsletter-termos {
                 @include fonte(1.2rem, 400);
                 padding: 0.5rem 0 1rem 0;
                 text-align: justify;
@@ -66,127 +74,120 @@ footer{
         }
     }
 
-    #footer__nav{
+    #footer__nav {
         width: 100%;
         padding: 2rem 0;
-        @include centralizar(column,center);
-        
-        .footer__list{
+        @include centralizar(column, center);
+
+        .footer__list {
             @include centralizar (column, center);
 
-            .footer__item-container{
+            .footer__item-container {
                 @include centralizar (column, center);
                 margin: 1rem 0;
 
-                .footer__list-item{
+                .footer__list-item {
                     @include fonte(1.7rem, bolder);
-                    margin: 0.5rem 0;  
+                    margin: 0.5rem 0;
                     cursor: pointer;
                 }
 
-                .footer__item{
+                .footer__item {
                     display: none;
                     flex-direction: column;
                     justify-content: center;
                     align-items: start;
                     @include fonte(1.5rem, 400);
-                   
-                    a{ 
+
+                    a {
                         color: $cor__cinza;
 
-                        &:hover{
+                        &:hover {
                             color: $cor__preto;
                         }
-                   }
+                    }
                 }
             }
         }
     }
 
-    #footer__copyright{
+    #footer__copyright {
         @include centralizar(column, center);
         width: 100%;
 
-        #footer__logo{
+        #footer__logo {
             margin: 3rem 0 2rem 0;
         }
 
-        h2{
+        h2 {
             @include fonte(1.5rem, 600);
         }
-        .footer__copyright-text{
+
+        .footer__copyright-text {
             @include fonte(1.3rem, 400);
-            padding:1.5rem;
+            padding: 1.5rem;
             margin: 0 0 2rem 0;
             text-align: justify;
-            
+
         }
-        .footer__copyright-simbolo{
+
+        .footer__copyright-simbolo {
             margin: 3rem 0 0 0;
             @include fonte(1rem, 400);
         }
-    
     }
 
-    hr{
+    hr {
         width: 90%;
     }
-
 }
 
 @media screen and (min-width:500px) {
-   footer{
-        #footer__origem{
-            .footer__origem-container{
-                figure{
-                    img{
+    footer {
+        #footer__origem {
+            .footer__origem-container {
+                figure {
+                    img {
                         @include ajusteImg (5.5rem, 5.5rem);
                     }
-                    p{
+
+                    p {
                         @include fonte(1.5rem, 400);
                     }
                 }
             }
         }
     }
-    #footer__newsletter{
-        .footer__form-container{
+
+    #footer__newsletter {
+        .footer__form-container {
             width: 70%;
-         
+
         }
     }
 
-    #footer__nav{
+    #footer__nav {
 
-        .footer__list{
+        .footer__list {
             flex-direction: row !important;
             align-items: start !important;
-            justify-content:center !important;
+            justify-content: center !important;
             gap: 1rem;
             width: 100%;
-            .footer__item-container{
+
+            .footer__item-container {
                 width: 33%;
-                
-                span{
+
+                span {
                     display: none;
                 }
-                .footer__item{
-                    padding: 1rem 0 ;
+
+                .footer__item {
+                    padding: 1rem 0;
                     display: block !important;
 
                 }
             }
         }
     }
-
-}
-
-@media screen and (min-width:1000px) {
-    // footer{
-    //     #footer__newsletter{
-    //         flex-direction: row !important;
-           
-    //     }
-    // }
-
 }

@@ -1,160 +1,170 @@
-header{
+header {
 
-  #container_header{
-      @include centralizar(row, space-between);
-      padding: 2rem 0.8rem 1rem 0.8rem;
-      position: fixed;
-      width: 100%;
+  #container_header {
+    @include centralizar(row, space-between);
+    padding: 2rem 0.8rem 1rem 0.8rem;
+    position: fixed;
+    width: 100%;
     z-index: 2;
     background-color: $cor__branco;
 
-      #contato{
-        display: none;
-        width: 35%;
-        padding: 0 3rem;
-        @include fonte(1.2rem, bolder);
+    #contato {
+      display: none;
+      width: 35%;
+      padding: 0 3rem;
+      @include fonte(1.2rem, bolder);
 
-        
-        a{
-          color: $cor__preto;
-          &:hover{
-            text-decoration: underline;
-          }
+
+      a {
+        color: $cor__preto;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
+    }
 
-      #header_logo{
-        width: 50%;
-        @include centralizar(row, start);
-        .header_logo-img{
-          @include ajusteImg(14rem, 2.5rem);
-        }
+    #header_logo {
+      width: 50%;
+      @include centralizar(row, start);
+
+      .header_logo-img {
+        @include ajusteImg(14rem, 2.5rem);
       }
+    }
 
-      #header_botoes{
-        @include centralizar(row, end);
-        width: 50%;
-      }
+    #header_botoes {
+      @include centralizar(row, end);
+      width: 50%;
+    }
 
-      .header_botoes-list{
-        display: flex;
+    .header_botoes-list {
+      display: flex;
 
-          .header_list-icon{
-            cursor: pointer;
+      .header_list-icon {
+        cursor: pointer;
 
-            &:hover{
-              background-color: $cor__cinzaClaro;
-            }
-
-            img{
-              @include ajusteImg(2.3rem, 2.3rem);
-                margin: 0 0.5rem;
-                cursor: pointer;
-            }
-
-            span{
-              display: none; 
-            }
-          }
-      }
-
-      #header_menu-aberto{
-        @include modalMenu(100vw, 100vh);
-        display: block;
-        background-color: $cor__branco;
-        z-index: 2;
-        transition: all 1s;
-      } 
-
-      
-          .header_menu-cabecalho{
-          @include centralizar(row, space-between);
-          width: 100%;
-          padding: 2rem 1.5rem 3rem 1.5rem;
-          overflow-y: hidden;
-
-          .header_menu-cabecalho-logo{
-            @include ajusteImg(14rem, 2.5rem);
-          }
-          
-          img{
-            @include ajusteImg(1.5rem, 1.5rem);
-              margin: 0 1.5rem;
-          }
+        &:hover {
+          background-color: $cor__cinzaClaro;
         }
 
-      #header_list-menu{
+        img {
+          @include ajusteImg(2.3rem, 2.3rem);
+          margin: 0 0.5rem;
+          cursor: pointer;
+        }
 
-        .header_list-item{
-          width: 100vw;
-          padding: 1.2rem 2rem;
-          @include centralizar (row, space-between);
-          @include fonte (1.6rem, 400);
-
-          img{
-            @include ajusteImg(1.5rem, 1.5rem);
-            margin: 0 2rem;
-          }
+        span {
+          display: none;
         }
       }
-    #header_menu-footer{
+    }
+
+    #header_menu-aberto {
+      @include modalMenu(100vw, 100vh);
+      display: block;
+      background-color: $cor__branco;
+      z-index: 2;
+      transition: all 1s;
+    }
+
+
+    .header_menu-cabecalho {
+      @include centralizar(row, space-between);
+      width: 100%;
+      padding: 2rem 1.5rem 3rem 1.5rem;
+      overflow-y: hidden;
+
+      .header_menu-cabecalho-logo {
+        @include ajusteImg(14rem, 2.5rem);
+      }
+
+      img {
+        @include ajusteImg(1.5rem, 1.5rem);
+        margin: 0 1.5rem;
+      }
+    }
+
+    #header_list-menu {
+
+      .header_list-item {
+        width: 100vw;
+        padding: 1.2rem 2rem;
+        @include centralizar (row, space-between);
+        @include fonte (1.6rem, 400);
+
+        img {
+          @include ajusteImg(1.5rem, 1.5rem);
+          margin: 0 2rem;
+        }
+      }
+    }
+
+    #header_menu-footer {
       @include centralizar(row, flex-start);
       padding: 4rem 0;
-      
-      a{
-        @include centralizar(row, flex-start);
-        @include fonte(1.5rem, bolder);   
-        color: $cor__preto;     
 
-        img{
+      a {
+        @include centralizar(row, flex-start);
+        @include fonte(1.5rem, bolder);
+        color: $cor__preto;
+
+        img {
           @include ajusteImg(5rem, auto);
         }
       }
     }
   }
-  .pesquisa{
+
+  .pesquisa {
     margin: 6rem 0 0 0;
     @include centralizar (row, center);
     padding: 1rem;
     background-color: $cor__branco;
 
-    form{
+    form {
       @include form(85%, 3.5rem, 1px, $cor__verdeClaro);
-    
-      #header_pesquisa-caixa{
-       @include formTextCaixa(80%);
+
+      #header_pesquisa-caixa {
+        @include formTextCaixa(80%);
         @include fonte (1.5rem, 400);
       }
-      
-      .header__pesquisa-btn{
-        @include formBtn(20%,3px, $cor__verdeClaro);
-        cursor: pointer;
 
-        img{
+      .header__pesquisa-btn {
+        @include formBtn(20%, 3px, $cor__verdeClaro);
+        cursor: pointer;
+        transition: 1s background-color;
+        &:hover{
+          background-color: $cor__verdeVivoClaro;
+        }
+
+        img {
           @include ajusteImg(2rem, auto);
         }
       }
-
     }
   }
 }
 
 @media screen and (min-width:500px) {
-  header{
-    #container_header{
-      #contato{
+  header {
+    #container_header {
+      #contato {
         display: block;
       }
-      #header_logo{
+
+      #header_logo {
         width: 30%;
         justify-content: center;
       }
-      #header_botoes{
+
+      #header_botoes {
         width: 35%;
       }
     }
-    .pesquisa{
-      form{
+
+    .pesquisa {
+      form {
         width: 70%;
         height: 4rem;
       }
@@ -164,32 +174,34 @@ header{
 
 @media screen and (min-width:1000px) {
 
-  header{
-    #container_header{
-        .header_botoes-list{
-          .menu{
-            display: none;
-          }        
+  header {
+    #container_header {
+      .header_botoes-list {
+        .menu {
+          display: none;
+        }
 
-          .header_list-icon{
-            @include centralizar(row, center); 
-            padding: 0.5rem;
-           
-            span{
-              display: inline-block;
-              @include fonte(1.2rem, bolder);
-            }
-            .menu{
-              display: none;
-            }
+        .header_list-icon {
+          @include centralizar(row, center);
+          padding: 0.5rem;
+
+          span {
+            display: inline-block;
+            @include fonte(1.2rem, bolder);
+          }
+
+          .menu {
+            display: none;
           }
         }
       }
-      .pesquisa{
-        form{
-          width: 50%;
-          height: 5rem;
-        }
+    }
+
+    .pesquisa {
+      form {
+        width: 50%;
+        height: 5rem;
       }
+    }
   }
 }
