@@ -51,19 +51,6 @@
             .swiper {
                 width: 90%;
 
-                .swiper-button-next:after,
-                .swiper-button-prev:after {
-                    font-size: 2rem;
-                }
-
-                .swiper-button-next,
-                .swiper-button-prev {
-                    background-color: rgb(255, 255, 255);
-                    padding: 0.5rem;
-                    width: 2rem;
-                    height: 3rem;
-                }
-
                 .swiper-slide {
                     padding: 2rem;
                     color: $cor__verdeEscuro;
@@ -96,6 +83,7 @@
             .menu_list-item {
                 @include fonte(1.5rem, bolder);
                 padding: 1rem 0;
+                cursor: pointer;
 
                 a {
                     color: $cor__branco;

@@ -15,21 +15,21 @@ let swiper = new Swiper('.container-swiper-1', {
     enabled: true,
   },
  breakpoints: {
-    430: {
+    470: {
       slidesPerView: 2,
       spaceBetween: 20,
     },
-    600: {
+    705: {
       slidesPerView: 3,
     },
     900: {
         slidesPerView: 4,
         
       },
-    1024: {
+    1180: {
       slidesPerView: 5.2,
     },
-    1500: {
+    1650: {
         slidesPerView: 7.2,
       },
   },

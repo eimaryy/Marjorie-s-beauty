@@ -34,8 +34,7 @@ a {
 .swiper-button-next,
 .swiper-button-prev {
   color: #327463;
-  border-radius: 100%;
-  background-color: #ebecee;
+  border-radius: 10px;
   padding: 1rem;
   width: 4rem;
   height: 4rem;
@@ -50,8 +49,7 @@ a {
   .swiper-button-next,
   .swiper-button-prev {
     color: #327463;
-    border-radius: 100%;
-    background-color: #ebecee;
+    border-radius: 10px;
     padding: 1rem;
     width: 5rem;
     height: 5rem;
@@ -110,9 +108,6 @@ header #container_header .header_botoes-list {
 }
 header #container_header .header_botoes-list .header_list-icon {
   cursor: pointer;
-}
-header #container_header .header_botoes-list .header_list-icon:hover {
-  background-color: #ebecee;
 }
 header #container_header .header_botoes-list .header_list-icon img {
   width: 2.3rem;
@@ -323,7 +318,7 @@ header .pesquisa form .header__pesquisa-btn img {
   font-size: 1.1rem;
   font-family: "Platypi", serif;
   font-weight: 400;
-  color: #327463;
+  color: #1b4b3f;
 }
 #banner #banner__infos .banner__infos-list .info_list-item img {
   margin: 1rem;
@@ -335,20 +330,9 @@ header .pesquisa form .header__pesquisa-btn img {
 #banner #banner__infos .banner__infos-swiper .swiper {
   width: 90%;
 }
-#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-next:after,
-#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-prev:after {
-  font-size: 2rem;
-}
-#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-next,
-#banner #banner__infos .banner__infos-swiper .swiper .swiper-button-prev {
-  background-color: rgb(255, 255, 255);
-  padding: 0.5rem;
-  width: 2rem;
-  height: 3rem;
-}
 #banner #banner__infos .banner__infos-swiper .swiper .swiper-slide {
   padding: 2rem;
-  color: #327463;
+  color: #1b4b3f;
   font-size: 1rem;
   font-family: "Platypi", serif;
   font-weight: 400;
@@ -366,7 +350,7 @@ header .pesquisa form .header__pesquisa-btn img {
 #banner #banner__menu {
   display: none;
   margin: 1rem 0;
-  background-color: #327463;
+  background-color: #1b4b3f;
 }
 #banner #banner__menu .banner__menu-list {
   display: flex;
@@ -381,6 +365,7 @@ header .pesquisa form .header__pesquisa-btn img {
   font-family: "Platypi", serif;
   font-weight: bolder;
   padding: 1rem 0;
+  cursor: pointer;
 }
 #banner #banner__menu .banner__menu-list .menu_list-item a {
   color: rgb(255, 255, 255);
@@ -445,6 +430,10 @@ header .pesquisa form .header__pesquisa-btn img {
 #showcase #showcase__produtos .showcase__container .swiper {
   width: 100%;
 }
+#showcase #showcase__produtos .showcase__container .swiper .swiper-button-next,
+#showcase #showcase__produtos .showcase__container .swiper .swiper-button-prev {
+  background-color: #ebecee;
+}
 #showcase #showcase__produtos .showcase__container .swiper .swiper-wrapper {
   width: 300px;
   height: 30%;
@@ -462,9 +451,9 @@ header .pesquisa form .header__pesquisa-btn img {
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__infoStatus {
   position: absolute;
+  background-color: rgb(255, 255, 255);
   width: auto;
   padding: 0.5rem;
-  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   font-size: 1.1rem;
   font-family: "Platypi", serif;
@@ -475,10 +464,11 @@ header .pesquisa form .header__pesquisa-btn img {
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__btn-fav {
   position: absolute;
+  background-color: rgb(255, 255, 255);
   width: auto;
   padding: 0.5rem;
-  background-color: rgb(255, 255, 255);
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.63);
   right: 5px;
   top: 6px;
 }
@@ -492,6 +482,7 @@ header .pesquisa form .header__pesquisa-btn img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   padding: 1rem;
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__infoNome {
@@ -530,15 +521,15 @@ header .pesquisa form .header__pesquisa-btn img {
   font-weight: 500;
   width: 100%;
   padding: 1rem;
-  border: solid 1px #327463;
+  border: solid 1px #1b4b3f;
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
   transition: 0.3s all;
-  color: #327463;
+  color: #1b4b3f;
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__btn-sacola:hover {
   color: rgb(255, 255, 255);
-  background-color: #327463;
+  background-color: #1b4b3f;
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-slide img {
   display: block;
@@ -551,6 +542,123 @@ header .pesquisa form .header__pesquisa-btn img {
 #showcase #showcase__produtos .showcase__container .swiper .swiper-pagination {
   position: initial;
   margin: 1rem 0;
+}
+
+#showcaseFiltro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem 2rem 3.5rem 2rem;
+  width: 100vw;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+#showcaseFiltro p {
+  font-size: 2rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  color: rgb(75, 75, 75);
+}
+#showcaseFiltro .showcaseFiltro__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-radius: 2%;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ebecee;
+  position: relative;
+}
+#showcaseFiltro .showcaseFiltro__item img {
+  display: block;
+  width: 300px;
+  height: 200px;
+  object-fit: fill;
+  border-radius: 2% 2% 0 0;
+  object-fit: cover;
+}
+#showcaseFiltro .showcaseFiltro__item .item__infoStatus {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  left: 5px;
+  top: 6px;
+}
+#showcaseFiltro .showcaseFiltro__item .item__btn-fav {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.63);
+  right: 5px;
+  top: 6px;
+}
+#showcaseFiltro .showcaseFiltro__item .item__btn-fav img {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: fill;
+}
+#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__infoNome {
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: bolder;
+  margin: 0.5rem;
+}
+#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__infoProduto {
+  font-size: 1.1rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  text-align: center;
+  overflow: hidden;
+  width: 200px;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__infoProduto span {
+  color: rgb(75, 75, 75);
+}
+#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__infoPreco {
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: bolder;
+  padding: 0.5rem;
+}
+#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__btn-sacola {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  width: 100%;
+  padding: 1rem;
+  border: solid 1px #1b4b3f;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s all;
+  color: #1b4b3f;
+}
+#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__btn-sacola:hover {
+  color: rgb(255, 255, 255);
+  background-color: #1b4b3f;
 }
 
 footer {
@@ -604,7 +712,20 @@ footer #footer__newsletter .footer__termos {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  align-items: start;
+  padding: 1rem 0 1rem 0;
   gap: 0.5rem;
+}
+footer #footer__newsletter .footer__termos input {
+  width: 18px;
+  height: 18px;
+}
+footer #footer__newsletter .footer__termos .footer__newsletter-termos {
+  font-size: 1.2rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+  text-align: justify;
+  cursor: pointer;
 }
 footer #footer__newsletter .footer__newsletter-descricao {
   font-size: 1.4rem;
@@ -620,7 +741,7 @@ footer #footer__newsletter .footer__form-container {
   justify-content: center;
   align-items: center;
 }
-footer #footer__newsletter .footer__form-container form {
+footer #footer__newsletter .footer__form-container form .form-container-inputBtn {
   display: flex;
   flex-direction: row;
   justify-content: none;
@@ -631,7 +752,7 @@ footer #footer__newsletter .footer__form-container form {
   border-radius: 6px;
   background-color: rgb(255, 255, 255);
 }
-footer #footer__newsletter .footer__form-container form .footer_email-caixa {
+footer #footer__newsletter .footer__form-container form .form-container-inputBtn .footer_email-caixa {
   width: 65%;
   height: 100%;
   border: none;
@@ -640,7 +761,7 @@ footer #footer__newsletter .footer__form-container form .footer_email-caixa {
   font-family: "Platypi", serif;
   font-weight: 400;
 }
-footer #footer__newsletter .footer__form-container form .footer__inscrever-btn {
+footer #footer__newsletter .footer__form-container form .form-container-inputBtn .footer__inscrever-btn {
   width: 35%;
   height: 100%;
   padding: 4px;
@@ -653,15 +774,8 @@ footer #footer__newsletter .footer__form-container form .footer__inscrever-btn {
   cursor: pointer;
   transition: 1s background-color;
 }
-footer #footer__newsletter .footer__form-container form .footer__inscrever-btn:hover {
+footer #footer__newsletter .footer__form-container form .form-container-inputBtn .footer__inscrever-btn:hover {
   background-color: #2A363B;
-}
-footer #footer__newsletter .footer__form-container .footer__newsletter-termos {
-  font-size: 1.2rem;
-  font-family: "Platypi", serif;
-  font-weight: 400;
-  padding: 0.5rem 0 1rem 0;
-  text-align: justify;
 }
 footer #footer__nav {
   width: 100%;

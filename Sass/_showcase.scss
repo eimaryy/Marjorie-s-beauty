@@ -17,6 +17,11 @@
             .swiper {
                 width: 100%;
 
+                .swiper-button-next,
+                .swiper-button-prev {
+                    background-color: #ebecee;
+                }
+
                 .swiper-wrapper {
                     width: 300px;
                     height: 30%;
@@ -25,11 +30,7 @@
                 }
 
                 .swiper-slide {
-                    @include centralizar(column, start);
-                    border-radius: 2%;
-                    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
-                    border: 1px solid $cor__cinzaClaro;
-
+                    @include containerCardProduto;
 
                     .slide__infoStatus {
                         @include btnFlutuanteSlide();
@@ -41,6 +42,7 @@
 
                     .slide__btn-fav {
                         @include btnFlutuanteSlide;
+                        background-color: $cor__brancoTransparente;
                         right: 5px;
                         top: 6px;
 
@@ -51,6 +53,7 @@
 
                     .slide__informacoes-Container {
                         @include centralizar(column, center);
+                        width: 100%;
                         padding: 1rem;
 
                         .slide__infoNome {
@@ -60,12 +63,7 @@
 
                         .slide__infoProduto {
                             @include fonte(1.1rem, 400);
-                            text-overflow: ellipsis;
-                            text-align: center;
-                            overflow: hidden;
-                            width: 200px;
-                            white-space: nowrap;
-                            padding: 0.5rem;
+                           @include infoCardProduto;
 
                             span {
                                 color: $cor__cinza;
@@ -85,10 +83,7 @@
                 }
 
                 .swiper-slide img {
-                    display: block;
-                    @include ajusteImg(300px, 200px);
-                    border-radius: 2% 2% 0 0;
-                    object-fit: cover;
+                    @include imgCardProduto;
                 }
 
                 .swiper-pagination {
@@ -97,5 +92,77 @@
                 }
             }
         }
+    }
+}
+#showcaseFiltro{
+    @include centralizar (row, center);
+    padding: 3.5rem 2rem 3.5rem 2rem;
+    width: 100vw;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    p{
+        @include fonte(2rem, 500);
+        color: $cor__cinza;
+    }
+
+    .showcaseFiltro__item{
+        @include containerCardProduto;
+        position: relative;
+        
+
+        img{
+          @include imgCardProduto;
+        }
+
+        .item__infoStatus {
+            @include btnFlutuanteSlide();
+            @include fonte(1.1rem, 500);
+            color: $cor__preto;
+            left: 5px;
+            top: 6px;
+        }
+
+        .item__btn-fav {
+            @include btnFlutuanteSlide;
+            background-color: $cor__brancoTransparente;
+            right: 5px;
+            top: 6px;
+
+            img {
+                @include ajusteImg(1.8rem, 1.8rem);
+            }
+    
+        }
+        .item__informacoes-Container {
+            @include centralizar(column, center);
+            width: 100%;
+            padding: 1rem;
+
+            .item__infoNome {
+                @include fonte(1.5rem, bolder);
+                margin: 0.5rem;
+            }
+
+            .item__infoProduto {
+                @include fonte(1.1rem, 400);
+                @include infoCardProduto;
+
+                span {
+                    color: $cor__cinza;
+                }
+            }
+
+            .item__infoPreco {
+                @include fonte(1.4rem, bolder);
+                padding: 0.5rem;
+            }
+
+            .item__btn-sacola {
+                @include botaoCompra();
+                @include btnCompraHover();
+            }
+        }
+
     }
 }

@@ -32,7 +32,19 @@ footer {
 
         .footer__termos {
             @include centralizar(row, center);
+            align-items: start;
+            padding: 1rem 0 1rem 0;
             gap: 0.5rem;
+
+            input{
+                width: 18px;
+                height: 18px;
+            }
+            .footer__newsletter-termos {
+                @include fonte(1.2rem, 400);
+                text-align: justify;
+                cursor: pointer;
+            }
         }
 
         .footer__newsletter-descricao {
@@ -46,30 +58,26 @@ footer {
             @include centralizar(column, center);
 
             form {
-                @include form(99%, 4.5rem, 1px, $cor__cinzaClaro);
+                .form-container-inputBtn{
+                 @include form(99%, 4.5rem, 1px, $cor__cinzaClaro);
 
-                .footer_email-caixa {
-                    @include formTextCaixa(65%);
-                    @include fonte (1.3rem, 400);
-                }
+                    .footer_email-caixa {
+                        @include formTextCaixa(65%);
+                        @include fonte (1.3rem, 400);
+                    }
 
-                .footer__inscrever-btn {
-                    @include formBtn(35%, 4px, $cor__preto);
-                    @include fonte (1.1rem, 500);
-                    color: $cor__branco;
-                    cursor: pointer;
-                    transition: 1s background-color;
-                    &:hover{
-                        background-color: $cor__pretoDesbotado;
+                    .footer__inscrever-btn {
+                        @include formBtn(35%, 4px, $cor__preto);
+                        @include fonte (1.1rem, 500);
+                        color: $cor__branco;
+                        cursor: pointer;
+                        transition: 1s background-color;
+                        &:hover{
+                            background-color: $cor__pretoDesbotado;
+                        }
                     }
 
                 }
-            }
-
-            .footer__newsletter-termos {
-                @include fonte(1.2rem, 400);
-                padding: 0.5rem 0 1rem 0;
-                text-align: justify;
             }
         }
     }
@@ -162,7 +170,6 @@ footer {
     #footer__newsletter {
         .footer__form-container {
             width: 70%;
-
         }
     }
 

@@ -77,9 +77,9 @@ a {
 
 @mixin btnFlutuanteSlide() {
     position: absolute;
+    background-color: $cor__branco;
     width: auto;
     padding: 0.5rem;
-    background-color: $cor__branco;
     border-radius: 5px;
 }
 
@@ -102,6 +102,27 @@ a {
     }
 }
 
+@mixin containerCardProduto(){
+    @include centralizar(column, start);
+        border-radius: 2%;
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+        border: 1px solid $cor__cinzaClaro;
+}
+@mixin imgCardProduto(){
+    display: block;
+    @include ajusteImg(300px, 200px);
+    border-radius: 2% 2% 0 0;
+    object-fit: cover;
+}
+@mixin infoCardProduto(){
+    text-overflow: ellipsis;
+    text-align: center;
+    overflow: hidden;
+    width: 200px;
+    white-space: nowrap;
+    padding: 0.5rem;
+}
+
 .swiper-pagination-clickable .swiper-pagination-bullet {
     width: 2rem;
     height: 5px;
@@ -118,8 +139,7 @@ a {
 .swiper-button-next,
 .swiper-button-prev {
     color: #327463;
-    border-radius: 100%;
-    background-color: #ebecee;
+    border-radius: 10px;
     padding: 1rem;
     width: 4rem;
     height: 4rem;
@@ -135,8 +155,7 @@ a {
     .swiper-button-next,
     .swiper-button-prev {
         color: #327463;
-        border-radius: 100%;
-        background-color: #ebecee;
+        border-radius: 10px;
         padding: 1rem;
         width: 5rem;
         height: 5rem;

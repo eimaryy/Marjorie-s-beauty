@@ -1,40 +1,6 @@
-const swiperContainer1 = document.querySelector('.s1');
-const swiperContainer2 = document.querySelector('.s2');
-
-
-async function acenderSlider(Produtos) {
-    const sliderPromises = Produtos.map((produto, index) => {
-        const container = 
-            index <= 11 ? swiperContainer1 : 
-            swiperContainer2;
-
-        return new Promise((resolve) => {
-
-            container.innerHTML += `
-                <div class="swiper-slide">
-                    <img src="${produto.url}" alt="${produto.alt}">
-                    <h3 class="slide__infoStatus">${produto.info}</h3>
-                    <a href="#" class="slide__btn-fav">
-                        <img class="img-fav" src="./assets/big-heart.png" alt="Icone de coração">
-                    </a>
-                    <div class="slide__informacoes-Container">
-                        <h2 class="slide__infoNome">${produto.titulo}</h2>
-                        <a href="#" class="slide__infoProduto"><span>${produto.descricao}</span></a>
-                        <h2 class="slide__infoPreco">${produto.preco}</h2>
-                        <a href="#" class="slide__btn-sacola"><span>Adicionar a sacola</span></a>
-                    </div>
-                </div>
-            `;
-            resolve();
-        });
-    });
-
-    await Promise.all(sliderPromises);
-}
-
-const Produtos = [{
+export const Produtos = [{
     id: '1',
-    categoria: 'perfume',
+    categoria: 'perfumaria',
     info: 'lançamento',
     titulo: 'Fiery',
     url: './assets/products/perfume0.jpg',
@@ -44,7 +10,7 @@ const Produtos = [{
 },
 {
     id: '2',
-    categoria: 'rosto',
+    categoria: 'skincare',
     info: '20% desconto',
     titulo: 'Lighten',
     url: './assets/products/serum0.jpg',
@@ -55,7 +21,7 @@ const Produtos = [{
 },
 {
     id: '3',
-    categoria: 'perfume',
+    categoria: 'perfumaria',
     info: 'Nova formula',
     titulo: 'Doré',
     url: './assets/products/perfume1.jpg',
@@ -77,7 +43,7 @@ const Produtos = [{
 },
 {
     id: '5',
-    categoria: 'pele',
+    categoria: 'corpoBanho',
     info: 'Compre 1 leve 2',
     titulo: 'Doux',
     url: './assets/products/cremeHidra+1.jpg',
@@ -88,7 +54,7 @@ const Produtos = [{
 },
 {
     id: '6',
-    categoria: 'rosto',
+    categoria: 'skincare',
     info: '10% desconto',
     titulo: 'Kit Prudent',
     url: './assets/products/kitrosto.jpg',
@@ -110,7 +76,7 @@ const Produtos = [{
 },
 {
     id: '8',
-    categoria: 'perfume',
+    categoria: 'perfumaria',
     info: '+15% Fidelidade',
     titulo: 'Préféré',
     url: './assets/products/perfume2.jpg',
@@ -121,7 +87,7 @@ const Produtos = [{
 },
 {
     id: '9',
-    categoria: 'creme',
+    categoria: 'corpoBanho',
     info: '+2 Fidelidade',
     titulo: 'Pour la peau',
     url: './assets/products/rosamosqueta.jpg',
@@ -132,7 +98,7 @@ const Produtos = [{
 },
 {
     id: '10',
-    categoria: 'rosto',
+    categoria: 'skincare',
     info: 'Lançamento',
     titulo: 'Pour la peau',
     url: './assets/products/serum2.jpg',
@@ -143,7 +109,7 @@ const Produtos = [{
 },
 {
     id: '11',
-    categoria: 'pele',
+    categoria: 'corpoBanho',
     info: '5% desconto',
     titulo: 'Pour la peau',
     url: './assets/products/rosamosqueta0.jpg',
@@ -154,7 +120,7 @@ const Produtos = [{
 },
 {
     id: '12',
-    categoria: 'rosto',
+    categoria: 'skincare',
     info: '+30% Fidelidade',
     titulo: 'Lighten++',
     url: './assets/products/serum1.jpg',
@@ -240,8 +206,4 @@ const Produtos = [{
     preco: 'R$ '+40.00,
 
 },
-
 ];
-
-acenderSlider(Produtos);
-
