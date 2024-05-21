@@ -95,74 +95,106 @@
     }
 }
 #showcaseFiltro{
-    @include centralizar (row, center);
-    padding: 3.5rem 2rem 3.5rem 2rem;
-    width: 100vw;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
 
-    p{
-        @include fonte(2rem, 500);
-        color: $cor__cinza;
+    #showcaseFiltro_navegacao{
+        margin: 3rem 0 0 0;
+        padding: 2rem;
+        width: 100%;
+        background-color: $cor__cinzaClaro;
+
+        .showcaseFiltro_voltar-Inicio{
+            @include fonte(1.5rem, 500);
+            color: $cor__verdeEscuro;
+            &:hover{
+                color: $cor__preto;
+            }
+        }
     }
+    #showcaseFiltro_container{
+        @include centralizar (row, center);
+        padding: 3.5rem 2rem 3.5rem 2rem;
+        width: 100vw;
+        flex-wrap: wrap;
+        gap: 1.5rem;
 
-    .showcaseFiltro__item{
-        @include containerCardProduto;
-        position: relative;
+        p{
+            @include fonte(2rem, 500);
+            color: $cor__cinza;
+        }
+
+        .showcaseFiltro__item{
+            @include containerCardProduto;
+            position: relative;
+            
+
+            img{
+            @include imgCardProduto;
+            }
+
+            .item__infoStatus {
+                @include btnFlutuanteSlide();
+                @include fonte(1.1rem, 500);
+                color: $cor__preto;
+                left: 5px;
+                top: 6px;
+            }
+
+            .item__btn-fav {
+                @include btnFlutuanteSlide;
+                background-color: $cor__brancoTransparente;
+                right: 5px;
+                top: 6px;
+
+                img {
+                    @include ajusteImg(1.8rem, 1.8rem);
+                }
         
-
-        img{
-          @include imgCardProduto;
-        }
-
-        .item__infoStatus {
-            @include btnFlutuanteSlide();
-            @include fonte(1.1rem, 500);
-            color: $cor__preto;
-            left: 5px;
-            top: 6px;
-        }
-
-        .item__btn-fav {
-            @include btnFlutuanteSlide;
-            background-color: $cor__brancoTransparente;
-            right: 5px;
-            top: 6px;
-
-            img {
-                @include ajusteImg(1.8rem, 1.8rem);
             }
-    
-        }
-        .item__informacoes-Container {
-            @include centralizar(column, center);
-            width: 100%;
-            padding: 1rem;
+            .item__informacoes-Container {
+                @include centralizar(column, center);
+                width: 100%;
+                padding: 1rem;
 
-            .item__infoNome {
-                @include fonte(1.5rem, bolder);
-                margin: 0.5rem;
-            }
+                .item__infoNome {
+                    @include fonte(1.5rem, bolder);
+                    margin: 0.5rem;
+                }
 
-            .item__infoProduto {
-                @include fonte(1.1rem, 400);
-                @include infoCardProduto;
+                .item__infoProduto {
+                    @include fonte(1.1rem, 400);
+                    @include infoCardProduto;
 
-                span {
-                    color: $cor__cinza;
+                    span {
+                        color: $cor__cinza;
+                    }
+                }
+
+                .item__infoPreco {
+                    @include fonte(1.4rem, bolder);
+                    padding: 0.5rem;
+                }
+
+                .item__btn-sacola {
+                    @include botaoCompra();
+                    @include btnCompraHover();
                 }
             }
-
-            .item__infoPreco {
-                @include fonte(1.4rem, bolder);
-                padding: 0.5rem;
-            }
-
-            .item__btn-sacola {
-                @include botaoCompra();
-                @include btnCompraHover();
-            }
         }
+    }
+}
+@media screen and (min-width:1000px){
+    #showcaseFiltro{
+        flex-direction: row;
 
+        #showcaseFiltro_navegacao{
+            margin: 2rem 0 0 2rem;
+            height: 100%;
+            width: 20%;
+            background-color: $cor__cinzaClaro;
+            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+        }
     }
 }

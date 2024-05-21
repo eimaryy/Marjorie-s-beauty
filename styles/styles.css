@@ -150,9 +150,9 @@ header #container_header .header_menu-cabecalho img {
   object-fit: fill;
   margin: 0 1.5rem;
 }
-header #container_header #header_list-menu .header_list-item {
+header #container_header #header_list-menu .item-page, header #container_header #header_list-menu .header_list-item {
   width: 100vw;
-  padding: 1.2rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -161,7 +161,7 @@ header #container_header #header_list-menu .header_list-item {
   font-family: "Platypi", serif;
   font-weight: 400;
 }
-header #container_header #header_list-menu .header_list-item img {
+header #container_header #header_list-menu .item-page img, header #container_header #header_list-menu .header_list-item img {
   width: 1.5rem;
   height: 1.5rem;
   object-fit: fill;
@@ -545,6 +545,26 @@ header .pesquisa form .header__pesquisa-btn img {
 }
 
 #showcaseFiltro {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+#showcaseFiltro #showcaseFiltro_navegacao {
+  margin: 3rem 0 0 0;
+  padding: 2rem;
+  width: 100%;
+  background-color: #ebecee;
+}
+#showcaseFiltro #showcaseFiltro_navegacao .showcaseFiltro_voltar-Inicio {
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  color: #1b4b3f;
+}
+#showcaseFiltro #showcaseFiltro_navegacao .showcaseFiltro_voltar-Inicio:hover {
+  color: rgb(0, 0, 0);
+}
+#showcaseFiltro #showcaseFiltro_container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -554,13 +574,13 @@ header .pesquisa form .header__pesquisa-btn img {
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-#showcaseFiltro p {
+#showcaseFiltro #showcaseFiltro_container p {
   font-size: 2rem;
   font-family: "Platypi", serif;
   font-weight: 500;
   color: rgb(75, 75, 75);
 }
-#showcaseFiltro .showcaseFiltro__item {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -570,7 +590,7 @@ header .pesquisa form .header__pesquisa-btn img {
   border: 1px solid #ebecee;
   position: relative;
 }
-#showcaseFiltro .showcaseFiltro__item img {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item img {
   display: block;
   width: 300px;
   height: 200px;
@@ -578,7 +598,7 @@ header .pesquisa form .header__pesquisa-btn img {
   border-radius: 2% 2% 0 0;
   object-fit: cover;
 }
-#showcaseFiltro .showcaseFiltro__item .item__infoStatus {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__infoStatus {
   position: absolute;
   background-color: rgb(255, 255, 255);
   width: auto;
@@ -591,7 +611,7 @@ header .pesquisa form .header__pesquisa-btn img {
   left: 5px;
   top: 6px;
 }
-#showcaseFiltro .showcaseFiltro__item .item__btn-fav {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__btn-fav {
   position: absolute;
   background-color: rgb(255, 255, 255);
   width: auto;
@@ -601,12 +621,12 @@ header .pesquisa form .header__pesquisa-btn img {
   right: 5px;
   top: 6px;
 }
-#showcaseFiltro .showcaseFiltro__item .item__btn-fav img {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__btn-fav img {
   width: 1.8rem;
   height: 1.8rem;
   object-fit: fill;
 }
-#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -614,13 +634,13 @@ header .pesquisa form .header__pesquisa-btn img {
   width: 100%;
   padding: 1rem;
 }
-#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__infoNome {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__infoNome {
   font-size: 1.5rem;
   font-family: "Platypi", serif;
   font-weight: bolder;
   margin: 0.5rem;
 }
-#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__infoProduto {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__infoProduto {
   font-size: 1.1rem;
   font-family: "Platypi", serif;
   font-weight: 400;
@@ -631,16 +651,16 @@ header .pesquisa form .header__pesquisa-btn img {
   white-space: nowrap;
   padding: 0.5rem;
 }
-#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__infoProduto span {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__infoProduto span {
   color: rgb(75, 75, 75);
 }
-#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__infoPreco {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__infoPreco {
   font-size: 1.4rem;
   font-family: "Platypi", serif;
   font-weight: bolder;
   padding: 0.5rem;
 }
-#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__btn-sacola {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__btn-sacola {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -656,11 +676,23 @@ header .pesquisa form .header__pesquisa-btn img {
   transition: 0.3s all;
   color: #1b4b3f;
 }
-#showcaseFiltro .showcaseFiltro__item .item__informacoes-Container .item__btn-sacola:hover {
+#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__btn-sacola:hover {
   color: rgb(255, 255, 255);
   background-color: #1b4b3f;
 }
 
+@media screen and (min-width: 1000px) {
+  #showcaseFiltro {
+    flex-direction: row;
+  }
+  #showcaseFiltro #showcaseFiltro_navegacao {
+    margin: 2rem 0 0 2rem;
+    height: 100%;
+    width: 20%;
+    background-color: #ebecee;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  }
+}
 footer {
   display: flex;
   flex-direction: column;

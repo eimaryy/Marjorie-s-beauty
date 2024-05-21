@@ -83,12 +83,12 @@ header {
 
     #header_list-menu {
 
-      .header_list-item {
+      .item-page, .header_list-item{
         width: 100vw;
-        padding: 1.2rem 2rem;
+        padding: 1.5rem 2rem;
         @include centralizar (row, space-between);
         @include fonte (1.6rem, 400);
-
+        
         img {
           @include ajusteImg(1.5rem, 1.5rem);
           margin: 0 2rem;

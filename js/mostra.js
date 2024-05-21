@@ -2,16 +2,14 @@ import { Produtos } from "./mock.js";
 
 const swiperContainer1 = document.querySelector('.s1');
 const swiperContainer2 = document.querySelector('.s2');
-const showcaseComFiltro = document.querySelector('#showcaseFiltro');
+const showcaseComFiltro = document.querySelector('#showcaseFiltro_container');
 const showcase = document.querySelector('#showcase');
 const showcase2 = document.querySelector('#showcaseFiltro');
 
 acenderSlider(Produtos, '');
 
-export async function acenderSlider(Produtos, filtroCategoria) {
+export function acenderSlider(Produtos, filtroCategoria) {
     showcaseComFiltro.innerHTML = '';
-    swiperContainer1.innerHTML = '';
-    swiperContainer2.innerHTML = '';
 
     const ProdutosFiltrados = filtroCategoria ? 
         Produtos.filter(produto => produto.categoria === filtroCategoria) : 

@@ -1,16 +1,17 @@
 const menuBt = document.querySelector('.menu');
 const menuAberto = document.querySelector('#header_menu-aberto');
 const menuSair = document.querySelector('.header_menu-sair');
-const corpo = document.body;
 
-menuBt.addEventListener('click', () => {
-  menuAberto.style.top = '0'
-
-});
-menuSair.addEventListener('click', () => {
+export function headerMenuDesativo(){
   menuAberto.style.top = '100vh'
+}
 
-});
+export function headerMenuAtivo(){
+  menuAberto.style.top = '0'
+}
+
+menuBt.addEventListener('click', headerMenuAtivo);
+menuSair.addEventListener('click', headerMenuDesativo);
 
 const btnCompra = document.querySelector('.com');
 const btnAtendimento = document.querySelector('.at');
@@ -43,3 +44,16 @@ function eventoClicker(ul, textBtn, span) {
   }
 }
 
+const btnVoltarInicio = document.querySelector('.showcaseFiltro_voltar-Inicio');
+const showcase = document.querySelector('#showcase');
+const showcaseComFiltro = document.querySelector('#showcaseFiltro');
+const bannerinfo = document.querySelector('#banner__infos')
+const bannerSlide = document.querySelector('.swiper')
+
+btnVoltarInicio.addEventListener('click', (e) => {
+  e.preventDefault();
+  bannerSlide.style.display = 'block';
+  bannerinfo.style.display = 'flex';
+  showcase.style.display = 'block';
+  showcaseComFiltro.style.display = 'none';
+})
