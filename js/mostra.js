@@ -8,12 +8,10 @@ const showcase2 = document.querySelector('#showcaseFiltro');
 
 acenderSlider(Produtos, '');
 
-export function acenderSlider(Produtos, filtroCategoria) {
+export function acenderSlider(Produtos, filtro) {
     showcaseComFiltro.innerHTML = '';
 
-    const ProdutosFiltrados = filtroCategoria ? 
-        Produtos.filter(produto => produto.categoria === filtroCategoria) : 
-        Produtos;
+    const ProdutosFiltrados = filtro ? filtro : Produtos;
 
     if (ProdutosFiltrados.length === 0) {
         showcaseComFiltro.innerHTML = '<p>Essa sessão está vazia no momento.</p>';
@@ -22,22 +20,22 @@ export function acenderSlider(Produtos, filtroCategoria) {
 
     ProdutosFiltrados.forEach(produto => {
         const produtoHTML = `
-            <div class="${filtroCategoria ? 'showcaseFiltro__item' : 'swiper-slide'}">
+            <div class="${filtro ? 'showcaseFiltro__item' : 'swiper-slide'}">
                 <img src="${produto.url}" alt="${produto.alt}">
-                <h3 class="${filtroCategoria ? 'item__infoStatus' : 'slide__infoStatus'}">${produto.info}</h3>
-                <a href="#" class="${filtroCategoria ? 'item__btn-fav' : 'slide__btn-fav'}">
+                <h3 class="${filtro ? 'item__infoStatus' : 'slide__infoStatus'}">${produto.info}</h3>
+                <a href="#" class="${filtro ? 'item__btn-fav' : 'slide__btn-fav'}">
                     <img class="img-fav" src="./assets/big-heart.png" alt="Icone de coração">
                 </a>
-                <div class="${filtroCategoria ? 'item__informacoes-Container' : 'slide__informacoes-Container'}">
-                    <h2 class="${filtroCategoria ? 'item__infoNome' : 'slide__infoNome'}">${produto.titulo}</h2>
-                    <a href="#" class="${filtroCategoria ? 'item__infoProduto' : 'slide__infoProduto'}"><span>${produto.descricao}</span></a>
-                    <h2 class="${filtroCategoria ? 'item__infoPreco' : 'slide__infoPreco'}">${produto.preco}</h2>
-                    <a href="#" class="${filtroCategoria ? 'item__btn-sacola' : 'slide__btn-sacola'}"><span>Adicionar a sacola</span></a>
+                <div class="${filtro? 'item__informacoes-Container' : 'slide__informacoes-Container'}">
+                    <h2 class="${filtro ? 'item__infoNome' : 'slide__infoNome'}">${produto.titulo}</h2>
+                    <a href="#" class="${filtro ? 'item__infoProduto' : 'slide__infoProduto'}"><span>${produto.descricao}</span></a>
+                    <h2 class="${filtro ? 'item__infoPreco' : 'slide__infoPreco'}">${produto.preco}</h2>
+                    <a href="#" class="${filtro ? 'item__btn-sacola' : 'slide__btn-sacola'}"><span>Adicionar a sacola</span></a>
                 </div>
             </div>
         `;
 
-        if (filtroCategoria) {
+        if (filtro) {
             showcaseComFiltro.innerHTML += produtoHTML;
         } else {
             const container = produto.categoria !== 'Artesanal' ? swiperContainer1 : swiperContainer2;
@@ -45,7 +43,7 @@ export function acenderSlider(Produtos, filtroCategoria) {
         }
     });
 
-    if (!filtroCategoria) {
+    if (!filtro) {
         showcase.style.display = 'block';
     } else {
         showcase.style.display = 'none';

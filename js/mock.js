@@ -65,7 +65,7 @@ export const Produtos = [{
 },
 {
     id: '7',
-    categoria: 'cabelo',
+    categoria: 'cabelos',
     info: 'lancamento',
     titulo: 'Kit Argent',
     url: './assets/products/kitcabelo.jpg',

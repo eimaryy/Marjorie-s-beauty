@@ -43,15 +43,17 @@ header {
 
       .header_list-icon {
         cursor: pointer;
+        a{
+          color: $cor__preto;
+          img {
+            @include ajusteImg(2.3rem, 2.3rem);
+            margin: 0 0.5rem;
+            cursor: pointer;
+          }
 
-        img {
-          @include ajusteImg(2.3rem, 2.3rem);
-          margin: 0 0.5rem;
-          cursor: pointer;
-        }
-
-        span {
-          display: none;
+          span {
+            display: none;
+          }
         }
       }
     }
@@ -178,6 +180,7 @@ header {
         }
 
         .header_list-icon {
+          a{
           @include centralizar(row, center);
           padding: 0.5rem;
 
@@ -185,7 +188,7 @@ header {
             display: inline-block;
             @include fonte(1.2rem, bolder);
           }
-
+        }
           .menu {
             display: none;
           }
