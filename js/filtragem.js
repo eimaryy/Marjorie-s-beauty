@@ -1,6 +1,7 @@
 import { Produtos } from "./mock.js";
 import { acenderSlider } from "./mostra.js";
 import { headerMenuDesativo } from "./script.js";
+import { load } from "./carFav.js";
 
 const categorias = document.querySelectorAll(".item-page");
 const showcase = document.querySelector('#showcase');
@@ -24,7 +25,9 @@ for (let sessao of categorias){
                 listaProdutosFiltrados.push(produto);
             }
         }
+
         acenderSlider(Produtos, listaProdutosFiltrados);
+        load();
 
     })
 }
@@ -51,7 +54,8 @@ function filtrarPesquisa(Produtos){
                 listaProdutosFiltrados.push(produto);
             }
         }
-        acenderSlider(Produtos, listaProdutosFiltrados)
+        acenderSlider(Produtos, listaProdutosFiltrados);
+        load();
     } 
 
 }

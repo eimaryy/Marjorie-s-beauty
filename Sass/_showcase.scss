@@ -31,59 +31,6 @@
 
                 .swiper-slide {
                     @include containerCardProduto;
-
-                    .slide__infoStatus {
-                        @include btnFlutuanteSlide();
-                        @include fonte(1.1rem, 500);
-                        color: $cor__preto;
-                        left: 5px;
-                        top: 6px;
-                    }
-
-                    .slide__btn-fav {
-                        @include btnFlutuanteSlide;
-                        background-color: $cor__brancoTransparente;
-                        right: 5px;
-                        top: 6px;
-
-                        img {
-                            @include ajusteImg(1.8rem, 1.8rem);
-                        }
-                    }
-
-                    .slide__informacoes-Container {
-                        @include centralizar(column, center);
-                        width: 100%;
-                        padding: 1rem;
-
-                        .slide__infoNome {
-                            @include fonte(1.5rem, bolder);
-                            margin: 0.5rem;
-                        }
-
-                        .slide__infoProduto {
-                            @include fonte(1.1rem, 400);
-                           @include infoCardProduto;
-
-                            span {
-                                color: $cor__cinza;
-                            }
-                        }
-
-                        .slide__infoPreco {
-                            @include fonte(1.4rem, bolder);
-                            padding: 0.5rem;
-                        }
-
-                        .slide__btn-sacola {
-                            @include botaoCompra();
-                            @include btnCompraHover();
-                        }
-                    }
-                }
-
-                .swiper-slide img {
-                    @include imgCardProduto;
                 }
 
                 .swiper-pagination {
@@ -94,6 +41,64 @@
         }
     }
 }
+
+.img-produto{
+    @include imgCardProduto;
+    }
+
+.item__btn-fav {
+    @include btnFlutuanteSlide;
+    background-color: $cor__brancoTransparente;
+    right: 5px;
+    top: 6px;
+    cursor: pointer;
+
+
+    .img-fav{
+        @include ajusteImg(1.8rem, 1.8rem);
+    }
+
+}
+
+.item__infoStatus {
+    @include btnFlutuanteSlide();
+    @include fonte(1.1rem, 500);
+    color: $cor__preto;
+    left: 5px;
+    top: 6px;
+}
+
+.item__informacoes-Container {
+    @include centralizar(column, center);
+    width: 100%;
+    padding: 1rem;
+
+    .item__infoNome {
+        @include fonte(1.5rem, bolder);
+        margin: 0.5rem;
+    }
+
+    .item__infoProduto {
+        @include fonte(1.1rem, 400);
+        @include infoCardProduto;
+
+        span {
+            color: $cor__cinza;
+        }
+    }
+
+    .item__infoPreco {
+        @include fonte(1.4rem, bolder);
+        padding: 0.5rem;
+    }
+
+    .item__btn-sacola {
+        @include botaoCompra();
+        @include btnCompraHover();
+    }
+}
+
+
 #showcaseFiltro{
     display: none;
     flex-direction: column;
@@ -129,59 +134,6 @@
             @include containerCardProduto;
             position: relative;
             
-
-            img{
-            @include imgCardProduto;
-            }
-
-            .item__infoStatus {
-                @include btnFlutuanteSlide();
-                @include fonte(1.1rem, 500);
-                color: $cor__preto;
-                left: 5px;
-                top: 6px;
-            }
-
-            .item__btn-fav {
-                @include btnFlutuanteSlide;
-                background-color: $cor__brancoTransparente;
-                right: 5px;
-                top: 6px;
-
-                img {
-                    @include ajusteImg(1.8rem, 1.8rem);
-                }
-        
-            }
-            .item__informacoes-Container {
-                @include centralizar(column, center);
-                width: 100%;
-                padding: 1rem;
-
-                .item__infoNome {
-                    @include fonte(1.5rem, bolder);
-                    margin: 0.5rem;
-                }
-
-                .item__infoProduto {
-                    @include fonte(1.1rem, 400);
-                    @include infoCardProduto;
-
-                    span {
-                        color: $cor__cinza;
-                    }
-                }
-
-                .item__infoPreco {
-                    @include fonte(1.4rem, bolder);
-                    padding: 0.5rem;
-                }
-
-                .item__btn-sacola {
-                    @include botaoCompra();
-                    @include btnCompraHover();
-                }
-            }
         }
     }
 }

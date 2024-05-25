@@ -56,4 +56,5 @@ btnVoltarInicio.addEventListener('click', (e) => {
   bannerinfo.style.display = 'flex';
   showcase.style.display = 'block';
   showcaseComFiltro.style.display = 'none';
-})
+});
+

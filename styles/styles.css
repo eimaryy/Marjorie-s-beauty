@@ -452,7 +452,38 @@ header .pesquisa form .header__pesquisa-btn img {
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border: 1px solid #ebecee;
 }
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__infoStatus {
+#showcase #showcase__produtos .showcase__container .swiper .swiper-pagination {
+  position: initial;
+  margin: 1rem 0;
+}
+
+.img-produto {
+  display: block;
+  width: 300px;
+  height: 200px;
+  object-fit: fill;
+  border-radius: 2% 2% 0 0;
+  object-fit: cover;
+}
+
+.item__btn-fav {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.63);
+  right: 5px;
+  top: 6px;
+  cursor: pointer;
+}
+.item__btn-fav .img-fav {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: fill;
+}
+
+.item__infoStatus {
   position: absolute;
   background-color: rgb(255, 255, 255);
   width: auto;
@@ -465,22 +496,8 @@ header .pesquisa form .header__pesquisa-btn img {
   left: 5px;
   top: 6px;
 }
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__btn-fav {
-  position: absolute;
-  background-color: rgb(255, 255, 255);
-  width: auto;
-  padding: 0.5rem;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.63);
-  right: 5px;
-  top: 6px;
-}
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__btn-fav img {
-  width: 1.8rem;
-  height: 1.8rem;
-  object-fit: fill;
-}
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container {
+
+.item__informacoes-Container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -488,13 +505,13 @@ header .pesquisa form .header__pesquisa-btn img {
   width: 100%;
   padding: 1rem;
 }
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__infoNome {
+.item__informacoes-Container .item__infoNome {
   font-size: 1.5rem;
   font-family: "Platypi", serif;
   font-weight: bolder;
   margin: 0.5rem;
 }
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__infoProduto {
+.item__informacoes-Container .item__infoProduto {
   font-size: 1.1rem;
   font-family: "Platypi", serif;
   font-weight: 400;
@@ -505,16 +522,16 @@ header .pesquisa form .header__pesquisa-btn img {
   white-space: nowrap;
   padding: 0.5rem;
 }
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__infoProduto span {
+.item__informacoes-Container .item__infoProduto span {
   color: rgb(75, 75, 75);
 }
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__infoPreco {
+.item__informacoes-Container .item__infoPreco {
   font-size: 1.4rem;
   font-family: "Platypi", serif;
   font-weight: bolder;
   padding: 0.5rem;
 }
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__btn-sacola {
+.item__informacoes-Container .item__btn-sacola {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -530,21 +547,9 @@ header .pesquisa form .header__pesquisa-btn img {
   transition: 0.3s all;
   color: #1b4b3f;
 }
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide .slide__informacoes-Container .slide__btn-sacola:hover {
+.item__informacoes-Container .item__btn-sacola:hover {
   color: rgb(255, 255, 255);
   background-color: #1b4b3f;
-}
-#showcase #showcase__produtos .showcase__container .swiper .swiper-slide img {
-  display: block;
-  width: 300px;
-  height: 200px;
-  object-fit: fill;
-  border-radius: 2% 2% 0 0;
-  object-fit: cover;
-}
-#showcase #showcase__produtos .showcase__container .swiper .swiper-pagination {
-  position: initial;
-  margin: 1rem 0;
 }
 
 #showcaseFiltro {
@@ -592,96 +597,6 @@ header .pesquisa form .header__pesquisa-btn img {
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border: 1px solid #ebecee;
   position: relative;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item img {
-  display: block;
-  width: 300px;
-  height: 200px;
-  object-fit: fill;
-  border-radius: 2% 2% 0 0;
-  object-fit: cover;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__infoStatus {
-  position: absolute;
-  background-color: rgb(255, 255, 255);
-  width: auto;
-  padding: 0.5rem;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-family: "Platypi", serif;
-  font-weight: 500;
-  color: rgb(0, 0, 0);
-  left: 5px;
-  top: 6px;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__btn-fav {
-  position: absolute;
-  background-color: rgb(255, 255, 255);
-  width: auto;
-  padding: 0.5rem;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.63);
-  right: 5px;
-  top: 6px;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__btn-fav img {
-  width: 1.8rem;
-  height: 1.8rem;
-  object-fit: fill;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1rem;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__infoNome {
-  font-size: 1.5rem;
-  font-family: "Platypi", serif;
-  font-weight: bolder;
-  margin: 0.5rem;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__infoProduto {
-  font-size: 1.1rem;
-  font-family: "Platypi", serif;
-  font-weight: 400;
-  text-overflow: ellipsis;
-  text-align: center;
-  overflow: hidden;
-  width: 200px;
-  white-space: nowrap;
-  padding: 0.5rem;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__infoProduto span {
-  color: rgb(75, 75, 75);
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__infoPreco {
-  font-size: 1.4rem;
-  font-family: "Platypi", serif;
-  font-weight: bolder;
-  padding: 0.5rem;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__btn-sacola {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-  font-family: "Platypi", serif;
-  font-weight: 500;
-  width: 100%;
-  padding: 1rem;
-  border: solid 1px #1b4b3f;
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-  transition: 0.3s all;
-  color: #1b4b3f;
-}
-#showcaseFiltro #showcaseFiltro_container .showcaseFiltro__item .item__informacoes-Container .item__btn-sacola:hover {
-  color: rgb(255, 255, 255);
-  background-color: #1b4b3f;
 }
 
 @media screen and (min-width: 1000px) {

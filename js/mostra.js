@@ -1,4 +1,5 @@
 import { Produtos } from "./mock.js";
+import { favoritos } from "./localStorage.js";
 
 const swiperContainer1 = document.querySelector('.s1');
 const swiperContainer2 = document.querySelector('.s2');
@@ -19,18 +20,21 @@ export function acenderSlider(Produtos, filtro) {
     }
 
     ProdutosFiltrados.forEach(produto => {
+        let isFav = favoritos.find((element) => element == produto.id);
         const produtoHTML = `
             <div class="${filtro ? 'showcaseFiltro__item' : 'swiper-slide'}">
-                <img src="${produto.url}" alt="${produto.alt}">
-                <h3 class="${filtro ? 'item__infoStatus' : 'slide__infoStatus'}">${produto.info}</h3>
-                <a href="#" class="${filtro ? 'item__btn-fav' : 'slide__btn-fav'}">
-                    <img class="img-fav" src="./assets/big-heart.png" alt="Icone de coração">
+                <img class="img-produto" src="${produto.url}" alt="${produto.alt}">
+                <h3 class="item__infoStatus">${produto.info}</h3>
+                <a class="item__btn-fav" name="${produto.id}">
+                    <img class="img-fav" name="${isFav ? 'ativo' : 'desativo'}" 
+                    src="${isFav ? '../assets/heart-solid.svg' : '../assets/heart-regular.svg'}"
+                     alt="Icone de coração">
                 </a>
-                <div class="${filtro? 'item__informacoes-Container' : 'slide__informacoes-Container'}">
-                    <h2 class="${filtro ? 'item__infoNome' : 'slide__infoNome'}">${produto.titulo}</h2>
-                    <a href="#" class="${filtro ? 'item__infoProduto' : 'slide__infoProduto'}"><span>${produto.descricao}</span></a>
-                    <h2 class="${filtro ? 'item__infoPreco' : 'slide__infoPreco'}">${produto.preco}</h2>
-                    <a href="#" class="${filtro ? 'item__btn-sacola' : 'slide__btn-sacola'}"><span>Adicionar a sacola</span></a>
+                <div class="item__informacoes-Container">
+                    <h2 class="item__infoNome">${produto.titulo}</h2>
+                    <a href="#" class="item__infoProduto"><span>${produto.descricao}</span></a>
+                    <h2 class="item__infoPreco">${produto.preco}</h2>
+                    <a href="#" class="item__btn-sacola" name="${produto.id}"><span>Adicionar a sacola</span></a>
                 </div>
             </div>
         `;
