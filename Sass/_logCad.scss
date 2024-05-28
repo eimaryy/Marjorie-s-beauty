@@ -17,14 +17,14 @@ main{
 
         .form__container{
         @include centralizar(column, center);
-        width:80%;
+        width:100%;
         padding: 2rem;
         .formulario__campo{
             display: flex;
             flex-direction: column;
             margin-bottom: 2rem;
             border: none;
-            width: 80%;
+            width: 95%;
             .campo{
                 text-align: start;
                 line-height: 20px;
