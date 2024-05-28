@@ -90,6 +90,7 @@ header {
         padding: 1.5rem 2rem;
         @include centralizar (row, space-between);
         @include fonte (1.6rem, 400);
+        cursor: pointer;
         
         img {
           @include ajusteImg(1.5rem, 1.5rem);

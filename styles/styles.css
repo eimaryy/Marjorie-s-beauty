@@ -163,6 +163,7 @@ header #container_header #header_list-menu .item-page, header #container_header 
   font-size: 1.6rem;
   font-family: "Platypi", serif;
   font-weight: 400;
+  cursor: pointer;
 }
 header #container_header #header_list-menu .item-page img, header #container_header #header_list-menu .header_list-item img {
   width: 1.5rem;

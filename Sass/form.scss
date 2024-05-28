@@ -1,0 +1,10 @@
+@import "default.scss";
+@import "variaveis.scss";
+@import "logCad.scss";
+
+body{
+   @include centralizar(column, center);
+   width: 100%;
+   min-height: 100vh;
+   margin: 2rem 0;
+}

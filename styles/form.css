@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  overflow-x: hidden;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  width: 2rem;
+  height: 5px;
+}
+
+.swiper-pagination-bullet {
+  border-radius: 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #327463;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #327463;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 500px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #327463;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 3rem;
+  }
+}
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 2rem;
+  border: solid 2px #B0C5A4;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #7FB57D;
+  margin: 3rem;
+}
+main form .form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 2rem;
+}
+main form .form__container .formulario__campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border: none;
+  width: 80%;
+}
+main form .form__container .formulario__campo .campo {
+  text-align: start;
+  line-height: 20px;
+  padding: 0.5rem 0;
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+}
+main form .form__container .formulario__campo .campo_input {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  padding: 1rem;
+  border: solid 1px #B0C5A4;
+}
+main form .form__container .mensagem-erro {
+  color: red;
+  margin: 0.5rem;
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: bolder;
+}
+main form .form__container .formulario__termos {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main form .form__container .formulario__termos .termos__input {
+  cursor: pointer;
+  width: 40px;
+  height: auto;
+  margin: 0.5rem 0;
+}
+main form .form__container .formulario__termos .termos__texto {
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+main form .form__container .formulario__botao {
+  background-color: #1b4b3f;
+  margin: 2em auto;
+  display: block;
+  border: solid 2px #1b4b3f;
+  padding: 1em 2em;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "Platypi", serif;
+  font-weight: 600;
+  line-height: 22px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 1s;
+}
+main form .form__container .formulario__botao:hover {
+  background-color: #ebecee;
+  color: #1b4b3f;
+  border: solid 2px #B0C5A4;
+}
+main form a {
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  padding: 1rem 0;
+  cursor: pointer;
+  color: #1b4b3f;
+}
+
+footer {
+  padding: 2rem 0;
+}
+footer .footer__termos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+footer .footer__termos a {
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  color: #1b4b3f;
+  cursor: pointer;
+}
+footer .footer__termos a:hover {
+  color: rgb(75, 75, 75);
+}
+
+@media screen and (min-width: 500px) {
+  main form {
+    width: 50%;
+  }
+  footer .footer__termos {
+    flex-direction: row;
+  }
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 2rem 0;
+}
+
+/*# sourceMappingURL=form.css.map */
