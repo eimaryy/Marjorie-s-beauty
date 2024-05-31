@@ -107,6 +107,7 @@ a {
         border-radius: 2%;
         box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
         border: 1px solid $cor__cinzaClaro;
+        position: relative;
 }
 @mixin imgCardProduto(){
     display: block;
@@ -121,6 +122,13 @@ a {
     width: 200px;
     white-space: nowrap;
     padding: 0.5rem;
+}
+@mixin containerItemProduto(){
+    @include centralizar (row, center);
+    padding: 3.5rem 2rem 3.5rem 2rem;
+    width: 100vw;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {

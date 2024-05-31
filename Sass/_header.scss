@@ -43,6 +43,21 @@ header {
 
       .header_list-icon {
         cursor: pointer;
+        position: relative;
+
+          .header_itemSacola-number{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $cor__verdeEscuro;
+            color: $cor__branco;
+            border-radius: 30px;
+            width: 17px;
+            height: 17px;
+            text-align: center;
+            @include fonte(1.1rem, 500);
+          }
+
         a{
           color: $cor__preto;
           img {
@@ -80,6 +95,7 @@ header {
       img {
         @include ajusteImg(1.5rem, 1.5rem);
         margin: 0 1.5rem;
+        cursor: pointer;
       }
     }
 
@@ -192,6 +208,10 @@ header {
         }
           .menu {
             display: none;
+          }
+
+          .header_itemSacola-number{
+            left: 2px;
           }
         }
       }

@@ -1,6 +1,6 @@
 import { Produtos } from "./mock.js";
 import { acenderSlider } from "./mostra.js";
-import { headerMenuDesativo } from "./script.js";
+import { headerMenuDesativo } from "./menu.js";
 import { load } from "./carFav.js";
 
 const categorias = document.querySelectorAll(".item-page");

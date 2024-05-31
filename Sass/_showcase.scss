@@ -52,17 +52,18 @@
     right: 5px;
     top: 6px;
     cursor: pointer;
+    border-radius: 30px;
 
 
     .img-fav{
-        @include ajusteImg(1.8rem, 1.8rem);
+        @include ajusteImg(2.3rem, 2.3rem);
     }
 
 }
 
 .item__infoStatus {
     @include btnFlutuanteSlide();
-    @include fonte(1.1rem, 500);
+    @include fonte(1.2rem, 500);
     color: $cor__preto;
     left: 5px;
     top: 6px;
@@ -119,11 +120,7 @@
         }
     }
     #showcaseFiltro_container{
-        @include centralizar (row, center);
-        padding: 3.5rem 2rem 3.5rem 2rem;
-        width: 100vw;
-        flex-wrap: wrap;
-        gap: 1.5rem;
+        @include containerItemProduto;
 
         p{
             @include fonte(2rem, 500);
@@ -131,9 +128,7 @@
         }
 
         .showcaseFiltro__item{
-            @include containerCardProduto;
-            position: relative;
-            
+            @include containerCardProduto;            
         }
     }
 }

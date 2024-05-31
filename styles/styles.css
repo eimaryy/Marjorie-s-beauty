@@ -108,6 +108,21 @@ header #container_header .header_botoes-list {
 }
 header #container_header .header_botoes-list .header_list-icon {
   cursor: pointer;
+  position: relative;
+}
+header #container_header .header_botoes-list .header_list-icon .header_itemSacola-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1b4b3f;
+  color: rgb(255, 255, 255);
+  border-radius: 30px;
+  width: 17px;
+  height: 17px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
 }
 header #container_header .header_botoes-list .header_list-icon a {
   color: rgb(0, 0, 0);
@@ -152,6 +167,7 @@ header #container_header .header_menu-cabecalho img {
   height: 1.5rem;
   object-fit: fill;
   margin: 0 1.5rem;
+  cursor: pointer;
 }
 header #container_header #header_list-menu .item-page, header #container_header #header_list-menu .header_list-item {
   width: 100vw;
@@ -275,6 +291,9 @@ header .pesquisa form .header__pesquisa-btn img {
   }
   header #container_header .header_botoes-list .header_list-icon .menu {
     display: none;
+  }
+  header #container_header .header_botoes-list .header_list-icon .header_itemSacola-number {
+    left: 2px;
   }
   header .pesquisa form {
     width: 50%;
@@ -452,6 +471,7 @@ header .pesquisa form .header__pesquisa-btn img {
   border-radius: 2%;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border: 1px solid #ebecee;
+  position: relative;
 }
 #showcase #showcase__produtos .showcase__container .swiper .swiper-pagination {
   position: initial;
@@ -477,10 +497,11 @@ header .pesquisa form .header__pesquisa-btn img {
   right: 5px;
   top: 6px;
   cursor: pointer;
+  border-radius: 30px;
 }
 .item__btn-fav .img-fav {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2.3rem;
+  height: 2.3rem;
   object-fit: fill;
 }
 
@@ -490,7 +511,7 @@ header .pesquisa form .header__pesquisa-btn img {
   width: auto;
   padding: 0.5rem;
   border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: "Platypi", serif;
   font-weight: 500;
   color: rgb(0, 0, 0);
@@ -612,6 +633,42 @@ header .pesquisa form .header__pesquisa-btn img {
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   }
 }
+#main__fav {
+  width: 100%;
+  margin: 10rem 0;
+}
+#main__fav #main__favoritados-Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main__fav #main__favoritados-Container .main_fav-titulo {
+  font-size: 2.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+}
+#main__fav #main__favoritados-Container .main__list-item-fav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem 2rem 3.5rem 2rem;
+  width: 100vw;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+#main__fav #main__favoritados-Container .main__list-item-fav .main__item-fav {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  border-radius: 2%;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ebecee;
+  position: relative;
+}
+
 footer {
   display: flex;
   flex-direction: column;

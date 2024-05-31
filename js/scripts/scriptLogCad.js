@@ -1,4 +1,4 @@
-import  cadastrar from "./formCad.js";
+import  cadastrar from "../formCad.js";
 const formulario = document.querySelector('.form__container');
 
 const login =  `
