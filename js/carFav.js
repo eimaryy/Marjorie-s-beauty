@@ -3,7 +3,7 @@ import { Produtos } from "./mock.js";
 
 export function load(){
     let favoritar = [];
-    favoritar = document.querySelectorAll(".item__btn-fav");
+   favoritar = document.querySelectorAll(".item__btn-fav");
     let adicionarCarrinho = document.querySelectorAll(".item__btn-sacola");
 
     for(let favorito of favoritar){
@@ -38,6 +38,13 @@ export function load(){
             mostraQuantidadeItem();
         });
     }
+}
+
+export function excluirItemCarrinho(lixeira){
+  let indexRemove = carrinho.indexOf(lixeira.name);
+  carrinho.splice(indexRemove, 1);
+  atualizaCarrinho();
+  return carrinho;
 }
 
 

@@ -6,7 +6,7 @@ export const Produtos = [{
     url: './assets/products/perfume0.jpg',
     alt: 'imagem perfume',
     descricao: 'Fiery desodorante colonia 90ml', 
-    preco: 'R$ '+100.00,
+    preco: 100.00,
 },
 {
     id: '2',
@@ -16,7 +16,7 @@ export const Produtos = [{
     url: './assets/products/serum0.jpg',
     alt: 'imagem Serum',
     descricao: 'Sérum ácido Hialurônico 30ml', 
-    preco: 'R$ '+20.00,
+    preco: 20.00,
     
 },
 {
@@ -27,7 +27,7 @@ export const Produtos = [{
     url: './assets/products/perfume1.jpg',
     alt: 'imagem perfume',
     descricao: 'Doré desodorante colonia 90ml', 
-    preco: 'R$ '+149.99,
+    preco: 149.99,
 
 },
 {
@@ -38,7 +38,7 @@ export const Produtos = [{
     url: './assets/products/batom1.jpg',
     alt: 'imagem batom',
     descricao: 'Batom cremoso rose 3,8g', 
-    preco: 'R$ '+14.99,
+    preco: 14.99,
 
 },
 {
@@ -49,7 +49,7 @@ export const Produtos = [{
     url: './assets/products/cremeHidra+1.jpg',
     alt: 'imagem Cremes hidratante',
     descricao: 'Creme hidratante 60g', 
-    preco: 'R$ '+35.49,
+    preco: 35.49,
 
 },
 {
@@ -60,7 +60,7 @@ export const Produtos = [{
     url: './assets/products/kitrosto.jpg',
     alt: 'imagem kit produtos Prudent',
     descricao: 'Skincare completo Prudent', 
-    preco: 'R$ '+76.35,
+    preco: 76.35,
 
 },
 {
@@ -71,7 +71,7 @@ export const Produtos = [{
     url: './assets/products/kitcabelo.jpg',
     alt: 'imagem kit produtos argent',
     descricao: 'kit para cabelos Argent', 
-    preco: 'R$ '+120.00,
+    preco: 120.00,
 
 },
 {
@@ -82,7 +82,7 @@ export const Produtos = [{
     url: './assets/products/perfume2.jpg',
     alt: 'imagem perfume préféré',
     descricao: 'Préféré desodorante colonia 40ml', 
-    preco: 'R$ '+200.00,
+    preco: 200.00,
 
 },
 {
@@ -93,7 +93,7 @@ export const Produtos = [{
     url: './assets/products/rosamosqueta.jpg',
     alt: 'imagem Creme facial rosa mosqueta',
     descricao: 'Creme facial Rosa Mosqueta 3,8g', 
-    preco: 'R$ '+25.00,
+    preco: 25.00,
 
 },
 {
@@ -104,7 +104,7 @@ export const Produtos = [{
     url: './assets/products/serum2.jpg',
     alt: 'imagem Serum Pour la peau',
     descricao: 'Serum rosa mosqueta 30ml', 
-    preco: 'R$ '+40.00,
+    preco: 40.00,
 
 },
 {
@@ -115,7 +115,7 @@ export const Produtos = [{
     url: './assets/products/rosamosqueta0.jpg',
     alt: 'imagem creme hidratante Pour la peau',
     descricao: 'creme hidratante rosa mosqueta 140g', 
-    preco: 'R$ '+40.00,
+    preco: 40.00,
 
 },
 {
@@ -126,7 +126,7 @@ export const Produtos = [{
     url: './assets/products/serum1.jpg',
     alt: 'imagem serum Lighten++',
     descricao: 'Serum revitalizante retinol puro 30ml', 
-    preco: 'R$ '+200.00,
+    preco: 200.00,
 
 },
 {
@@ -137,7 +137,7 @@ export const Produtos = [{
     url: './assets/products/saboneteArt1.jpg',
     alt: 'imagem Sabonete artificial',
     descricao: 'Sabonete Artesanal camomila 120g', 
-    preco: 'R$ '+119.99,
+    preco: 119.99,
 
 },
 {
@@ -148,7 +148,7 @@ export const Produtos = [{
     url: './assets/products/saboneteArt0.jpg',
     alt: 'imagem Sabonete artificial',
     descricao: 'Sabonete Artesanal de açafrão 120g', 
-    preco: 'R$ '+139.99,
+    preco: 139.99,
 
 },
 {
@@ -159,7 +159,7 @@ export const Produtos = [{
     url: './assets/products/saboneteliquido.jpg',
     alt: 'imagem Sabonete artificial',
     descricao: 'Sabonete Artesanal de alegrim 250ml', 
-    preco: 'R$ '+60.00,
+    preco: 60.00,
 
 },
 {
@@ -170,7 +170,7 @@ export const Produtos = [{
     url: './assets/products/saboneteArt.webp',
     alt: 'imagem Sabonete artificial',
     descricao: 'Sabonete Artesanal de glicerina 120g', 
-    preco: 'R$ '+109.99,
+    preco: +109.99,
 
 },
 {
@@ -181,7 +181,7 @@ export const Produtos = [{
     url: './assets/products/saboneteArt3.jpg',
     alt: 'imagem Sabonete artificial',
     descricao: 'Sabonete Artesanal argila branca 120g', 
-    preco: 'R$ '+79.90,
+    preco: +79.90,
 
 },
 {
@@ -192,7 +192,7 @@ export const Produtos = [{
     url: './assets/products/saboneteArt4.jpg',
     alt: 'imagem Sabonete artificial',
     descricao: 'Sabonete Artesanal rosa mosqueta + maracuja 120g', 
-    preco: 'R$ '+130.00,
+    preco: 130.00,
 
 },
 {
@@ -203,7 +203,7 @@ export const Produtos = [{
     url: './assets/products/saboneteArt5.jpg',
     alt: 'imagem Sabonete artificial',
     descricao: 'Sabonete Artesanal coco 120g', 
-    preco: 'R$ '+40.00,
+    preco: 40.00,
 
 },
 ];

@@ -14,7 +14,168 @@
             .main__item-fav{
                 @include containerCardProduto;
             }
+            .main__item-aviso{
+                @include fonte(1.8rem, 300);
+            }
+        }
+    }
+}
+
+#main__car{
+    width: 100%;
+    margin: 12rem 0 1rem 0;
+    @include centralizar(column, center);
+
     
+    .main__carrinho-vazio{
+        @include centralizar(column, center);
+        display: none;
+        h2{
+            color: $cor__verdeEscuro;
+            @include fonte(2.5rem, 500);
+            margin: 1rem;
+        }
+        p{
+            @include fonte(1.8rem, 300);
+            line-height: 2rem;
+            padding: 1rem;
+        }
+        a{
+            color: $cor__verdeEscuro;
+            font-weight: bolder;
+            transition: all 3s;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+        
+    }
+    #main__carrinho-Container{
+        @include centralizar(column, center);
+        gap: 4rem;
+        
+        .main__carrinho{
+            width: 95%;
+            border: 1px solid $cor__cinza;
+            border-radius: 5px;
+            
+            .main__carrinho-titulo{
+                @include fonte(2rem, 500);
+                padding: 1.5rem;
+                color: $cor__preto;
+            }
+
+            hr{
+                width: 100%;
+                border-color: $cor__cinzaClaro;
+            }
+
+            .main__carrinho-itemContainer{
+                .main__carrinho-item{
+                    @include centralizar(row, space-between);
+                    width: 100%;
+                    margin: 0.5rem 0;
+
+                    .car__img-produto{
+                        @include ajusteImg(100px, auto);
+                        width: 30%;
+                        margin: 0.5rem 1rem 0.5rem 0.5rem;
+                    }
+                    .item__carrinho-Container{
+                        @include centralizar(column, center);
+                        width: 70%;
+                        padding: 0 1rem 0 1rem;
+
+                        .item__Nome{
+                            @include fonte(1.5rem, 500);
+                            padding: 0.5rem;
+                        }
+                        .item__quantProduto{
+                            @include fonte(1.2rem, 500);
+                            text-wrap: wrap;
+                            color: $cor__cinza;
+                        }
+                        .item__container-preco{
+                            width: 100%;
+                            @include centralizar (row, space-between);
+
+                            .item__Preco{
+                                @include fonte(1.5rem, 500);
+                                padding: 1rem;
+                            }
+
+                            .item__precoLixeira-opcoes{
+                                .car__img-lixeira{
+                                    @include ajusteImg(15px, auto);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .main__carrinhoPagar-Container{
+            @include centralizar(column, center);
+            width: 95%;
+            border: 1px solid $cor__cinza;
+            border-radius: 5px;
+            padding: 1rem;
+            
+            .main__carrinhoPagar{
+                padding: 3rem;
+                width: 100%;
+                @include centralizar(row, space-between);
+
+                h3{
+                    @include fonte(2rem, bolder);
+                }
+                .main__carrinhoValor{
+                    @include fonte(2rem, bolder);
+                }
+            }
+            .main__btn-processeguirPagamento{
+                @include centralizar (row, center);
+                @include fonte(1.5rem, 400);
+                width: 95%;
+                padding: 1.5rem;
+                border-radius: 2px;
+                color: $cor__branco;
+                background-color: $cor__preto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:400px) {
+    #main__car{
+        #main__carrinho-Container{
+            .main__carrinho{
+                width: 70%;
+            }
+            .main__carrinhoPagar-Container{
+                width: 80%;
+            }
+        }
+    }       
+}
+
+@media screen and (min-width:700px) {
+    #main__car{
+        padding: 1rem;
+        #main__carrinho-Container{
+            flex-direction: row;
+            align-items: start;
+        }
+
+    }
+}
+@media screen and (min-width:900px) {
+    #main__car{
+        margin: 14rem 0 1rem 0;
+        #main__carrinho-Container{
+            width: 80%;
+            gap: 10rem;
         }
     }
 }

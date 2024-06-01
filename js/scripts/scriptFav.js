@@ -8,5 +8,11 @@ acenderFavoritos(Produtos, favoritos);
 load();
 
 const favQuantidade = document.querySelector(".main__fav-quant");
+const favoritosVazio = document.querySelector(".main_fav-titulo")
 
-favQuantidade.textContent = `(${favoritos.length})`;
+if(favoritos.length > 0){
+    favQuantidade.textContent = `(${favoritos.length})`;
+}else{
+    favoritosVazio.style.color = '#1b4b3f';
+
+}
