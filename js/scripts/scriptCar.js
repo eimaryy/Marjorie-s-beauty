@@ -1,7 +1,8 @@
-import { carrinho } from "../localStorage.js";
-import { acenderCarrinho } from "../mostra.js";
+import { carrinho } from "../storage/localStorage.js";
+import { acenderCarrinho } from "../utils/mostra.js";
 import { Produtos } from "../mock.js";
-import { mostraQuantidadeItem, load, excluirItemCarrinho } from "../carFav.js";
+import { mostraQuantidadeItem, load, excluirItemCarrinho } from "../utils/carFav.js";
+import { calculaValorCarrinho } from "../utils/calculaCarrinho.js"
 
 const valorAPagar = document.querySelector(".main__carrinhoValor");
 
@@ -12,19 +13,8 @@ load();
 verificaItensCarrinho();
 selecionarLixeiraCarrinho();
 
-function calculaValorCarrinho(Produtos, carrinho){
-    let valorTotalCarrinho = 0;
-    carrinho.forEach(item => {
-        for(let produto of Produtos){
-            if(item === produto.id){
-                valorTotalCarrinho += produto.preco;
-                break;
-            }
-        }
-    });
 
-    valorAPagar.textContent = valorTotalCarrinho.toFixed(2);
-}
+valorAPagar.textContent = calculaValorCarrinho(Produtos, carrinho).toFixed(2);
 
 function verificaItensCarrinho(){
         const carQuantidade = document.querySelector(".quant-prod");
@@ -50,7 +40,7 @@ let lixeiras = document.querySelectorAll(".car__img-lixeira");
            excluirItemCarrinho(lixeira);
            mostraQuantidadeItem();
            acenderCarrinho(Produtos, carrinho);
-           calculaValorCarrinho(Produtos, carrinho);
+           valorAPagar.textContent = calculaValorCarrinho(Produtos, carrinho).toFixed(2);
            verificaItensCarrinho();
            selecionarLixeiraCarrinho();
         });

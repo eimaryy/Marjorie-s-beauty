@@ -1,4 +1,4 @@
-import { favoritos } from "./localStorage.js";
+import { favoritos } from "../storage/localStorage.js";
 
 
 export function acenderSlider(Produtos, filtro) {

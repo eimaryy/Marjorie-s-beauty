@@ -1,7 +1,7 @@
-import { favoritos } from "../localStorage.js";
-import { acenderFavoritos } from "../mostra.js";
+import { favoritos } from "../storage/localStorage.js";
+import { acenderFavoritos } from "../utils/mostra.js";
 import { Produtos } from "../mock.js";
-import { mostraQuantidadeItem, load } from "../carFav.js";
+import { mostraQuantidadeItem, load } from "../utils/carFav.js";
 
 mostraQuantidadeItem();
 acenderFavoritos(Produtos, favoritos);

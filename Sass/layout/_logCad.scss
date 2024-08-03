@@ -1,0 +1,35 @@
+header{
+    @include centralizar(column, center);
+    margin: 1rem 0;
+}
+main{
+    width: 100%;
+    @include centralizar(column, center);
+}
+
+footer{
+    padding: 2rem 0;
+    .footer__termos{
+        @include centralizar(column, center);
+        gap: 2rem;
+
+        a{
+            @include fonte(1.5rem, 500);
+            color: $cor__verdeEscuro;
+            cursor: pointer;
+            &:hover{
+                color: $cor__cinza;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:500px) {
+
+ 
+    footer{
+        .footer__termos{
+            flex-direction: row;
+        }
+    }
+}

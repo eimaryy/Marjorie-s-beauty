@@ -55,7 +55,7 @@
         gap: 4rem;
         
         .main__carrinho{
-            width: 95%;
+            max-width: 95%;
             border: 1px solid $cor__cinza;
             border-radius: 5px;
             
@@ -117,7 +117,7 @@
         }
         .main__carrinhoPagar-Container{
             @include centralizar(column, center);
-            width: 95%;
+            max-width: 95%;
             border: 1px solid $cor__cinza;
             border-radius: 5px;
             padding: 1rem;
@@ -126,6 +126,7 @@
                 padding: 3rem;
                 width: 100%;
                 @include centralizar(row, space-between);
+                flex-wrap: wrap;
 
                 h3{
                     @include fonte(2rem, bolder);
@@ -135,13 +136,8 @@
                 }
             }
             .main__btn-processeguirPagamento{
-                @include centralizar (row, center);
+                @include botaoBlack(95%,1.5rem);
                 @include fonte(1.5rem, 400);
-                width: 95%;
-                padding: 1.5rem;
-                border-radius: 2px;
-                color: $cor__branco;
-                background-color: $cor__preto;
             }
         }
     }

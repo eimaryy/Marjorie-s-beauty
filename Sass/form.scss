@@ -1,6 +1,7 @@
-@import "default.scss";
-@import "variaveis.scss";
-@import "logCad.scss";
+@import "base/default";
+@import "base/variaveis";
+@import "layout/logCad";
+@import "layout/form";
 
 body{
    @include centralizar(column, center);

@@ -1,6 +1,6 @@
-import { acenderSlider } from "../mostra.js";
+import { acenderSlider } from "../utils/mostra.js";
 import { Produtos } from "../mock.js";
-import { load, mostraQuantidadeItem } from "../carFav.js";
+import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 
 acenderSlider(Produtos, '');
 mostraQuantidadeItem();

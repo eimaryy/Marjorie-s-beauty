@@ -102,6 +102,15 @@ a {
     }
 }
 
+@mixin botaoBlack($width, $pad){
+    @include centralizar (row, center);
+    width: $width;
+    padding: $pad;
+    border-radius: 2px;
+    color: $cor__branco;
+    background-color: $cor__preto;
+}
+
 @mixin containerCardProduto(){
     @include centralizar(column, start);
         border-radius: 2%;

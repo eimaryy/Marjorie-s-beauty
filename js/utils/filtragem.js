@@ -1,4 +1,4 @@
-import { Produtos } from "./mock.js";
+import { Produtos } from "../mock.js";
 import { acenderSlider } from "./mostra.js";
 import { headerMenuDesativo } from "./menu.js";
 import { load } from "./carFav.js";

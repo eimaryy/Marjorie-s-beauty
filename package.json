@@ -1,0 +1,12 @@
+{
+  "name": "marjorie",
+  "version": "1.0.0",
+  "description": "Marjorie`s Beauty Frontend",
+  "type": "module",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maria Eduarda Nery",
+  "license": "ISC"
+}

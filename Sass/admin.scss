@@ -1,0 +1,11 @@
+@import "base/default";
+@import "base/variaveis";
+@import "layout/header";
+@import "layout/manager";
+@import "layout/form";
+@import "layout/footer";
+
+body{
+    background-color: $cor__cinzaClaro;
+
+}

@@ -1,0 +1,40 @@
+#main__manager {
+    height: auto;
+    width: 100vw;
+    padding: 15rem 0 7rem 0 ;
+    @include centralizar(column, center);
+    background-color: $cor__branco;
+    gap: 5rem;
+
+    #main__managerBotoes{
+        width: 95vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+        gap: 10px;
+
+        .main__managerBotao{
+            @include centralizar(center, column);
+            
+            height: 6rem;
+            
+            .main__botaoAncora{
+                @include centralizar(center, center);
+                width: 100%;
+                height: 100%;
+                @include fonte(1.7rem, 400);
+                color: $cor__pretoDesbotado;
+                background-color: $cor__verdeClaro;
+                transition: background-color 1s;
+                &:hover{
+                    background-color: $cor__verdeVivoClaro;
+                    color: $cor__cinzaClaro;
+                }
+            }
+        }
+    }
+    #main__managerAcao{
+        width: 100vw;
+        @include centralizar(column, center);
+    }
+
+}
