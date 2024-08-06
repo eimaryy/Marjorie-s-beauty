@@ -37,4 +37,17 @@
         @include centralizar(column, center);
     }
 
+    
+    .main__managerAcaoSair{
+        @include botaoCompra();
+        border: 1px solid $cor__verdeClaro;
+        width: auto;
+        cursor: pointer;
+        transition: all 1s;
+        &:hover{
+            background-color: $cor__verdeClaro;
+            color: $cor__pretoDesbotado;
+        }
+    }
+
 }

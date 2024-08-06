@@ -350,6 +350,30 @@ header .pesquisa form .header__pesquisa-btn img {
   justify-content: center;
   align-items: center;
 }
+#main__manager .main__managerAcaoSair {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  width: 100%;
+  padding: 1rem;
+  border: solid 1px #1b4b3f;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s all;
+  color: #1b4b3f;
+  border: 1px solid #B0C5A4;
+  width: auto;
+  cursor: pointer;
+  transition: all 1s;
+}
+#main__manager .main__managerAcaoSair:hover {
+  background-color: #B0C5A4;
+  color: #2A363B;
+}
 
 form {
   display: flex;

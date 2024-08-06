@@ -8,7 +8,6 @@ async function listProdutos() {
     }catch(error){
         throw new Error(`Erro ao conectar com a API: ${error.statusText}`);
     }
-
 }
 
 async function createProduto(category, amount, status, name, file, alt, description, price) {
