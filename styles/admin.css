@@ -12,6 +12,10 @@
 
 body {
   min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -721,9 +725,6 @@ footer hr {
     padding: 1rem 0;
     display: block !important;
   }
-}
-body {
-  background-color: #ebecee;
 }
 
 /*# sourceMappingURL=admin.css.map */

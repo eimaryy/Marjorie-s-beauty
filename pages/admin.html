@@ -35,8 +35,9 @@
         <ul id="main__managerBotoes">
             <li class="main__managerBotao"><a class="main__botaoAncora" data-acao="criaProd" href="#">Criar produto</a></li>
             <li class="main__managerBotao"><a class="main__botaoAncora" data-acao="editProd" href="#">Editar produto</a></li>
-            <li class="main__managerBotao"><a class="main__botaoAncora" data-acao="delProd "href="#">Deletar produto</a></li>
+            <li class="main__managerBotao"><a class="main__botaoAncora" data-acao="delProd" href="#">Deletar produto</a></li>
             <li class="main__managerBotao"><a class="main__botaoAncora" data-acao="listProd" href="#">Listar Produtos</a></li>
+            <li class="main__managerBotao"><a class="main__botaoAncora" data-acao="criaUser" href="#">Criar Administrador</a></li>
             <li class="main__managerBotao"><a class="main__botaoAncora" data-acao="listUsers" href="#">Listar Usuários</a></li>
 
         </ul>
@@ -121,6 +122,13 @@
 
               <button class="main__managerAcaoSair">Cancelar</button>
         </template>
+        <template id="criaUser-template">
+            <form>
+
+                <p>teste</p>
+            </form>
+            <button class="main__managerAcaoSair">Cancelar</button>
+        </template>
 
     </main>
     <footer>
@@ -160,6 +168,9 @@
     </footer>
 
     <script src="../js/scripts/scriptAdmin.js" type="module"></script>
+    <script src="../js/storage/cookies.js" type="module"></script>
+
+
 
 </body>
 </html>
