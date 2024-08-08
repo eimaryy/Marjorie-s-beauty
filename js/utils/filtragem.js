@@ -8,7 +8,7 @@ const showcase = document.querySelector('#showcase');
 const showcaseComFiltro = document.querySelector('#showcaseFiltro');
 const bannerinfo = document.querySelector('#banner__infos')
 const bannerSlide = document.querySelector('.swiper')
-const barraDePesquisa = document.querySelector('#header_pesquisa-caixa'); 
+const barraDePesquisa = document.querySelector('#pesquisaItem'); 
 
 for (let sessao of categorias){
     sessao.addEventListener('click', (e) => {
@@ -32,12 +32,12 @@ for (let sessao of categorias){
     })
 }
 
-barraDePesquisa.addEventListener('input', (e) =>{ 
+barraDePesquisa.addEventListener('submit', (e) =>{ 
     e.preventDefault();
-    filtrarPesquisa(Produtos);
+    filtrarPesquisa(Produtos, barraDePesquisa.pesquisa.value);
 });
 
-function filtrarPesquisa(Produtos){
+function filtrarPesquisa(Produtos, valorPesquisa){
     let listaProdutosFiltrados = [];
 
     showcase.style.display = 'none';
@@ -45,12 +45,12 @@ function filtrarPesquisa(Produtos){
     bannerinfo.style.display = 'none';
     showcaseComFiltro.style.display = 'flex';
 
-    if(barraDePesquisa.value != ""){
+    if(valorPesquisa != ""){
         for(let produto of Produtos){
             let produtoConvertido = produto.descricao.toLocaleLowerCase();
-            let valorPesquisa = barraDePesquisa.value.toLocaleLowerCase();
+            let Pesquisa = valorPesquisa.toLocaleLowerCase();
             
-            if(produtoConvertido.includes(valorPesquisa)){
+            if(produtoConvertido.includes(Pesquisa)){
                 listaProdutosFiltrados.push(produto);
             }
         }

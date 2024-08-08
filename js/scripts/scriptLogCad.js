@@ -1,21 +1,31 @@
-import  cadastrar from "../utils/formCad.js";
+import AuthService from "../services/AuthService.js";
+import  cadastrar from "../utils/form.js";
 import { loadForm } from "../utils/domUtils.js";
+// import UserService from "../services/UserService.js";
 
-const formulario = document.querySelector('.form__container');
+const formularioContainer = document.querySelector('.form__container');
+const formulario = document.querySelector("form"); 
 
-loadForm("login", formulario);
+loadForm("login", formularioContainer);
+cadastrar();
+formulario.addEventListener("submit", evento => AuthService.login(evento, formulario));
+
 
 let semConta = document.querySelector('.formulario__semConta');
 semConta.addEventListener('click', () =>{
     if(semConta.name === 'cadastrar'){
-        loadForm("cadastro", formulario);
+        loadForm("cadastro", formularioContainer);
         semConta.name = 'logar';
         semConta.textContent = 'JÁ POSSUO UMA CONTA';
         cadastrar();
+        // formulario.addEventListener("submit", evento => UserService.criarUser(evento, formulario));
     } else{
-        formulario.innerHTML = login;
+        loadForm("login", formularioContainer);
         semConta.name = 'cadastrar';
         semConta.textContent = 'NÃO POSSUO UMA CONTA';
-
+        // formulario.addEventListener("submit", evento => AuthService.login(evento, formulario));
     }
 })
+
+
+

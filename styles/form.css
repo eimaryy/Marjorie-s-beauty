@@ -12,6 +12,10 @@
 
 body {
   min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -74,102 +78,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-main form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  padding: 2rem;
-  border: solid 2px #B0C5A4;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px #7FB57D;
-  margin: 3rem;
-}
-main form .form__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 2rem;
-}
-main form .form__container .formulario__campo {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  border: none;
-  width: 95%;
-}
-main form .form__container .formulario__campo .campo {
-  text-align: start;
-  line-height: 20px;
-  padding: 0.5rem 0;
-  font-size: 1.4rem;
-  font-family: "Platypi", serif;
-  font-weight: 500;
-}
-main form .form__container .formulario__campo .campo_input {
-  display: block;
-  border-radius: 5px;
-  width: 100%;
-  padding: 1rem;
-  border: solid 1px #B0C5A4;
-}
-main form .form__container .mensagem-erro {
-  color: red;
-  margin: 0.5rem;
-  font-size: 1.4rem;
-  font-family: "Platypi", serif;
-  font-weight: bolder;
-}
-main form .form__container .formulario__termos {
-  border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-main form .form__container .formulario__termos .termos__input {
-  cursor: pointer;
-  width: 40px;
-  height: auto;
-  margin: 0.5rem 0;
-}
-main form .form__container .formulario__termos .termos__texto {
-  font-size: 1.4rem;
-  font-family: "Platypi", serif;
-  font-weight: 500;
-  cursor: pointer;
-}
-main form .form__container .formulario__botao {
-  background-color: #1b4b3f;
-  margin: 2em auto;
-  display: block;
-  border: solid 2px #1b4b3f;
-  padding: 1em 2em;
-  border-radius: 10px;
-  font-size: 18px;
-  font-family: "Platypi", serif;
-  font-weight: 600;
-  line-height: 22px;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  transition: all 1s;
-}
-main form .form__container .formulario__botao:hover {
-  background-color: #ebecee;
-  color: #1b4b3f;
-  border: solid 2px #B0C5A4;
-}
-main form a {
-  font-size: 1.5rem;
-  font-family: "Platypi", serif;
-  font-weight: 500;
-  padding: 1rem 0;
-  cursor: pointer;
-  color: #1b4b3f;
-}
 
 footer {
   padding: 2rem 0;
@@ -193,11 +101,135 @@ footer .footer__termos a:hover {
 }
 
 @media screen and (min-width: 500px) {
-  main form {
-    width: 50%;
-  }
   footer .footer__termos {
     flex-direction: row;
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 2rem;
+  border: solid 2px #B0C5A4;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #7FB57D;
+  margin: 3rem;
+}
+form .form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+form .form__container .formulario__campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border: none;
+  width: 95%;
+}
+form .form__container .formulario__campo .campo, form .form__container .formulario__campo legend {
+  text-align: start;
+  line-height: 20px;
+  padding: 0.5rem 0;
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+}
+form .form__container .formulario__campo .campo_input {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  padding: 1rem;
+  border: solid 1px #B0C5A4;
+}
+form .form__container .formulario__campoRadio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: none;
+  padding: 1rem;
+}
+form .form__container .formulario__campoRadio .campoRadio, form .form__container .formulario__campoRadio legend {
+  text-align: start;
+  line-height: 20px;
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+form .form__container .formulario__campoRadio .campo_inputRadio {
+  display: inline-block;
+  margin-left: 1rem;
+  border: solid 1px #B0C5A4;
+  accent-color: #1b4b3f;
+}
+form .form__container .formulario__termos {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+  gap: 0.5rem;
+}
+form .form__container .formulario__termos .termos__input {
+  cursor: pointer;
+  width: 1.8rem;
+  zoom: 1.3;
+  height: auto;
+  accent-color: #1b4b3f;
+}
+form .form__container .formulario__termos .termos__texto {
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+form .form__container .formulario__botao {
+  background-color: #1b4b3f;
+  margin: 2em auto;
+  display: block;
+  border: solid 2px #1b4b3f;
+  padding: 1em 2em;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "Platypi", serif;
+  font-weight: 600;
+  line-height: 22px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 1s;
+}
+form .form__container .formulario__botao:hover {
+  background-color: #ebecee;
+  color: #1b4b3f;
+  border: solid 2px #B0C5A4;
+}
+form a {
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  padding: 1rem 0;
+  cursor: pointer;
+  color: #1b4b3f;
+}
+form .mensagem-erro {
+  color: red;
+  margin: 0.5rem;
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: bolder;
+}
+
+@media screen and (min-width: 500px) {
+  form {
+    width: 50%;
   }
 }
 body {

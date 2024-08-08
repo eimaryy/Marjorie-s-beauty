@@ -48,6 +48,10 @@ const mensagens = {
     },
     termos: {
         valueMissing: 'Você deve aceitar nossos termos antes de continuar.',
+    },
+    senha:{
+        valueMissing: 'Você deve adicionar sua senha.',
+        tooShort: "por favor, crie uma senha forte com mais de 4 caractéres."
     }
 }
 
@@ -62,12 +66,11 @@ function verificaCampo(campo){
             mensagem = mensagens[campo.name][erro];
         }
     })
-    const mensagemErro =campo.parentNode.querySelector('.mensagem-erro');
+    const mensagemErro = campo.parentNode.nextElementSibling;
     const validadorDeInput = campo.checkValidity();
     if (!validadorDeInput){
         mensagemErro.textContent = mensagem; 
     } else{
-        console.log(mensagem);
         mensagemErro.textContent = '';
     }
 }

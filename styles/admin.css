@@ -442,25 +442,22 @@ form .form__container .formulario__campoRadio .campo_inputRadio {
   border: solid 1px #B0C5A4;
   accent-color: #1b4b3f;
 }
-form .form__container .mensagem-erro {
-  color: red;
-  margin: 0.5rem;
-  font-size: 1.4rem;
-  font-family: "Platypi", serif;
-  font-weight: bolder;
-}
 form .form__container .formulario__termos {
   border: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+  gap: 0.5rem;
 }
 form .form__container .formulario__termos .termos__input {
   cursor: pointer;
-  width: 40px;
+  width: 1.8rem;
+  zoom: 1.3;
   height: auto;
-  margin: 0.5rem 0;
+  accent-color: #1b4b3f;
 }
 form .form__container .formulario__termos .termos__texto {
   font-size: 1.4rem;
@@ -495,6 +492,13 @@ form a {
   padding: 1rem 0;
   cursor: pointer;
   color: #1b4b3f;
+}
+form .mensagem-erro {
+  color: red;
+  margin: 0.5rem;
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 500px) {
@@ -555,11 +559,13 @@ footer #footer__newsletter .footer__termos {
   align-items: center;
   align-items: start;
   padding: 1rem 0 1rem 0;
-  gap: 0.5rem;
 }
 footer #footer__newsletter .footer__termos input {
-  width: 18px;
-  height: 18px;
+  cursor: pointer;
+  width: 1.8rem;
+  zoom: 1.3;
+  height: auto;
+  accent-color: #1b4b3f;
 }
 footer #footer__newsletter .footer__termos .footer__newsletter-termos {
   font-size: 1.2rem;
