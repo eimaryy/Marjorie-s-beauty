@@ -1,16 +1,16 @@
-async function listProdutos() {
+async function listProdutos(pagination = '') {
     try{
-        const endpointDaAPI = 'http://127.0.0.1:8000/produtos'
+        const endpointDaAPI = `http://127.0.0.1:8000/produtos${pagination}`;
         const conexao = await fetch(endpointDaAPI)
         const conexaoConvertida = await conexao.json()
         return conexaoConvertida;
 
     }catch(error){
-        throw new Error(`Erro ao conectar com a API: ${error.statusText}`);
+        throw new Error(`Erro ao conectar com a API`);
     }
 }
 
-async function createProduto(category, amount, status, name, file, alt, description, price) {
+async function createProduto(category, amount, status, name, file, alt, description, price, accessToken) {
 
     const formData = new FormData();
     formData.append("category", category);
@@ -24,6 +24,9 @@ async function createProduto(category, amount, status, name, file, alt, descript
 
     const conexao = await fetch("http://127.0.0.1:8000/produto/create", {
         method: "POST",
+        headers:{
+            'Authorization': `Bearer ${accessToken}`, 
+        }, 
         body: formData
     });
     if(!conexao.ok){
@@ -44,3 +47,5 @@ export const conectaAPIProduto = {
 //     console.log(mostra);
 //  }
 
+
+// teste()

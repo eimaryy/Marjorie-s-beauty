@@ -4,13 +4,18 @@ class UserService {
         evento.preventDefault();
 
         let role;
-        const roles = form.role;
-        for (let i = 0; i < roles.length; i++) {
-            if (roles[i].checked) {
-                role = roles[i].value;
-                break;
+        if(form.role){
+            const roles = form.role;
+            for (let i = 0; i < roles.length; i++) {
+                if (roles[i].checked) {
+                    role = roles[i].value;
+                    break;
+                }
             }
+        }else{
+            role = "Cliente";
         }
+
         const name = form.nome.value;
         const sobrenome = form.sobrenome.value;
         const CPF = form.cpf.value;
@@ -22,7 +27,8 @@ class UserService {
 
     try{
        const res = await conectaAPIUser.createUser(name, sobrenome, CPF, aniversarioDate, email, senha, role);
-        alert(res.message);
+        alert(`${res.message}. Por favor, realize o login!`);
+        window.location.href = "./logCad.html"
     } catch(e){
         alert(e);
     }

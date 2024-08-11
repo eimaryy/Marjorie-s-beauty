@@ -22,6 +22,20 @@ async function createUser(name, lastName, CPF, aniversario, email, password, rol
     return conexaoConvertida;
 }
 
+async function findUserId(accessToken) {
+    const conexao = await fetch("http://127.0.0.1:8000/user", {
+        method: "GET",
+        headers:{
+            'Authorization': `Bearer ${accessToken}`, 
+            "Content-type": "application/json"
+        }, 
+    }); 
+    const conexaoConvertida = await conexao.json();
+    return conexaoConvertida;
+
+}
+
 export const conectaAPIUser = {
-    createUser
+    createUser, 
+    findUserId,
 }

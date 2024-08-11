@@ -1,6 +1,9 @@
 import { acenderSlider } from "../utils/mostra.js";
-import { Produtos } from "../mock.js";
+// import { Produtos } from "../mock.js";
+import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
+
+let Produtos = await ProdutoService.listarProduto(`?limit=15`);
 
 acenderSlider(Produtos, '');
 mostraQuantidadeItem();
@@ -42,6 +45,7 @@ const showcase = document.querySelector('#showcase');
 const showcaseComFiltro = document.querySelector('#showcaseFiltro');
 const bannerinfo = document.querySelector('#banner__infos')
 const bannerSlide = document.querySelector('.swiper')
+const swiperButton = document.querySelectorAll('.btnSwiper');
 
 btnVoltarInicio.addEventListener('click', (e) => {
   e.preventDefault();
@@ -50,4 +54,5 @@ btnVoltarInicio.addEventListener('click', (e) => {
   showcase.style.display = 'block';
   showcaseComFiltro.style.display = 'none';
 });
+
 

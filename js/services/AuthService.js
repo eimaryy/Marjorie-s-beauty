@@ -1,4 +1,5 @@
 import { conectaAPIAuth } from "../api/authEndpoint.js";
+import { conectaAPIUser } from "../api/userEndpoint.js";
 import Cookies from "../storage/cookies.js";
 
 class AuthService {
@@ -12,12 +13,15 @@ class AuthService {
             const res = await conectaAPIAuth.login(email, senha);
             await Cookies.createCookie("accessToken", res.accessToken);
 
-            // const user = await UserService.findUserId(res.accessToken);
+            const user = await conectaAPIUser.findUserId(res.accessToken);
 
-            // if(){
-
-            // }
-         window.location.href = "../index.html";   
+            await Cookies.createCookie("nameUser", user.name);
+            
+            if(user.role === "admin"){
+                window.location.href = "./admin.html";   
+            }else{
+                window.location.href = "../index.html";   
+            }
 
          } catch(e){
              alert(e);

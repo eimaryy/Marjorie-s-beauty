@@ -473,7 +473,6 @@ header .pesquisa form .header__pesquisa-btn img {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  border-radius: 2%;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border: 1px solid #ebecee;
   position: relative;
@@ -485,7 +484,7 @@ header .pesquisa form .header__pesquisa-btn img {
 
 .img-produto {
   display: block;
-  width: 300px;
+  width: auto;
   height: 200px;
   object-fit: fill;
   border-radius: 2% 2% 0 0;
@@ -620,7 +619,6 @@ header .pesquisa form .header__pesquisa-btn img {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  border-radius: 2%;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border: 1px solid #ebecee;
   position: relative;
@@ -668,7 +666,6 @@ header .pesquisa form .header__pesquisa-btn img {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  border-radius: 2%;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
   border: 1px solid #ebecee;
   position: relative;

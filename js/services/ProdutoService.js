@@ -1,3 +1,4 @@
+import Cookies from "../storage/cookies.js"
 import { conectaAPIProduto } from "../api/produtoEndpoint.js";
 
 class ProdutoService {
@@ -22,12 +23,28 @@ class ProdutoService {
         const price = Number.parseFloat(form.price.value);
 
     try{
-       const res = await conectaAPIProduto.createProduto(category, amount, status, name, file, alt, description, price);
+       const accessToken = await Cookies.pegaCookie("accessToken");
+       const res = await conectaAPIProduto.createProduto(category, amount, status, name, file, alt, description, price, accessToken);
         alert(res.message);
     } catch(e){
         alert(e);
     }
     }
+
+    static async listarProduto(pagination){
+        try{
+            const res = await conectaAPIProduto.listProdutos(pagination);
+            
+            if(res.length === 0){
+                return {message: `Não há produtos cadastrados`}
+            }
+            return res;
+        }catch(e){
+            console.log(e);
+        }
+
+    }
 }
+
 
 export default ProdutoService;
