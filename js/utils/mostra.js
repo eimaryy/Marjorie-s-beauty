@@ -63,30 +63,26 @@ export function acenderSlider(Produtos, filtro) {
     }
 }
 
-export function acenderFavoritos(Produtos, listaItens){
-    let produtosSolicitados = [];
+export function acenderFavoritos(Produtos){
+    const mostraFavContainer = document.querySelector('.main__list-item-fav')
     let mensagem = '';
 
-    if(listaItens === favoritos){
+    if(Produtos.length === 0){
         mensagem = 'Você não possui produtos na sua lista de favoritos';
-        listaItens.forEach(item => {
-            for(let produto of Produtos){
-                if (item === produto.id){
-                    produtosSolicitados.push(produto);
-                    break;
-                }
-            }
-        });
+        return mostraFavContainer.innerHTML = `
+        <div class="main__item-aviso">
+            <p>${mensagem}.</p>
+        </div>`
     }
-    const mostraFavContainer = document.querySelector('.main__list-item-fav')
-    produtosSolicitados.reverse().forEach(produto => {
+   
+    Produtos.reverse().forEach(produto => {
         const produtoHTML = `
         <div class="main__item-fav">
             <img class="img-produto" src="${UrlBaseApi}uploads/${produto.src}" alt="${produto.alt}">
             <h3 class="item__infoStatus">${produto.status}</h3>
             <a class="item__btn-fav" name="${produto._id}">
-                <img class="img-fav" name="${produtosSolicitados ? 'ativo' : 'desativo'}"
-                src="${produtosSolicitados ? '../assets/heart-solid.svg' : 'assets/heart-regular.svg'}" 
+                <img class="img-fav" name="${Produtos ? 'ativo' : 'desativo'}"
+                src="${Produtos ? '../assets/heart-solid.svg' : 'assets/heart-regular.svg'}" 
                 alt="Icone de coração">
             </a>
             <div class="item__informacoes-Container">
@@ -100,12 +96,7 @@ export function acenderFavoritos(Produtos, listaItens){
             mostraFavContainer.innerHTML += produtoHTML;
     });
 
-    if(produtosSolicitados.length === 0){
-        mostraFavContainer.innerHTML = `
-        <div class="main__item-aviso">
-            <p>${mensagem}.</p>
-        </div>`
-    } 
+    
 }
 
 export function acenderCarrinho(Produtos, carrinho){

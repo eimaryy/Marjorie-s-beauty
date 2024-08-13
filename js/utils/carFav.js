@@ -1,5 +1,6 @@
+import { conectaAPIProduto } from "../api/produtoEndpoint.js";
 import { favoritos, carrinho, atualizaFavoritos, atualizaCarrinho } from "../storage/localStorage.js";
-import { Produtos } from "../mock.js";
+// import { Produtos } from "../mock.js";
 
 export function load(){
     let favoritar = [];
