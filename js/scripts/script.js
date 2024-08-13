@@ -3,9 +3,9 @@ import { acenderSlider } from "../utils/mostra.js";
 import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 
-let Produtos = await ProdutoService.listarProduto(`?limit=15`);
+let Produtos = await ProdutoService.listarProduto(`?limit=7`);
 
-acenderSlider(Produtos, '');
+acenderSlider(Produtos, false);
 mostraQuantidadeItem();
 load();
 
@@ -55,8 +55,16 @@ btnVoltarInicio.addEventListener('click', (e) => {
   showcaseComFiltro.style.display = 'none';
 });
 
+let number = 1;
 for(let btn of swiperButton){
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', async () => {
     console.log('clicado')
+    number++;
+    Produtos = await ProdutoService.listarProduto(`?page=${number}`);
+
+    if(Produtos.length){
+      acenderSlider(Produtos, false);
+    }
+
   })
 }
