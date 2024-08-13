@@ -56,7 +56,8 @@ btnVoltarInicio.addEventListener('click', (e) => {
 });
 
 let number = 1;
-for(let btn of swiperButton){
+const botaoSlide = [swiperButton[2], swiperButton[3]]
+for(let btn of botaoSlide){
   btn.addEventListener('click', async () => {
     console.log('clicado')
     number++;
@@ -65,5 +66,6 @@ for(let btn of swiperButton){
     if(Produtos.length){
       acenderSlider(Produtos, false);
     }
+    load();
   })
 }

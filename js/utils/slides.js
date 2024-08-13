@@ -5,7 +5,8 @@ let swiper1;
 let swiper2;
 
 document.addEventListener('DOMContentLoaded', () => {
-for( let i= 1; i < swiperContainer.length; i++){
+for( let i = 0; i < swiperContainer.length; i++){
+  if(i > 1){
     swiper1 = new Swiper(swiperContainer[i], {
      spaceBetween: 15,
      slidesPerView: 1.2,
@@ -43,31 +44,32 @@ for( let i= 1; i < swiperContainer.length; i++){
        },
    },
   });
-}
-
-swiper2 = new Swiper(swiperContainer[0], {
-    spaceBetween: 15,
-    slidesPerView: 1,
-    setWrapperSize:true,
-    effect: 'coverflow',
-  coverflowEffect: {
-    rotate: 30,
-    slideShadows: false,
-  },
-
-    autoplay: {
+  }else{ 
+    swiper2 = new Swiper(swiperContainer[i], {
+      spaceBetween: 15,
+      slidesPerView: 1,
+      setWrapperSize:true,
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 30,
+        slideShadows: false,
+      },
+      
+      autoplay: {
         delay: 5000,
       },
-
-    pagination: {
+      
+      pagination: {
         el: '.swiper-pagination',
         clickable: true,
-     },
-     navigation: {
+      },
+      navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-}); 
-
-
+    }); 
+    
+  }
+    
+  }
 });
