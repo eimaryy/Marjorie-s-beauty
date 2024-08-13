@@ -1,6 +1,8 @@
+import { UrlBaseApi } from "./server.js";
+
 async function createUser(name, lastName, CPF, aniversario, email, password, role) {
 
-    const conexao = await fetch("http://127.0.0.1:8000/user/create", {
+    const conexao = await fetch(`${UrlBaseApi}user/create`, {
         method: "POST",
         headers:{
             "Content-type": "application/json"
@@ -23,7 +25,7 @@ async function createUser(name, lastName, CPF, aniversario, email, password, rol
 }
 
 async function findUserId(accessToken) {
-    const conexao = await fetch("http://127.0.0.1:8000/user", {
+    const conexao = await fetch(`${UrlBaseApi}user`, {
         method: "GET",
         headers:{
             'Authorization': `Bearer ${accessToken}`, 

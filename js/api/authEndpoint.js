@@ -1,6 +1,8 @@
+import { UrlBaseApi } from "./server.js";
+
 async function login(email, senha){
 
-    const conexao = await fetch("http://127.0.0.1:8000/auth/login", {
+    const conexao = await fetch(`${UrlBaseApi}auth/login`, {
         method: "POST", 
         headers: {
             "Content-type": "application/json"

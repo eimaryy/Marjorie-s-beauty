@@ -1,26 +1,33 @@
 import { favoritos } from "../storage/localStorage.js";
 
 export function acenderSlider(Produtos, filtro) {
+
+    const showcase = document.querySelector('#showcase');
     
     if(Produtos.message){
-        return alert(Produtos.message);
+        const showcaseProdutos = document.querySelector('#showcase__produtos');
+        showcaseProdutos.style.display = 'none';
+        const paragrafo = document.createElement('p');
+        paragrafo.className = 'showcase__produtosMessage';
+        paragrafo.textContent = 'Não há produtos para mostrar no momento :/';
+
+        showcase.appendChild(paragrafo);
+
+        return;
     }  
 
     const swiperContainer1 = document.querySelector('.s1');
     const swiperContainer2 = document.querySelector('.s2');
     const showcaseComFiltro = document.querySelector('#showcaseFiltro_container');
-    const showcase = document.querySelector('#showcase');
     
     showcaseComFiltro.innerHTML = '';
-    
-    const ProdutosFiltrados = filtro ? filtro : Produtos;
-    
-    if (ProdutosFiltrados.length === 0) {
+        
+    if (Produtos.length === 0 && filtro) {
         showcaseComFiltro.innerHTML = '<p>Essa sessão está vazia no momento.</p>';
         return;
     }
     
-    ProdutosFiltrados.forEach(produto => {
+    Produtos.forEach(produto => {
         let isFav = favoritos.find((element) => element == produto._id);
         const produtoHTML = `
         <div class="${filtro ? 'showcaseFiltro__item' : 'swiper-slide'}">
@@ -43,7 +50,7 @@ export function acenderSlider(Produtos, filtro) {
         if (filtro) {
             showcaseComFiltro.innerHTML += produtoHTML;
         } else {
-            const container = produto.categoria !== 'Artesanal' ? swiperContainer1 : swiperContainer2;
+            const container = produto.category !== 'artesanal' ? swiperContainer1 : swiperContainer2;
             container.innerHTML += produtoHTML;
         }
     });

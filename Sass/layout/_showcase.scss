@@ -145,3 +145,8 @@
         }
     }
 }
+
+.showcase__produtosMessage{
+    margin: 4rem 0;
+    @include fonte(2rem, 400);
+}

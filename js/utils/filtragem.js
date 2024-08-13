@@ -1,4 +1,4 @@
-import { Produtos } from "../mock.js";
+import { conectaAPIProduto } from "../api/produtoEndpoint.js";
 import { acenderSlider } from "./mostra.js";
 import { headerMenuDesativo } from "./menu.js";
 import { load } from "./carFav.js";
@@ -11,22 +11,17 @@ const bannerSlide = document.querySelector('.swiper')
 const barraDePesquisa = document.querySelector('#pesquisaItem'); 
 
 for (let sessao of categorias){
-    sessao.addEventListener('click', (e) => {
+    sessao.addEventListener('click', async (e) => {
         e.preventDefault();
         headerMenuDesativo();
         showcase.style.display = 'none';
         bannerSlide.style.display = 'none'; 
         bannerinfo.style.display = 'none';
         showcaseComFiltro.style.display = 'flex';
-        let listaProdutosFiltrados = [];
 
-        for(let produto of Produtos){
-            if(produto.categoria == sessao.name){
-                listaProdutosFiltrados.push(produto);
-            }
-        }
+        const listaProdutosFiltrados = await conectaAPIProduto.findProdutoCategory(sessao.name, "?limit=25");
 
-        acenderSlider(Produtos, listaProdutosFiltrados);
+        acenderSlider(listaProdutosFiltrados, true);
         load();
 
     })
@@ -34,27 +29,19 @@ for (let sessao of categorias){
 
 barraDePesquisa.addEventListener('submit', (e) =>{ 
     e.preventDefault();
-    filtrarPesquisa(Produtos, barraDePesquisa.pesquisa.value);
+    filtrarPesquisa(barraDePesquisa.pesquisa.value);
 });
 
-function filtrarPesquisa(Produtos, valorPesquisa){
-    let listaProdutosFiltrados = [];
-
+async function filtrarPesquisa(valorPesquisa){
     showcase.style.display = 'none';
     bannerSlide.style.display = 'none'; 
     bannerinfo.style.display = 'none';
     showcaseComFiltro.style.display = 'flex';
-
     if(valorPesquisa != ""){
-        for(let produto of Produtos){
-            let produtoConvertido = produto.descricao.toLocaleLowerCase();
-            let Pesquisa = valorPesquisa.toLocaleLowerCase();
-            
-            if(produtoConvertido.includes(Pesquisa)){
-                listaProdutosFiltrados.push(produto);
-            }
-        }
-        acenderSlider(Produtos, listaProdutosFiltrados);
+
+       const listaProdutosFiltrados = await conectaAPIProduto.searchProduto(valorPesquisa, "?limit=20");
+        
+        acenderSlider(listaProdutosFiltrados, true);
         load();
     } 
 

@@ -1,6 +1,8 @@
+import { UrlBaseApi } from "./server.js";
+
 async function listProdutos(pagination = '') {
     try{
-        const endpointDaAPI = `http://127.0.0.1:8000/produtos${pagination}`;
+        const endpointDaAPI = `${UrlBaseApi}produtos${pagination}`;
         const conexao = await fetch(endpointDaAPI)
         const conexaoConvertida = await conexao.json()
         return conexaoConvertida;
@@ -9,6 +11,46 @@ async function listProdutos(pagination = '') {
         throw new Error(`Erro ao conectar com a API`);
     }
 }
+
+async function searchProduto(keyword = '', pagination) {
+    if(keyword.trim() === ""){
+        return {message: "Não foi possivel realizar a pesquisa. O campo esta vazio!"}
+    }
+    try{
+        const endpointDaAPI = `${UrlBaseApi}produtos/search/keyword/${keyword}${pagination}`;
+        const conexao = await fetch(endpointDaAPI)
+        const conexaoConvertida = await conexao.json()
+        return conexaoConvertida;
+
+    }catch(error){
+        throw new Error(`Erro ao conectar com a API`);
+    }
+}
+
+async function findProdutoCategory(keyword = '', pagination) {
+    try{
+        const endpointDaAPI = `${UrlBaseApi}produtos/category/${keyword}${pagination}`;
+        const conexao = await fetch(endpointDaAPI)
+        const conexaoConvertida = await conexao.json()
+        return conexaoConvertida;
+
+    }catch(error){
+        throw new Error(`Erro ao conectar com a API`);
+    }
+}
+
+async function findProdutoId(id) {
+    try{
+        const endpointDaAPI = `${UrlBaseApi}produto/search/${id}`;
+        const conexao = await fetch(endpointDaAPI)
+        const conexaoConvertida = await conexao.json()
+        return conexaoConvertida;
+
+    }catch(error){
+        throw new Error(`Erro ao conectar com a API`);
+    }
+}
+
 
 async function createProduto(category, amount, status, name, file, alt, description, price, accessToken) {
 
@@ -22,7 +64,7 @@ async function createProduto(category, amount, status, name, file, alt, descript
     formData.append("description", description);
     formData.append("price", price);
 
-    const conexao = await fetch("http://127.0.0.1:8000/produto/create", {
+    const conexao = await fetch(`${UrlBaseApi}produto/create`, {
         method: "POST",
         headers:{
             'Authorization': `Bearer ${accessToken}`, 
@@ -38,11 +80,14 @@ async function createProduto(category, amount, status, name, file, alt, descript
 
 export const conectaAPIProduto = {
     listProdutos,
+    searchProduto,
+    findProdutoId,
+    findProdutoCategory,
     createProduto
 }
 
 //  async function teste(){
-//     const mostra = await conectaAPIProduto.listProdutos();
+//     const mostra = await conectaAPIProduto.findProdutoCategory("Artesanal", "?limit=10");
 
 //     console.log(mostra);
 //  }
