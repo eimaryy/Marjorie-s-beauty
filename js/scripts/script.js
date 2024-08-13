@@ -3,7 +3,7 @@ import { acenderSlider } from "../utils/mostra.js";
 import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 
-let Produtos = await ProdutoService.listarProduto(`?limit=7`);
+let Produtos = await ProdutoService.listarProduto(`?limit=12`);
 
 acenderSlider(Produtos, false);
 mostraQuantidadeItem();
@@ -65,6 +65,5 @@ for(let btn of swiperButton){
     if(Produtos.length){
       acenderSlider(Produtos, false);
     }
-
   })
 }
