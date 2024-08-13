@@ -45,7 +45,7 @@ const showcase = document.querySelector('#showcase');
 const showcaseComFiltro = document.querySelector('#showcaseFiltro');
 const bannerinfo = document.querySelector('#banner__infos')
 const bannerSlide = document.querySelector('.swiper')
-const swiperButton = document.querySelectorAll('.btnSwiper');
+const swiperButton = document.querySelectorAll('.swiper-button-next');
 
 btnVoltarInicio.addEventListener('click', (e) => {
   e.preventDefault();
@@ -55,4 +55,8 @@ btnVoltarInicio.addEventListener('click', (e) => {
   showcaseComFiltro.style.display = 'none';
 });
 
-
+for(let btn of swiperButton){
+  btn.addEventListener('click', () => {
+    console.log('clicado')
+  })
+}

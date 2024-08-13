@@ -1,4 +1,5 @@
 import { favoritos } from "../storage/localStorage.js";
+import { UrlBaseApi } from "../api/server.js";
 
 export function acenderSlider(Produtos, filtro) {
 
@@ -31,7 +32,7 @@ export function acenderSlider(Produtos, filtro) {
         let isFav = favoritos.find((element) => element == produto._id);
         const produtoHTML = `
         <div class="${filtro ? 'showcaseFiltro__item' : 'swiper-slide'}">
-        <img class="img-produto" src="http://localhost:8000/uploads/${produto.src}" alt="${produto.alt}">
+        <img class="img-produto" src="${UrlBaseApi}uploads/${produto.src}" alt="${produto.alt}">
                 <h3 class="item__infoStatus">${produto.status}</h3>
                 <a class="item__btn-fav" name="${produto._id}">
                     <img class="img-fav" name="${isFav ? 'ativo' : 'desativo'}" 
@@ -81,7 +82,7 @@ export function acenderFavoritos(Produtos, listaItens){
     produtosSolicitados.reverse().forEach(produto => {
         const produtoHTML = `
         <div class="main__item-fav">
-            <img class="img-produto" src="../${produto.src}" alt="${produto.alt}">
+            <img class="img-produto" src="${UrlBaseApi}uploads/${produto.src}" alt="${produto.alt}">
             <h3 class="item__infoStatus">${produto.status}</h3>
             <a class="item__btn-fav" name="${produto._id}">
                 <img class="img-fav" name="${produtosSolicitados ? 'ativo' : 'desativo'}"
@@ -136,7 +137,7 @@ export function acenderCarrinho(Produtos, carrinho){
         const produtoHTML = `
         <hr />
          <div class="main__carrinho-item">
-            <img class="car__img-produto" src="../${produto.src}" alt="${produto.alt}">
+            <img class="car__img-produto" src="${UrlBaseApi}uploads/${produto.src}" alt="${produto.alt}">
             <div class="item__carrinho-Container">
             <h2 class="item__Nome">${produto.name}</h2>
             <a href="#" class="item__quantProduto"><span>Quantidade: ${quantidade}</span></a>
