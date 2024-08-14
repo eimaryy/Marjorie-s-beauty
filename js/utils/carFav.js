@@ -1,5 +1,6 @@
 import { conectaAPIProduto } from "../api/produtoEndpoint.js";
-import { conectaAPICarrinho } from "../api/carrinhoEndpoint.js"
+import Cookies from "../storage/cookies.js";
+import { conectaAPICarrinho } from "../api/carrinhoEndpoint.js";
 import { favoritos, atualizaFavoritos } from "../storage/localStorage.js";
 
 export function load(){
@@ -31,13 +32,19 @@ export function load(){
     for(let item of adicionarCarrinho){
         item.addEventListener('click', async(e) => {
             e.preventDefault();
-            const res = await conectaAPICarrinho.addItemCarrinho(item.name)
-            if(res){
-              const nomeProduto = await conectaAPIProduto.findProdutoId(item.name)
-              await alert(`${nomeProduto.name} foi adicionado ao seu carrinho!`);
-
+            const userLogado = Cookies.pegaCookie("accessToken");
+            if(userLogado){
+              const res = await conectaAPICarrinho.addItemCarrinho(item.name)
+              if(res){
+                const nomeProduto = await conectaAPIProduto.findProdutoId(item.name)
+                await alert(`${nomeProduto.name} foi adicionado ao seu carrinho!`);
+  
+              }
+              mostraQuantidadeItem();
+            }else{
+              alert(`Para adicionar ao carrinho é necessario realizar o login primeiro!`);
+              window.location.href = "./pages/logCad.html"
             }
-            mostraQuantidadeItem();
         });
     }
 }
@@ -52,18 +59,18 @@ export async function mostraQuantidadeItem(){
   const quantItemCar = document.querySelector('.car');
   const quantItemFav = document.querySelector('.fav');
   const carrinho = await conectaAPICarrinho.findCarrinho();
-  console.log(carrinho)
- 
-  if (carrinho[0].items.length === 0){
-      quantItemCar.style.display = 'none';
-  } else{
-      quantItemCar.style.display = 'block';   
-      quantItemCar.textContent = `${carrinho[0].items.length}`
-  };
-  if(favoritos.length === 0){
-      quantItemFav.style.display = 'none';
-  }else{
-      quantItemFav.style.display = 'block';   
-      quantItemFav.textContent = `${favoritos.length}`
-  };
+  if(!carrinho.mensagem){
+    if (carrinho[0].items.length === 0){
+        quantItemCar.style.display = 'none';
+    } else{
+        quantItemCar.style.display = 'block';   
+        quantItemCar.textContent = `${carrinho[0].items.length}`
+      };
+  }
+    if(favoritos.length === 0){
+        quantItemFav.style.display = 'none';
+    }else{
+        quantItemFav.style.display = 'block';   
+        quantItemFav.textContent = `${favoritos.length}`
+      };
 };

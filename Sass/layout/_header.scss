@@ -1,5 +1,14 @@
 header {
 
+  .userName{
+    @include fonte(1.4rem, 600);
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    font-weight: bolder;
+  }
+
   #container_header {
     @include centralizar(row, space-between);
     padding: 2rem 0.8rem 1rem 0.8rem;
@@ -7,6 +16,10 @@ header {
     width: 100%;
     z-index: 2;
     background-color: $cor__branco;
+
+    .perfil{
+      display: none;
+    }
 
     #contato {
       display: none;
@@ -162,10 +175,13 @@ header {
   }
 }
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:600px) {
   header {
     #container_header {
       #contato {
+        display: block;
+      }
+      .perfil{
         display: block;
       }
 

@@ -53,6 +53,7 @@
     #main__carrinho-Container{
         @include centralizar(column, center);
         gap: 4rem;
+        display: none;
         
         .main__carrinho{
             max-width: 95%;

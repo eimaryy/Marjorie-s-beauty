@@ -32,7 +32,7 @@ async function findCarrinho(){
         return conexaoConvertida;
 
     }catch(error){
-        throw new Error(`Erro ao mostrar o carrinho` + error);
+        throw new Error(`Erro ao mostrar o carrinho`);
     }
 }
 

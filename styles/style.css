@@ -63,6 +63,16 @@ a {
     font-size: 3rem;
   }
 }
+header .userName {
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 600;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bolder;
+}
 header #container_header {
   display: flex;
   flex-direction: row;
@@ -73,6 +83,9 @@ header #container_header {
   width: 100%;
   z-index: 2;
   background-color: rgb(255, 255, 255);
+}
+header #container_header .perfil {
+  display: none;
 }
 header #container_header #contato {
   display: none;
@@ -261,8 +274,11 @@ header .pesquisa form .header__pesquisa-btn img {
   object-fit: fill;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
   header #container_header #contato {
+    display: block;
+  }
+  header #container_header .perfil {
     display: block;
   }
   header #container_header #header_logo {
@@ -726,6 +742,7 @@ header .pesquisa form .header__pesquisa-btn img {
   justify-content: center;
   align-items: center;
   gap: 4rem;
+  display: none;
 }
 #main__car #main__carrinho-Container .main__carrinho {
   max-width: 95%;

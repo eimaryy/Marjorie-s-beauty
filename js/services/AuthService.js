@@ -1,7 +1,6 @@
 import { conectaAPIAuth } from "../api/authEndpoint.js";
 import { conectaAPIUser } from "../api/userEndpoint.js";
 import Cookies from "../storage/cookies.js";
-
 class AuthService {
     static async login(evento, form){
         evento.preventDefault();

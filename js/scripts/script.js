@@ -6,14 +6,19 @@ import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 let Produtos = await ProdutoService.listarProduto(`?limit=12`);
 
 function verificaConta(){
-    const contaLogada = Cookies.pegaCookie("accessToken");
+    const contaLogada = Cookies.pegaCookie("nameUser");
   if(contaLogada){
-
+   const perfilUser = document.querySelectorAll('[data-user]');
+   for(let perfil of perfilUser){
+     perfil.innerHTML = `<p class='userName'>Olá, ${contaLogada}<p>`
+   }
   }
 }
 
 acenderSlider(Produtos, false);
+mostraQuantidadeItem();
 load();
+verificaConta();
 
 const btnCompra = document.querySelector('.com');
 const btnAtendimento = document.querySelector('.at');

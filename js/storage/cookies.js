@@ -6,8 +6,7 @@ class Cookies {
                 date.setTime(date.getTime() + (seconds * 1000));
                 expires = "; expires=" + date.toUTCString();
             }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    
+            document.cookie = name + "=" + (value || "") + expires + "; path=/"; 
     };
     
     static pegaCookie(cname) {
