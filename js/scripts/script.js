@@ -1,11 +1,18 @@
 import { acenderSlider } from "../utils/mostra.js";
+import Cookies from "../storage/cookies.js";
 import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 
 let Produtos = await ProdutoService.listarProduto(`?limit=12`);
 
+function verificaConta(){
+    const contaLogada = Cookies.pegaCookie("accessToken");
+  if(contaLogada){
+
+  }
+}
+
 acenderSlider(Produtos, false);
-mostraQuantidadeItem();
 load();
 
 const btnCompra = document.querySelector('.com');

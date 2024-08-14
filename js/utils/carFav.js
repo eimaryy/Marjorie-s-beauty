@@ -52,6 +52,7 @@ export async function mostraQuantidadeItem(){
   const quantItemCar = document.querySelector('.car');
   const quantItemFav = document.querySelector('.fav');
   const carrinho = await conectaAPICarrinho.findCarrinho();
+  console.log(carrinho)
  
   if (carrinho[0].items.length === 0){
       quantItemCar.style.display = 'none';
