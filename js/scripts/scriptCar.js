@@ -71,7 +71,7 @@ async function initPageCarrinho(){
 
 }
 
-if(window.location.pathname.includes('pages/meu-carrinho.html')) {
+if(window.location.pathname.includes('pages/meu-carrinho')) {
     mostraQuantidadeItem();
     const userLogado = Cookies.pegaCookie("accessToken");
     if(userLogado){
