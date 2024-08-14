@@ -1,6 +1,6 @@
 import { conectaAPIProduto } from "../api/produtoEndpoint.js";
-import { favoritos, carrinho, atualizaFavoritos, atualizaCarrinho } from "../storage/localStorage.js";
-// import { Produtos } from "../mock.js";
+import { conectaAPICarrinho } from "../api/carrinhoEndpoint.js"
+import { favoritos, atualizaFavoritos } from "../storage/localStorage.js";
 
 export function load(){
     let favoritar = [];
@@ -29,35 +29,35 @@ export function load(){
     }
 
     for(let item of adicionarCarrinho){
-        item.addEventListener('click', (e) => {
+        item.addEventListener('click', async(e) => {
             e.preventDefault();
-            carrinho.push(item.name);
-            atualizaCarrinho();
+            const res = await conectaAPICarrinho.addItemCarrinho(item.name)
+            if(res){
+              const nomeProduto = await conectaAPIProduto.findProdutoId(item.name)
+              await alert(`${nomeProduto.name} foi adicionado ao seu carrinho!`);
 
-            let produto = Produtos.find((element) => element.id == item.name);
-            alert(`${produto.titulo} foi adicionado a sacola com sucesso!`); 
+            }
             mostraQuantidadeItem();
         });
     }
 }
 
-export function excluirItemCarrinho(lixeira){
-  let indexRemove = carrinho.indexOf(lixeira.name);
-  carrinho.splice(indexRemove, 1);
-  atualizaCarrinho();
-  return carrinho;
+export async function excluirItemCarrinho(lixeira){
+  let res = await conectaAPICarrinho.delItemCarrinho(lixeira.name);
+  return res;
 }
 
 
-export function mostraQuantidadeItem(){
+export async function mostraQuantidadeItem(){
   const quantItemCar = document.querySelector('.car');
   const quantItemFav = document.querySelector('.fav');
-
-  if (carrinho.length === 0){
+  const carrinho = await conectaAPICarrinho.findCarrinho();
+ 
+  if (carrinho[0].items.length === 0){
       quantItemCar.style.display = 'none';
   } else{
       quantItemCar.style.display = 'block';   
-      quantItemCar.textContent = `${carrinho.length}`
+      quantItemCar.textContent = `${carrinho[0].items.length}`
   };
   if(favoritos.length === 0){
       quantItemFav.style.display = 'none';

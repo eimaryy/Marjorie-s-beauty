@@ -1,12 +1,7 @@
-export function calculaValorCarrinho(Produtos, carrinho){
+export function calculaValorCarrinho(carrinho){
     let valorTotalCarrinho = 0;
-    carrinho.forEach(item => {
-        for(let produto of Produtos){
-            if(item === produto.id){
-                valorTotalCarrinho += produto.preco;
-                break;
-            }
-        }
+    carrinho[0].items.forEach(item => {
+        valorTotalCarrinho += (item.price * item.quantity)
     });
 
     return valorTotalCarrinho;

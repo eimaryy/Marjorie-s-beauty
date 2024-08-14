@@ -1,5 +1,4 @@
 import { acenderSlider } from "../utils/mostra.js";
-// import { Produtos } from "../mock.js";
 import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 

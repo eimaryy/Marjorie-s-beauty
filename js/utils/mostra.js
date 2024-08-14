@@ -1,5 +1,7 @@
 import { favoritos } from "../storage/localStorage.js";
 import { UrlBaseApi } from "../api/server.js";
+import { conectaAPIProduto } from "../api/produtoEndpoint.js";
+import { selecionarLixeiraCarrinho } from "../scripts/scriptCar.js";
 
 export function acenderSlider(Produtos, filtro) {
 
@@ -99,32 +101,26 @@ export function acenderFavoritos(Produtos){
     
 }
 
-export function acenderCarrinho(Produtos, carrinho){
+export async function acenderCarrinho(carrinho){
     const carrinhoItem = document.querySelector(".main__carrinho-itemContainer");
     const produtosCarrinho = [];
     carrinhoItem.innerHTML = '';
 
-    carrinho.forEach(item => {
-        for(let produto of Produtos){
-            if (item === produto.id){
-                produtosCarrinho.push(produto);
-                break;
+        for await(let produto of carrinho[0].items){
+            const res = await conectaAPIProduto.findProdutoId(produto.produtoId)
+            if (res){
+                produtosCarrinho.push(res);
             }
         }
-    });
 
     produtosCarrinho.reverse().forEach(produto => {
         let quantidade = 0;
-        for(let item of produtosCarrinho){
-            if(produto.id === item.id){
-                quantidade++;
-                if(quantidade >= 2){
-                const index = produtosCarrinho.indexOf(item);
-                produtosCarrinho.splice(index, 1);
-                };
+        for(let i = 0; i <= produtosCarrinho.length; i++){
+            if(carrinho[0].items[i].produtoId === produto._id){
+                quantidade = carrinho[0].items[i].quantity
+                break;
             };
         };
-
         const produtoHTML = `
         <hr />
          <div class="main__carrinho-item">
@@ -144,5 +140,6 @@ export function acenderCarrinho(Produtos, carrinho){
         carrinhoItem.innerHTML += produtoHTML;
     });
 
+    selecionarLixeiraCarrinho();
 
 }
