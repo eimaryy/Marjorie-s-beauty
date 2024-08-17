@@ -64,7 +64,7 @@ export function acenderSlider(Produtos, filtro) {
             showcase.style.display = 'none';
         }
     }catch(error){
-        console.log(error)
+        console.log('erro ao carregar produtos')
     }finally {
         document.getElementById('loading-screen').style.display = 'none';
     };
@@ -83,6 +83,7 @@ export function acenderFavoritos(Produtos){
         </div>`
     }
    
+    try{
     Produtos.reverse().forEach(produto => {
         const produtoHTML = `
         <div class="main__item-fav">
@@ -103,6 +104,11 @@ export function acenderFavoritos(Produtos){
         `;
             mostraFavContainer.innerHTML += produtoHTML;
     });
+    }catch{
+        console.log('error ao carregar produtos');
+    }finally {
+        document.getElementById('loading-screen').style.display = 'none';
+    };
 
     
 }
@@ -119,7 +125,7 @@ export async function acenderCarrinho(carrinho){
             }
         }
 
-    produtosCarrinho.reverse().forEach(produto => {
+   try{produtosCarrinho.reverse().forEach(produto => {
         let quantidade = 0;
         for(let i = 0; i <= produtosCarrinho.length; i++){
             if(carrinho[0].items[i].produtoId === produto._id){
@@ -147,5 +153,10 @@ export async function acenderCarrinho(carrinho){
     });
 
     selecionarLixeiraCarrinho();
+    }catch{
+        console.log('error ao carregar carrinho');
+    }finally {
+        document.getElementById('loading-screen').style.display = 'none';
+    };
 
 }

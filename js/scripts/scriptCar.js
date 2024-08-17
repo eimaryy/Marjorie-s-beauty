@@ -39,7 +39,8 @@ export async function selecionarLixeiraCarrinho(){
 
 async function verificaItensCarrinho(carrinho){
     const carQuantidade = document.querySelector(".quant-prod");
-    if(carrinho[0].items.length === 0){
+    if(carrinho.length === 0 || carrinho[0].items.length === 0){
+        document.getElementById('loading-screen').style.display = 'flex';
         carrinhoVazioMessage(`<h2>Sua sacola está vazia</h2>
         <p>Você não possui nenhum item em sua sacola.<br>Clique <a href="../index.html">aqui</a> para continuar comprando.</p>`);
     }
@@ -60,24 +61,22 @@ function carrinhoVazioMessage(message){
 
 async function initPageCarrinho(){
     const carrinho = await pegaCarrinho()
-        if(carrinho.length === 0 || carrinho[0].items.length === 0){
-            carrinhoVazioMessage(`<h2>Sua sacola está vazia</h2>
-                <p>Você não possui nenhum item em sua sacola.<br>Clique <a href="../index.html">aqui</a> para continuar comprando.</p>`);
-        }else{
-            const carrinhoSessao = document.querySelector("#main__carrinho-Container");
-            carrinhoSessao.style.display = 'flex'; 
-            verificaItensCarrinho(carrinho);
-            startCart(carrinho)
-        }
+    const carrinhoSessao = document.querySelector("#main__carrinho-Container");
+    carrinhoSessao.style.display = 'flex'; 
+    verificaItensCarrinho(carrinho);
+    startCart(carrinho)
 }
 
 if(window.location.pathname.includes('pages/meu-carrinho')) {
+    const load = document.getElementById('loading-screen')
+    load.style.display = 'flex';
    verificaConta();
     mostraQuantidadeItem();
     const userLogado = Cookies.pegaCookie("accessToken");
     if(userLogado){
       initPageCarrinho()
     }else{
+        load.style.display = 'none';
         carrinhoVazioMessage(`<h2>É necessário fazer o login primeiro!</h2>
         <p>Para acessar seu carrinho, você precisa entrar na sua conta.<br>Clique <a href="./logCad.html">aqui</a> para continuar comprando.</p>`);
     }
