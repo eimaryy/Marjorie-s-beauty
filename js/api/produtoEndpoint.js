@@ -85,12 +85,3 @@ export const conectaAPIProduto = {
     findProdutoCategory,
     createProduto
 }
-
-//  async function teste(){
-//     const mostra = await conectaAPIProduto.findProdutoCategory("Artesanal", "?limit=10");
-
-//     console.log(mostra);
-//  }
-
-
-// teste()

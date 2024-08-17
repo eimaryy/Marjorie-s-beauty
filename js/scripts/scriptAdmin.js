@@ -1,10 +1,28 @@
 import ProdutoService from "../services/ProdutoService.js";
 import UserService from "../services/UserService.js";
 import cadastrar from "../utils/form.js";
+import { verificaConta } from "../utils/userAccont.js";
 import { loadForm } from "../utils/domUtils.js";
+import Cookies from "../storage/cookies.js";
+import { conectaAPIUser } from "../api/userEndpoint.js";
 
 const botoesAdmin = document.querySelectorAll('.main__botaoAncora');
+const res = verificaConta();
+autentificacaoUser(res);
 
+async function autentificacaoUser(res){
+    if(res){
+        const token = Cookies.pegaCookie('accessToken');
+        if(token){
+            const user = await conectaAPIUser.findUserId(token);
+            if(user.role === 'Cliente'){
+                window.location.href = '../index.html'
+            }
+        } 
+    }else{
+        window.location.href = "./logCad.html"
+    }
+}
 
 for(let botao of botoesAdmin){
     botao.addEventListener('click', () => {

@@ -59,8 +59,9 @@ export async function mostraQuantidadeItem(){
   const quantItemCar = document.querySelector('.car');
   const quantItemFav = document.querySelector('.fav');
   const carrinho = await conectaAPICarrinho.findCarrinho();
+
   if(!carrinho.mensagem){
-    if (carrinho[0].items.length === 0){
+    if (carrinho.length === 0 || carrinho[0].items.length === 0){
         quantItemCar.style.display = 'none';
     } else{
         quantItemCar.style.display = 'block';   

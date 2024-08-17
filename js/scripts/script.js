@@ -1,19 +1,11 @@
 import { acenderSlider } from "../utils/mostra.js";
-import Cookies from "../storage/cookies.js";
+import { verificaConta } from "../utils/userAccont.js";
 import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 
-let Produtos = await ProdutoService.listarProduto(`?limit=12`);
+let Produtos = await ProdutoService.listarProduto(`?limit=30`);
 
-function verificaConta(){
-    const contaLogada = Cookies.pegaCookie("nameUser");
-  if(contaLogada){
-   const perfilUser = document.querySelectorAll('[data-user]');
-   for(let perfil of perfilUser){
-     perfil.innerHTML = `<p class='userName'>Olá, ${contaLogada}<p>`
-   }
-  }
-}
+
 
 acenderSlider(Produtos, false);
 mostraQuantidadeItem();
@@ -65,18 +57,3 @@ btnVoltarInicio.addEventListener('click', (e) => {
   showcase.style.display = 'block';
   showcaseComFiltro.style.display = 'none';
 });
-
-let number = 1;
-const botaoSlide = [swiperButton[2], swiperButton[3]]
-for(let btn of botaoSlide){
-  btn.addEventListener('click', async () => {
-    console.log('clicado')
-    number++;
-    Produtos = await ProdutoService.listarProduto(`?page=${number}`);
-
-    if(Produtos.length){
-      acenderSlider(Produtos, false);
-    }
-    load();
-  })
-}

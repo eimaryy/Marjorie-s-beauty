@@ -36,8 +36,21 @@ async function findUserId(accessToken) {
     return conexaoConvertida;
 
 }
+async function deleteUser(accessToken) {
+    const conexao = await fetch(`${UrlBaseApi}user`, {
+        method: "DELETE",
+        headers:{
+            'Authorization': `Bearer ${accessToken}`, 
+            "Content-type": "application/json"
+        }, 
+    }); 
+    const conexaoConvertida = await conexao.json();
+    return conexaoConvertida;
+
+}
 
 export const conectaAPIUser = {
     createUser, 
     findUserId,
+    deleteUser
 }

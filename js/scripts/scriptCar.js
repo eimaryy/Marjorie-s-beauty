@@ -1,5 +1,6 @@
 import { conectaAPICarrinho } from "../api/carrinhoEndpoint.js";
 import { acenderCarrinho } from "../utils/mostra.js";
+import { verificaConta } from "../utils/userAccont.js";
 import { mostraQuantidadeItem, load, excluirItemCarrinho } from "../utils/carFav.js";
 import { calculaValorCarrinho } from "../utils/calculaCarrinho.js"; 
 import Cookies from "../storage/cookies.js";
@@ -59,19 +60,19 @@ function carrinhoVazioMessage(message){
 
 async function initPageCarrinho(){
     const carrinho = await pegaCarrinho()
-    if(carrinho[0].items.length === 0){
-        carrinhoVazioMessage(`<h2>Sua sacola está vazia</h2>
-            <p>Você não possui nenhum item em sua sacola.<br>Clique <a href="../index.html">aqui</a> para continuar comprando.</p>`);
-    }else{
-        const carrinhoSessao = document.querySelector("#main__carrinho-Container");
-        carrinhoSessao.style.display = 'flex'; 
-        verificaItensCarrinho(carrinho);
-        startCart(carrinho)
-    }
-
+        if(carrinho.length === 0 || carrinho[0].items.length === 0){
+            carrinhoVazioMessage(`<h2>Sua sacola está vazia</h2>
+                <p>Você não possui nenhum item em sua sacola.<br>Clique <a href="../index.html">aqui</a> para continuar comprando.</p>`);
+        }else{
+            const carrinhoSessao = document.querySelector("#main__carrinho-Container");
+            carrinhoSessao.style.display = 'flex'; 
+            verificaItensCarrinho(carrinho);
+            startCart(carrinho)
+        }
 }
 
 if(window.location.pathname.includes('pages/meu-carrinho')) {
+   verificaConta();
     mostraQuantidadeItem();
     const userLogado = Cookies.pegaCookie("accessToken");
     if(userLogado){

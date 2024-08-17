@@ -63,6 +63,17 @@ a {
     font-size: 3rem;
   }
 }
+header .userName {
+  font-size: 1.4rem;
+  font-family: "Platypi", serif;
+  font-weight: 600;
+  padding: 0.5rem;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bolder;
+}
 header #container_header {
   display: flex;
   flex-direction: row;
@@ -73,6 +84,10 @@ header #container_header {
   width: 100%;
   z-index: 2;
   background-color: rgb(255, 255, 255);
+  overflow: visible;
+}
+header #container_header .perfil {
+  display: none;
 }
 header #container_header #contato {
   display: none;
@@ -106,13 +121,34 @@ header #container_header #header_botoes {
   justify-content: end;
   align-items: center;
   width: 50%;
+  overflow: visible;
 }
 header #container_header .header_botoes-list {
   display: flex;
+  overflow: visible;
 }
 header #container_header .header_botoes-list .header_list-icon {
   cursor: pointer;
   position: relative;
+  overflow: visible;
+}
+header #container_header .header_botoes-list .header_list-icon .menu-list {
+  position: absolute;
+  height: auto;
+  display: none;
+  z-index: 2;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+}
+header #container_header .header_botoes-list .header_list-icon .menu-list .item {
+  font-size: 1.2rem;
+  font-family: "Platypi", serif;
+  font-weight: 600;
+  color: #1b4b3f;
+  padding: 0.5rem 0;
+}
+header #container_header .header_botoes-list .header_list-icon .menu-list .item:hover {
+  color: rgb(0, 0, 0);
 }
 header #container_header .header_botoes-list .header_list-icon .header_itemSacola-number {
   display: none;
@@ -214,6 +250,17 @@ header #container_header #header_menu-footer a img {
   height: auto;
   object-fit: fill;
 }
+header #container_header #header_menu-footer .userItem {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 500;
+  cursor: pointer;
+}
 header .pesquisa {
   margin: 6rem 0 0 0;
   display: flex;
@@ -262,7 +309,7 @@ header .pesquisa form .header__pesquisa-btn img {
 }
 
 @media screen and (min-width: 500px) {
-  header #container_header #contato {
+  header #container_header .perfil {
     display: block;
   }
   header #container_header #header_logo {
@@ -277,7 +324,10 @@ header .pesquisa form .header__pesquisa-btn img {
     height: 4rem;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 850px) {
+  header #container_header #contato {
+    display: block;
+  }
   header #container_header .header_botoes-list .menu {
     display: none;
   }

@@ -1,6 +1,7 @@
 import { conectaAPIProduto } from "../api/produtoEndpoint.js";
 import { favoritos } from "../storage/localStorage.js";
 import { acenderFavoritos } from "../utils/mostra.js";
+import { verificaConta } from "../utils/userAccont.js";
 import { mostraQuantidadeItem, load } from "../utils/carFav.js";
 
 async function findProdutosFavoritos(){
@@ -17,6 +18,7 @@ async function findProdutosFavoritos(){
     load();
 }
 
+verificaConta();
 findProdutosFavoritos();
 
 const favQuantidade = document.querySelector(".main__fav-quant");

@@ -5,8 +5,18 @@ export function checkCookies(){
         const cookieValue = Cookies.pegaCookie("accessToken");
         if (!cookieValue) {
           clearInterval(interval); 
-          alert(`Sua sessão terminou! necessário fazer login novamente.`);
-          window.location.href = 'pages/logCad.html'
+          alert(`Sua sessão terminou! É necessário fazer login novamente.`);
+
+          const currentPath = window.location.pathname;
+          let redirectPath;
+
+          if (currentPath.includes("/pages/")) {
+              redirectPath = 'logCad.html';
+          } else {
+              redirectPath = 'pages/logCad.html';
+          }
+
+          window.location.href = redirectPath;
         }
     }, 1000); 
 }

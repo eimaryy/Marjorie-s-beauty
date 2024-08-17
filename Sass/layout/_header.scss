@@ -1,7 +1,9 @@
+
 header {
 
   .userName{
     @include fonte(1.4rem, 600);
+    padding: 0.5rem;
     align-items: center;
     white-space: nowrap;
     overflow: hidden;
@@ -16,6 +18,7 @@ header {
     width: 100%;
     z-index: 2;
     background-color: $cor__branco;
+    overflow: visible;
 
     .perfil{
       display: none;
@@ -49,14 +52,37 @@ header {
     #header_botoes {
       @include centralizar(row, end);
       width: 50%;
+      overflow: visible;
     }
 
     .header_botoes-list {
       display: flex;
+      overflow: visible;
+
 
       .header_list-icon {
         cursor: pointer;
         position: relative;
+        overflow: visible;
+
+        .menu-list{
+          position: absolute;
+          height: auto;
+          display: none;
+          z-index: 2;
+          padding: 1rem;
+          background-color: $cor__branco;
+          
+          .item{
+            @include fonte(1.2rem, 600);
+            color: $cor__verdeEscuro;
+            padding: 0.5rem 0;
+
+            &:hover{
+              color: $cor__preto;
+            }
+          }
+        }  
 
           .header_itemSacola-number{
             display: none;
@@ -132,7 +158,6 @@ header {
     #header_menu-footer {
       @include centralizar(row, flex-start);
       padding: 4rem 0;
-
       a {
         @include centralizar(row, flex-start);
         @include fonte(1.5rem, bolder);
@@ -141,6 +166,13 @@ header {
         img {
           @include ajusteImg(5rem, auto);
         }
+      }
+      .userItem{
+        padding: 1rem 2rem;
+        @include centralizar (row, space-between);
+        @include fonte (1.5rem, 500);
+        cursor: pointer;
+
       }
     }
   }
@@ -175,12 +207,9 @@ header {
   }
 }
 
-@media screen and (min-width:600px) {
+@media screen and (min-width:500px) {
   header {
     #container_header {
-      #contato {
-        display: block;
-      }
       .perfil{
         display: block;
       }
@@ -204,10 +233,13 @@ header {
   }
 }
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:850px) {
 
   header {
     #container_header {
+      #contato {
+        display: block;
+      }
       .header_botoes-list {
         .menu {
           display: none;
