@@ -479,6 +479,38 @@ header .pesquisa form .header__pesquisa-btn img {
     width: 80% !important;
   }
 }
+#loading-screen {
+  display: none;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  gap: 1rem;
+}
+#loading-screen p {
+  font-size: 1.5rem;
+  font-family: "Platypi", serif;
+  font-weight: 400;
+}
+#loading-screen .spinner {
+  padding: 1rem;
+  border: 4px solid #ebecee;
+  border-top: 4px solid #1b4b3f;
+  border-radius: 100%;
+  width: 0.7rem;
+  height: 0.7rem;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #showcase {
   display: flex;
   flex-direction: column;

@@ -29,41 +29,47 @@ export function acenderSlider(Produtos, filtro) {
         showcaseComFiltro.innerHTML = '<p>Essa sessão está vazia no momento.</p>';
         return;
     }
-    
-    Produtos.forEach(produto => {
-        let isFav = favoritos.find((element) => element == produto._id);
-        const produtoHTML = `
-        <div class="${filtro ? 'showcaseFiltro__item' : 'swiper-slide'}">
-        <img class="img-produto" src="${UrlBaseApi}uploads/${produto.src}" alt="${produto.alt}">
-                <h3 class="item__infoStatus">${produto.status}</h3>
-                <a class="item__btn-fav" name="${produto._id}">
-                    <img class="img-fav" name="${isFav ? 'ativo' : 'desativo'}" 
-                    src="${isFav ? '../assets/heart-solid.svg' : '../assets/heart-regular.svg'}"
-                     alt="Icone de coração">
-                </a>
-                <div class="item__informacoes-Container">
-                    <h2 class="item__infoNome">${produto.name}</h2>
-                    <a href="#" class="item__infoProduto"><span>${produto.description}</span></a>
-                    <h2 class="item__infoPreco">R$ ${produto.price}</h2>
-                    <a href="#" class="item__btn-sacola" name="${produto._id}"><span>Adicionar a sacola</span></a>
+    try{
+        Produtos.forEach(produto => {
+            let isFav = favoritos.find((element) => element == produto._id);
+            const produtoHTML = `
+            <div class="${filtro ? 'showcaseFiltro__item' : 'swiper-slide'}">
+            <img class="img-produto" src="${UrlBaseApi}uploads/${produto.src}" alt="${produto.alt}">
+                    <h3 class="item__infoStatus">${produto.status}</h3>
+                    <a class="item__btn-fav" name="${produto._id}">
+                        <img class="img-fav" name="${isFav ? 'ativo' : 'desativo'}" 
+                        src="${isFav ? '../assets/heart-solid.svg' : '../assets/heart-regular.svg'}"
+                         alt="Icone de coração">
+                    </a>
+                    <div class="item__informacoes-Container">
+                        <h2 class="item__infoNome">${produto.name}</h2>
+                        <a href="#" class="item__infoProduto"><span>${produto.description}</span></a>
+                        <h2 class="item__infoPreco">R$ ${produto.price}</h2>
+                        <a href="#" class="item__btn-sacola" name="${produto._id}"><span>Adicionar a sacola</span></a>
+                    </div>
                 </div>
-            </div>
-        `;
-
-        if (filtro) {
-            showcaseComFiltro.innerHTML += produtoHTML;
+            `;
+    
+            if (filtro) {
+                showcaseComFiltro.innerHTML += produtoHTML;
+            } else {
+                const container = produto.category !== 'artesanal' ? swiperContainer1 : swiperContainer2;
+                container.innerHTML += produtoHTML;
+            }
+        });
+    
+        if (!filtro) {
+            showcase.style.display = 'block';
         } else {
-            const container = produto.category !== 'artesanal' ? swiperContainer1 : swiperContainer2;
-            container.innerHTML += produtoHTML;
+            showcase.style.display = 'none';
         }
-    });
-
-    if (!filtro) {
-        showcase.style.display = 'block';
-    } else {
-        showcase.style.display = 'none';
-    }
+    }catch(error){
+        console.log(error)
+    }finally {
+        document.getElementById('loading-screen').style.display = 'none';
+    };
 }
+
 
 export function acenderFavoritos(Produtos){
     const mostraFavContainer = document.querySelector('.main__list-item-fav')

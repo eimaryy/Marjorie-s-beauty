@@ -3,9 +3,10 @@ import { verificaConta } from "../utils/userAccont.js";
 import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 
+document.getElementById('loading-screen').style.display = 'flex';
+
+
 let Produtos = await ProdutoService.listarProduto(`?limit=30`);
-
-
 
 acenderSlider(Produtos, false);
 mostraQuantidadeItem();
