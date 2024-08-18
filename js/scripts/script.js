@@ -6,6 +6,11 @@ import executarPesquisa from "../utils/menu.js"
 
 document.getElementById('loading-screen').style.display = 'flex';
 
+const params = new URLSearchParams(window.location.search);
+const pesquisa = params.get('search');
+if(pesquisa){
+  executarPesquisa(pesquisa);
+}
 
 let Produtos = await ProdutoService.listarProduto(`?limit=30`);
 
@@ -58,9 +63,3 @@ btnVoltarInicio.addEventListener('click', (e) => {
   showcase.style.display = 'block';
   showcaseComFiltro.style.display = 'none';
 });
-
-const params = new URLSearchParams(window.location.search);
-const pesquisa = params.get('search');
-if(pesquisa){
-  executarPesquisa(pesquisa);
-}
