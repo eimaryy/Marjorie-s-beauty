@@ -2,6 +2,7 @@ import { acenderSlider } from "../utils/mostra.js";
 import { verificaConta } from "../utils/userAccont.js";
 import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
+import executarPesquisa from "../utils/menu.js"
 
 document.getElementById('loading-screen').style.display = 'flex';
 
@@ -49,7 +50,6 @@ const showcase = document.querySelector('#showcase');
 const showcaseComFiltro = document.querySelector('#showcaseFiltro');
 const bannerinfo = document.querySelector('#banner__infos')
 const bannerSlide = document.querySelector('.swiper')
-const swiperButton = document.querySelectorAll('.swiper-button-next');
 
 btnVoltarInicio.addEventListener('click', (e) => {
   e.preventDefault();
@@ -58,3 +58,9 @@ btnVoltarInicio.addEventListener('click', (e) => {
   showcase.style.display = 'block';
   showcaseComFiltro.style.display = 'none';
 });
+
+const params = new URLSearchParams(window.location.search);
+const pesquisa = params.get('search');
+if(pesquisa){
+  executarPesquisa(pesquisa);
+}
