@@ -6,6 +6,8 @@ import executarPesquisa from "../utils/menu.js"
 
 document.getElementById('loading-screen').style.display = 'flex';
 
+document.addEventListener('DOMContentLoaded', async function() {
+
 const params = new URLSearchParams(window.location.search);
 const pesquisa = params.get('search');
 if(pesquisa){
@@ -62,4 +64,5 @@ btnVoltarInicio.addEventListener('click', (e) => {
   bannerinfo.style.display = 'flex';
   showcase.style.display = 'block';
   showcaseComFiltro.style.display = 'none';
+});
 });
