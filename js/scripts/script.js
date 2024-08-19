@@ -4,23 +4,6 @@ import ProdutoService from "../services/ProdutoService.js";
 import { load, mostraQuantidadeItem } from "../utils/carFav.js";
 import executarPesquisa from "../utils/menu.js"
 
-document.getElementById('loading-screen').style.display = 'flex';
-
-document.addEventListener('DOMContentLoaded', async function() {
-
-const params = new URLSearchParams(window.location.search);
-const pesquisa = params.get('search');
-if(pesquisa){
-  executarPesquisa(pesquisa);
-}
-
-let Produtos = await ProdutoService.listarProduto(`?limit=30`);
-
-acenderSlider(Produtos, false);
-mostraQuantidadeItem();
-load();
-verificaConta();
-
 const btnCompra = document.querySelector('.com');
 const btnAtendimento = document.querySelector('.at');
 const btnSobre = document.querySelector('.sob');
@@ -29,6 +12,22 @@ const ulAtendimento = document.querySelector('.atendimento');
 const ulSobre = document.querySelector('.sobre');
 const span = document.querySelectorAll('.footer_item-span');
 let textBtn = ['+', '-']
+
+document.getElementById('loading-screen').style.display = 'flex';
+
+document.addEventListener('DOMContentLoaded', async function() {
+
+const params = new URLSearchParams(window.location.search);
+const pesquisa = params.get('search');
+if(pesquisa){
+  executarPesquisa(pesquisa);
+}else{
+  let Produtos = await ProdutoService.listarProduto(`?limit=30`);  
+  acenderSlider(Produtos, false);
+}
+mostraQuantidadeItem();
+load();
+verificaConta();
 
 btnCompra.addEventListener('click', () => {
   eventoClicker(ulCompra, textBtn, span[0]);
