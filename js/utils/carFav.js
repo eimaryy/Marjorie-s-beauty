@@ -7,7 +7,7 @@ export function load(){
     let favoritar = [];
    favoritar = document.querySelectorAll(".item__btn-fav");
     let adicionarCarrinho = document.querySelectorAll(".item__btn-sacola");
-
+    
     for(let favorito of favoritar){
         favorito.addEventListener('click', (e) => {
         e.preventDefault();

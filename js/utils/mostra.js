@@ -106,11 +106,7 @@ export function acenderFavoritos(Produtos){
     });
     }catch{
         console.log('error ao carregar produtos');
-    }finally {
-        document.getElementById('loading-screen').style.display = 'none';
-    };
-
-    
+    }
 }
 
 export async function acenderCarrinho(carrinho){
